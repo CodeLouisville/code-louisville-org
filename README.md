@@ -4,7 +4,7 @@
 
 * Single page web app
 * Sections: Mentorship, Students, Employers, Youth, News & Events
-* Forms for: Mentor Application, Student Application (links to Treehouse portal), Employer inquiry, Youth Program inquiry
+* Forms for: Mentor Application, Student Application (links to Treehouse portal), Employer inquiry
 * Social Media Links
 
 ### Mentorship Section

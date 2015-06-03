@@ -23,11 +23,6 @@
 * Employer benefit statement
 * Form to inquire about becoming an employer partner
 
-### Youth Section
-
-* Beech Technologies overview
-* Form to inquire about starting a youth program
-
 ### News & Events
 
 * Tiled press content 

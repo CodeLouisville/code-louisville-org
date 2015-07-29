@@ -16,7 +16,10 @@
 
 * Tiled content student success stories (showcase)
 * Demo how many spots are left open in each session
-* Form for student application (links to Treehouse portal)
+* Form for student application 
+	* Posts contact & personal info to database
+	* Runs JSON script on user-provided Treehouse profile link to check for prerequisite completion 
+	* only allows for submission when prereq is done)
 
 ### Employer Section
 

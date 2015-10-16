@@ -21,18 +21,18 @@
 
 * Mentor showcase
 * Form for Mentor Application (MailChimp API)
-	*Choose topic and cohort
-	*Employer and role
-	*First Name, Last Name and email only
+	* Choose topic and cohort
+	* Employer and role
+	* First Name, Last Name and email only
 
 ### Employer Section
 
 * Employer showcase
 * Form to inquire about becoming an employer partner (MailChimp API)
-	*Looking for talent
-	*Willing to provide mentors
-	*Willing to host in employer space
-	*Willing to sponsor events
+	* Looking for talent
+	* Willing to provide mentors
+	* Willing to host in employer space
+	* Willing to sponsor events
 	
 
 ### News & Events

@@ -9,7 +9,7 @@
         <div class="container">
             <img class="cl-logo" src="assets/img/code-louisville-white.svg" alt="Code Louisville">
             <div>
-                <a href="#intro" class="button button-large white m1-right">Tell me more</a><a href="#" class="button button-large pink">Sign up today</a>
+                <a href="#intro" class="button button-large white m1-right">Tell me more</a><a href="/candidates#upcoming" class="button button-large pink">Sign up today</a>
             </div>
         </div>
     </header>

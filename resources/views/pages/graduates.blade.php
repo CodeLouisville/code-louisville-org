@@ -55,7 +55,7 @@
 
 @endsection
 
-@section('scripts')
+@section('vue')
 
     @include('components.vue')
 

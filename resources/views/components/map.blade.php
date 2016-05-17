@@ -1,6 +1,7 @@
 <section id="map"></section>
 
-@section('scripts')
+@push('scripts')
+
     <script src="https://maps.google.com/maps/api/js"></script>
     <script>
         var geocoder = new google.maps.Geocoder(),
@@ -66,4 +67,5 @@
 
         google.maps.event.addDomListener(window, 'load', getGeocode);
     </script>
-@endsection
+
+@endpush

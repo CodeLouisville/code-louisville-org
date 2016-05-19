@@ -15,8 +15,10 @@ var App = {
     },
     scrollTo: function($t)
     {
+        var top = $t.offset().top - 95
+        console.log(top)
         $('html, body').stop().animate({
-            'scrollTop': $t.offset().top
+            'scrollTop': top
         }, 400, 'swing', function(){
             window.location.hash = $t.attr('id')
         })

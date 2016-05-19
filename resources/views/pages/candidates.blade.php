@@ -152,7 +152,7 @@
                             <li><a href="#structure">Program structure</a></li>
                             <li><a href="#pricing">Pricing</a></li>
                             <li><a href="#questions">Questions</a></li>
-                            <li><a href="#register" class="button pink">Register</a></li>
+                            <li><a href="#register" class="button pink"><i class="fa fa-clipboard"></i><span>Register</span><span>Register</span></a></li>
                         </ul>
                     </nav>
                 </div>

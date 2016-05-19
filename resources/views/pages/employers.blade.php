@@ -90,7 +90,7 @@
                             <li><a href="#partners">Partners</a></li>
                             <li><a href="#why">Why partner?</a></li>
                             <li><a href="#form">Learn more</a></li>
-                            <li><a href="/employers/graduates" class="button pink">Graduate List</a></li>
+                            <li><a href="/employers/graduates" class="button pink"><i class="fa fa-graduation-cap"></i><span>Grad List</span><span>Graduate List</span></a></li>
                         </ul>
                     </nav>
                 </div>

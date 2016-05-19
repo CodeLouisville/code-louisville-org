@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h3 class="form-title" id="form">Become a mentor</h3>
+                    <h3 class="form-title anchor" id="form">Become a mentor</h3>
                     <section class="mentor-form inset">
                         @if(Session::has('success'))
                             <div class="inset">
@@ -204,7 +204,7 @@
                             <li><a href="#what">What does it take?</a></li>
                             <li><a href="#tech">Technologies</a></li>
                             <li><a href="#current">Current mentors</a></li>
-                            <li><a href="#form" class="button pink">Become a Mentor</a></li>
+                            <li><a href="#form" class="button pink"><i class="fa fa-clipboard"></i><span>Sign up</span><span>Become a Mentor</span></a></li>
                         </ul>
                     </nav>
                 </div>

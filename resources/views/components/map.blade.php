@@ -2,7 +2,7 @@
 
 @push('scripts')
 
-    <script src="https://maps.google.com/maps/api/js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAKPd802_bQJmAIr3vdQ-Xl8EfvitiYbbk"></script>
     <script>
         var geocoder = new google.maps.Geocoder(),
             address = "252 E Market St, Louisville, KY 40202",

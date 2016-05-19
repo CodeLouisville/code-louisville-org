@@ -1,13 +1,24 @@
-/************
- * Override *
- ************/
+/*
+ * |----------------------------------------------------------------------------
+ * | override
+ * |----------------------------------------------------------------------------
+ */
 .tooltip.bottom .tooltip-arrow { border-bottom-color:#2C3a42 }
 .tooltip-inner { background-color:#2C3a42; }
 [data-editable]:focus { outline:none; }
 
-/***********
- * general *
- ***********/
+/*
+ * |----------------------------------------------------------------------------
+ * | spacing
+ * |----------------------------------------------------------------------------
+ */
+.p0 { padding:0 !important; } .p1 { padding:16px !important; } .p2 { padding:32px !important; } .p3 { padding:48px !important; } .p4 { padding:64px !important; } .m0 { margin:0 !important; } .m1 { margin:16px !important; } .m2 { margin:32px !important; } .m3 { margin:48px !important; } .m4 { margin:64px !important; } .p0-top { padding-top:0 !important; } .p0-right { padding-right:0 !important; } .p0-bottom { padding-bottom:0 !important; } .p0-left { padding-left:0 !important; } .p1-top { padding-top:16px !important; } .p1-right { padding-right:16px !important; } .p1-bottom { padding-bottom:16px !important; } .p1-left { padding-left:16px !important; } .p2-top { padding-top:32px !important; } .p2-right { padding-right:32px !important; } .p2-bottom { padding-bottom:32px !important; } .p2-left { padding-left:32px !important; } .p3-top { padding-top:48px !important; } .p3-right { padding-right:48px !important; } .p3-bottom { padding-bottom:48px !important; } .p3-left { padding-left:48px !important; } .p4-top { padding-top:64px !important; } .p4-right { padding-right:64px !important; } .p4-bottom { padding-bottom:64px !important; } .p4-left { padding-left:64px !important; } .m0-top { margin-top:0 !important; } .m0-right { margin-right:0 !important; } .m0-bottom { margin-bottom:0 !important; } .m0-left { margin-left:0 !important; } .m1-top { margin-top:16px !important; } .m1-right { margin-right:16px !important; } .m1-bottom { margin-bottom:16px !important; } .m1-left { margin-left:16px !important; } .m2-top { margin-top:32px !important; } .m2-right { margin-right:32px !important; } .m2-bottom { margin-bottom:32px !important; } .m2-left { margin-left:32px !important; } .m3-top { margin-top:48px !important; } .m3-right { margin-right:48px !important; } .m3-bottom { margin-bottom:48px !important; } .m3-left { margin-left:48px !important; } .m4-top { margin-top:64px !important; } .m4-right { margin-right:64px !important; } .m4-bottom { margin-bottom:64px !important; } .m4-left { margin-left:64px !important; }
+
+/*
+ * |----------------------------------------------------------------------------
+ * | general
+ * |----------------------------------------------------------------------------
+ */
 body {
     background:#f5f5f5;
     color:#2c3a42;
@@ -36,6 +47,11 @@ label {
     width:100%;
 }
 
+/*
+ * |----------------------------------------------------------------------------
+ * | form fields
+ * |----------------------------------------------------------------------------
+ */
 .content input[type="text"] {
     background:#fff;
     border:1px solid #ddd;
@@ -51,30 +67,32 @@ label {
     min-height:85px;
 }
 
+/*
+ * |----------------------------------------------------------------------------
+ * | utility
+ * |----------------------------------------------------------------------------
+ */
 .background-white { background:#fff; }
-
 .btn-xl { padding:12px 24px; }
-
 .left { text-align:left; }
 .center { text-align:center; }
 .right { text-align:right; }
 .weak { font-weight:normal; }
 .smash { line-height:1.6; }
 
-/***********
- * spacing *
- ***********/
-.p0 { padding:0 !important; } .p1 { padding:16px !important; } .p2 { padding:32px !important; } .p3 { padding:48px !important; } .p4 { padding:64px !important; } .m0 { margin:0 !important; } .m1 { margin:16px !important; } .m2 { margin:32px !important; } .m3 { margin:48px !important; } .m4 { margin:64px !important; } .p0-top { padding-top:0 !important; } .p0-right { padding-right:0 !important; } .p0-bottom { padding-bottom:0 !important; } .p0-left { padding-left:0 !important; } .p1-top { padding-top:16px !important; } .p1-right { padding-right:16px !important; } .p1-bottom { padding-bottom:16px !important; } .p1-left { padding-left:16px !important; } .p2-top { padding-top:32px !important; } .p2-right { padding-right:32px !important; } .p2-bottom { padding-bottom:32px !important; } .p2-left { padding-left:32px !important; } .p3-top { padding-top:48px !important; } .p3-right { padding-right:48px !important; } .p3-bottom { padding-bottom:48px !important; } .p3-left { padding-left:48px !important; } .p4-top { padding-top:64px !important; } .p4-right { padding-right:64px !important; } .p4-bottom { padding-bottom:64px !important; } .p4-left { padding-left:64px !important; } .m0-top { margin-top:0 !important; } .m0-right { margin-right:0 !important; } .m0-bottom { margin-bottom:0 !important; } .m0-left { margin-left:0 !important; } .m1-top { margin-top:16px !important; } .m1-right { margin-right:16px !important; } .m1-bottom { margin-bottom:16px !important; } .m1-left { margin-left:16px !important; } .m2-top { margin-top:32px !important; } .m2-right { margin-right:32px !important; } .m2-bottom { margin-bottom:32px !important; } .m2-left { margin-left:32px !important; } .m3-top { margin-top:48px !important; } .m3-right { margin-right:48px !important; } .m3-bottom { margin-bottom:48px !important; } .m3-left { margin-left:48px !important; } .m4-top { margin-top:64px !important; } .m4-right { margin-right:64px !important; } .m4-bottom { margin-bottom:64px !important; } .m4-left { margin-left:64px !important; }
-
-/******************
- * colors + icons *
- ******************/
+/*
+ * |----------------------------------------------------------------------------
+ * | colors
+ * |----------------------------------------------------------------------------
+ */
 .blue { color:#3890ce; }
 .gray { color:#333; }
 .green { color:#7dbe56; }
 .orange { color:#ef9729; }
 .pink { color:#e91e63; }
 .white { color:#fff; }
+.success { color:#43a047; }
+.error { color:#c62828; }
 
 section.black {
     background:#111;
@@ -95,10 +113,13 @@ section.black {
     text-align:center;
 }
 
-/*******
- * nav *
- *******/
+/*
+ * |----------------------------------------------------------------------------
+ * | navigation
+ * |----------------------------------------------------------------------------
+ */
 .mainnav {
+    background:#f5f5f5;
     border-bottom:1px solid #eee;
     position:relative;
     text-align:center;
@@ -201,9 +222,11 @@ section.black {
 .subnav.affix .button,
 .subnav.affix-bottom .button { width:263px; }
 
-/********
- * hero *
- ********/
+/*
+ * |----------------------------------------------------------------------------
+ * | hero
+ * |----------------------------------------------------------------------------
+ */
 .hero {
     background:#2c3a42;
     padding-bottom:160px;
@@ -242,6 +265,11 @@ nav .cl-logo {
     width:300px;
 }
 
+/*
+ * |----------------------------------------------------------------------------
+ * | buttons
+ * |----------------------------------------------------------------------------
+ */
 .button {
     background:#fff;
     border:none;
@@ -308,9 +336,11 @@ nav .cl-logo {
     width:60%;
 }
 
-/******************
- * other sections *
- ******************/
+/*
+ * |----------------------------------------------------------------------------
+ * | misc
+ * |----------------------------------------------------------------------------
+ */
 .get-involved .fa {
     font-size:3em;
 }
@@ -328,9 +358,6 @@ nav .cl-logo {
     margin-right:8px;
     vertical-align:sub;
 }
-
-.success { color:#43a047; }
-.error { color:#c62828; }
 
 .inset {
     background:#f5f5f5;
@@ -370,16 +397,31 @@ nav .cl-logo {
     margin-top:3px;
 }
 
-/*******
- * map *
- *******/
+.gallery img {
+    width:21%;
+    height:auto;
+    margin-left:5%;
+    margin-bottom:40px;
+}
+
+.gallery img:nth-child(4n-3) {
+    margin-left:0;
+}
+
+/*
+ * |----------------------------------------------------------------------------
+ * | map
+ * |----------------------------------------------------------------------------
+ */
 #map iframe { width:100%; }
 #map { height:400px; }
 #map img { max-width:none; }
 
-/**********
- * footer *
- **********/
+/*
+ * |----------------------------------------------------------------------------
+ * | footer
+ * |----------------------------------------------------------------------------
+ */
 footer {
     background:#2c3a42;
     color:#606b71;
@@ -397,84 +439,11 @@ footer .icon {
 
 footer .fa { color:#fff; }
 
-/*****************
- * media queries *
- *****************/
-@media (max-width:900px){
-
-    .hero { padding-bottom:120px; }
-
-    .hero .cl-logo {
-        margin:60px 0;
-        width:200px;
-    }
-
-    .hero .button-large {
-        font-size:16px;
-        padding:10px 30px;
-    }
-}
-
-@media (min-width:768px){
-
-    .icons { margin-top:-1.8em; }
-}
-
-@media (max-width:767px){
-
-    .p0-top { padding-top:0 !important; } .p0-right { padding-right:0 !important; } .p0-bottom { padding-bottom:0 !important; } .p0-left { padding-left:0 !important; } .p1-top { padding-top:12px !important; } .p1-right { padding-right:12px !important; } .p1-bottom { padding-bottom:12px !important; } .p1-left { padding-left:12px !important; } .p2-top { padding-top:24px !important; } .p2-right { padding-right:24px !important; } .p2-bottom { padding-bottom:24px !important; } .p2-left { padding-left:24px !important; } .p3-top { padding-top:36px !important; } .p3-right { padding-right:36px !important; } .p3-bottom { padding-bottom:36px !important; } .p3-left { padding-left:36px !important; } .p4-top { padding-top:48px !important; } .p4-right { padding-right:48px !important; } .p4-bottom { padding-bottom:48px !important; } .p4-left { padding-left:48px !important; } .m0-top { margin-top:0 !important; } .m0-right { margin-right:0 !important; } .m0-bottom { margin-bottom:0 !important; } .m0-left { margin-left:0 !important; } .m1-top { margin-top:12px !important; } .m1-right { margin-right:12px !important; } .m1-bottom { margin-bottom:12px !important; } .m1-left { margin-left:12px !important; } .m2-top { margin-top:24px !important; } .m2-right { margin-right:24px !important; } .m2-bottom { margin-bottom:24px !important; } .m2-left { margin-left:24px !important; } .m3-top { margin-top:36px !important; } .m3-right { margin-right:36px !important; } .m3-bottom { margin-bottom:36px !important; } .m3-left { margin-left:36px !important; } .m4-top { margin-top:48px !important; } .m4-right { margin-right:48px !important; } .m4-bottom { margin-bottom:48px !important; } .m4-left { margin-left:48px !important; }
-
-    .icons { margin-top:1em; }
-}
-
-@media (max-width:645px){
-
-    .hero video {
-        width:auto;
-        height:100%;
-    }
-}
-
-@media (max-width:587px){
-
-    body { padding-bottom:46px; }
-
-    .hero { padding-bottom:110px; }
-    .hero .cl-logo { margin-top:110px; }
-
-    nav {
-        background:#12171a;
-        border-top:1px solid #353a3c;
-        padding:0;
-        position:fixed;
-        bottom:0;
-        left:0;
-        text-align:left;
-        width:100%;
-    }
-
-    nav a {
-        border-right:1px solid #353a3c;
-        display:inline-block;
-        font-size:16px;
-        margin:0;
-        padding:12px 0;
-        text-align:center;
-        width:33%;
-    }
-
-    nav a:first-child + a { width:34%; }
-
-    nav a:hover { border-bottom:none; }
-
-    footer {
-        font-size:13px;
-        padding:0 0 12px;
-    }
-
-    footer svg { width:50%; }
-}
-
+/*
+ * |----------------------------------------------------------------------------
+ * | edit
+ * |----------------------------------------------------------------------------
+ */
 [data-editable] { cursor:pointer; }
 [data-editable][contenteditable] {
     background:#fff;
@@ -507,6 +476,21 @@ footer .fa { color:#fff; }
 
 .modal textarea:focus { outline:none; }
 
+.screen {
+    background:rgba(0,0,0,0.8);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:10000;
+}
+
+/*
+ * |----------------------------------------------------------------------------
+ * | profiles
+ * |----------------------------------------------------------------------------
+ */
 .profiles .card {
     border:1px solid #eee;
     margin:0 0 24px;
@@ -580,16 +564,11 @@ footer .fa { color:#fff; }
 .fa-github-square { color:#333; }
 .fa-heart { color:#f44336; }
 
-.screen {
-    background:rgba(0,0,0,0.8);
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:10000;
-}
-
+/*
+ * |----------------------------------------------------------------------------
+ * | graduates
+ * |----------------------------------------------------------------------------
+ */
 .graduates th {
     font-weight:600;
     line-height:1 !important;
@@ -612,4 +591,111 @@ footer .fa { color:#fff; }
 
 .graduates .grad-cohort i {
     font-size:24px;
+}
+
+/*
+ * |----------------------------------------------------------------------------
+ * | responsive
+ * |----------------------------------------------------------------------------
+ */
+@media (max-width:900px) {
+
+    .hero { padding-bottom:120px; }
+
+    .hero .cl-logo {
+        margin:60px 0;
+        width:200px;
+    }
+
+    .hero .button-large {
+        font-size:16px;
+        padding:10px 30px;
+    }
+}
+
+@media (min-width:768px) {
+
+    .icons { margin-top:-1.8em; }
+}
+
+@media (max-width:767px) {
+
+    .p0-top { padding-top:0 !important; } .p0-right { padding-right:0 !important; } .p0-bottom { padding-bottom:0 !important; } .p0-left { padding-left:0 !important; } .p1-top { padding-top:12px !important; } .p1-right { padding-right:12px !important; } .p1-bottom { padding-bottom:12px !important; } .p1-left { padding-left:12px !important; } .p2-top { padding-top:24px !important; } .p2-right { padding-right:24px !important; } .p2-bottom { padding-bottom:24px !important; } .p2-left { padding-left:24px !important; } .p3-top { padding-top:36px !important; } .p3-right { padding-right:36px !important; } .p3-bottom { padding-bottom:36px !important; } .p3-left { padding-left:36px !important; } .p4-top { padding-top:48px !important; } .p4-right { padding-right:48px !important; } .p4-bottom { padding-bottom:48px !important; } .p4-left { padding-left:48px !important; } .m0-top { margin-top:0 !important; } .m0-right { margin-right:0 !important; } .m0-bottom { margin-bottom:0 !important; } .m0-left { margin-left:0 !important; } .m1-top { margin-top:12px !important; } .m1-right { margin-right:12px !important; } .m1-bottom { margin-bottom:12px !important; } .m1-left { margin-left:12px !important; } .m2-top { margin-top:24px !important; } .m2-right { margin-right:24px !important; } .m2-bottom { margin-bottom:24px !important; } .m2-left { margin-left:24px !important; } .m3-top { margin-top:36px !important; } .m3-right { margin-right:36px !important; } .m3-bottom { margin-bottom:36px !important; } .m3-left { margin-left:36px !important; } .m4-top { margin-top:48px !important; } .m4-right { margin-right:48px !important; } .m4-bottom { margin-bottom:48px !important; } .m4-left { margin-left:48px !important; }
+
+    .icons { margin-top:1em; }
+
+    .subpage { text-align:center; }
+
+    .subpage .cl-logo {
+        width:80%;
+    }
+
+    .links {
+        background:#f5f5f5;
+        padding:0;
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        z-index:100;
+    }
+
+    .links a {
+        padding:12px 0;
+    }
+
+    .links a:hover { padding-bottom:10px; }
+}
+
+@media (max-width:645px) {
+
+    .hero video {
+        width:auto;
+        height:100%;
+    }
+}
+
+@media (max-width:600px) {
+
+    body { padding-bottom:46px; }
+
+    .hero { padding-bottom:110px; }
+    .hero .cl-logo { margin-top:110px; }
+
+    .links {
+        padding:0;
+        position:fixed;
+        bottom:0;
+        left:0;
+        text-align:left;
+        width:100%;
+    }
+
+    .links a {
+        display:inline-block;
+        font-size:16px;
+        margin:0;
+        padding:16px 0;
+        text-align:center;
+        width:33%;
+    }
+
+    .links a:first-child + a { width:34%; }
+
+    .links a:hover { border-bottom:none; }
+
+    .gallery img {
+        display:block;
+        margin:0 auto 40px;
+        width:70%;
+    }
+
+    .gallery img:nth-child(4n-3) { margin-left:auto; }
+
+    footer {
+        font-size:13px;
+        padding:0 0 12px;
+    }
+
+    footer svg { width:50%; }
 }

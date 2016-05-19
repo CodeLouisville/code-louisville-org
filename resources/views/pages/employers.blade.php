@@ -12,7 +12,7 @@
                     <section id="partners" class="m2-bottom">
                         <h3 class="p1-top m0" @include('edit', ['key' => 'employers_partners_title'])>{!! $employers_partners_title !!}</h3>
                         <hr>
-                        <div class="p2-top p2-bottom" @include('edit', ['key' => 'employers_partners_images'])>
+                        <div class="gallery p2-top p2-bottom" @include('edit', ['key' => 'employers_partners_images'])>
                             {!! $employers_partners_images !!}
                         </div>
                         <hr>

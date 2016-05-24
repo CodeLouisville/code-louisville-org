@@ -137,7 +137,7 @@ class Forms extends Controller
         $data = array(
             'name' => $this->request->input('name'),
             'email' => $this->request->input('email'),
-            'involvement' = $this->request->input('involvement'),
+            'involvement' => $this->request->input('involvement'),
             'organization' => $this->request->input('organization'),
             'comment' => $this->request->input('message')
         );

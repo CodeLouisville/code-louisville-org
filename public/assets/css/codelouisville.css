@@ -690,7 +690,7 @@ footer .fa { color:#fff; }
         position:fixed;
         top:6px;
         right:0;
-        width:74px;
+        width:74px !important;
         height:74px;
         z-index:101;
     }

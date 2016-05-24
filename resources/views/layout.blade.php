@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,900">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/codelouisville.css">
-    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="icon" href="{{ env('CLOUDFRONT') }}/assets/img/favicon.png">
 </head>
 <body data-spy="scroll" data-target=".subnav" @if($title == 'Home') class="home" @endif>
     @if (Auth::check())

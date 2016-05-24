@@ -1,6 +1,4 @@
 @extends('layout')
-@section('title', 'Home')
-
 @section('content')
 
     <header class="hero center p5-top p5-bottom">
@@ -27,16 +25,16 @@
                 </div>
                 <div class="col-sm-6 icons">
                     <div class="row">
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="HTML5" class="devicon-html5-plain-wordmark colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="CSS3" class="devicon-css3-plain-wordmark colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="Javascript" class="devicon-javascript-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="NodeJS" class="devicon-nodejs-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="AngularJS" class="devicon-angularjs-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="MongoDB" class="devicon-mongodb-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="PHP" class="devicon-php-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="Dot Net" class="devicon-dot-net-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="Git" class="devicon-git-plain colored"></i></div>
-                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="jQuery" class="devicon-jquery-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="HTML5" class="devicon-html5-plain-wordmark colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="CSS3" class="devicon-css3-plain-wordmark colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="Javascript" class="devicon-javascript-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="NodeJS" class="devicon-nodejs-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="AngularJS" class="devicon-angularjs-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="MongoDB" class="devicon-mongodb-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="PHP" class="devicon-php-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="Dot Net" class="devicon-dot-net-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="Git" class="devicon-git-plain colored"></i></div>
+                        <div class="col-lg-3 col-sm-4 col-xs-4 col-xxs-6 m3-bottom"><i data-toggle="tooltip" data-placement="bottom" title="jQuery" class="devicon-jquery-plain colored"></i></div>
                     </div>
                 </div>
             </div>

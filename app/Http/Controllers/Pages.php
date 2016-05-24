@@ -36,6 +36,8 @@ class Pages extends Controller
             }
         }
 
+        $data['title'] = 'Home';
+
         return view('pages.home', $data);
     }
 

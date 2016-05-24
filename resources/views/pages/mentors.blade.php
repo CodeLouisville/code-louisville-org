@@ -34,10 +34,10 @@
                         </div>
                         <div class="icons">
                             <div class="row">
-                                <div class="col-lg-2 col-sm-4 col-xs-3 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></div>
-                                <div class="col-lg-2 col-sm-4 col-xs-3 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-mongodb-plain colored" data-original-title="MongoDB"></i></div>
-                                <div class="col-lg-2 col-sm-4 col-xs-3 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-angularjs-plain colored" data-original-title="AngularJS"></i></div>
-                                <div class="col-lg-2 col-sm-4 col-xs-3 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-nodejs-plain colored" data-original-title="NodeJS"></i></div>
+                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></div>
+                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-mongodb-plain colored" data-original-title="MongoDB"></i></div>
+                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-angularjs-plain colored" data-original-title="AngularJS"></i></div>
+                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-nodejs-plain colored" data-original-title="NodeJS"></i></div>
                             </div>
                         </div>
                         <div class="inset m2-bottom">
@@ -45,7 +45,7 @@
                         </div>
                         <div class="icons">
                             <div class="row">
-                                <div class="col-lg-2 col-sm-4 col-xs-3 col-xxs-6"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></div>
+                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></div>
                             </div>
                         </div>
                         <hr>
@@ -57,7 +57,7 @@
                         <div class="row">
                             @foreach ($mentors as $mentor)
                                 @if ( $mentor->active == 1 || ( Auth::check() && Auth::user()->admin ) )
-                                    <div class="col-sm-2 col-xs-4">
+                                    <div class="col-md-2 col-sm-3 col-xs-4">
                                         <div class="card text-center @if ($mentor->active == 0) inactive @endif">
                                             @if(Auth::check())
                                                 @if (Auth::user()->admin)

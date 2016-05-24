@@ -109,7 +109,6 @@ section.black {
 .icons i {
     font-size:4em;
     display:block;
-    margin:.5em 0;
     text-align:center;
 }
 
@@ -161,21 +160,13 @@ section.black {
     width:100%;
 }
 
-.subpage .cl-logo:hover {
-    border:none;
-}
+.subpage .cl-logo:hover { border:none; }
 
 .subnav { border:1px solid #f5f5f5; }
 
-.subnav.affix {
-    top:32px;
-    width:263px;
-}
+.subnav.affix { top:32px; }
 
-.subnav.affix-bottom {
-    position:absolute;
-    width:263px;
-}
+.subnav.affix-bottom { position:absolute; }
 
 .subnav h1 {
     font-size:1.75em;
@@ -617,15 +608,28 @@ footer .fa { color:#fff; }
     }
 }
 
-@media (min-width:768px) {
-
-    .icons { margin-top:-1.8em; }
-}
-
 @media (max-width:767px) {
 
     body { padding-top:80px; }
+
+    body.home {
+        padding-top:0;
+        padding-bottom:0;
+    }
+
     .affix { position:relative; }
+
+    .mainnav a {
+        font-size:16px;
+        width:33%;
+        text-align:center;
+        padding:24px 0;
+    }
+
+    .mainnav a .fa {
+        display:block;
+        margin:0;
+    }
 
     .anchor:before {
         content:'';
@@ -650,7 +654,9 @@ footer .fa { color:#fff; }
     }
 
     .subpage .cl-logo {
+        max-width:258px;
         width:75%;
+        height:74px;
     }
 
     .links {
@@ -713,6 +719,14 @@ footer .fa { color:#fff; }
     .hero { padding-bottom:110px; }
     .hero .cl-logo { margin-top:110px; }
 
+    .about .icons { margin-top:32px; }
+
+    .get-involved .card { margin-bottom:32px; }
+
+    .icons { margin-top:0; }
+    .icons i { font-size:2.5em; }
+
+
     .links {
         border-top:1px solid #f5f5f5;
         padding:0;
@@ -756,4 +770,17 @@ footer .fa { color:#fff; }
     }
 
     footer svg { width:50%; }
+}
+
+@media (max-width:360px) {
+
+    .col-xs-4 { width:50%; }
+
+    .hero { padding-bottom:60px; }
+    .hero .cl-logo { margin-top:60px; }
+
+    header .button {
+        margin:0 0 16px !important;
+        width:100%;
+    }
 }

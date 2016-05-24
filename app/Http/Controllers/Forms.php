@@ -16,14 +16,14 @@ class Forms extends Controller
 {
     protected $request;
 
-    private $mail_to;
+    private $mail_from;
     private $mail_recipient;
 
     public function __construct(Request $request)
     {
         $this->request = $request;
-        $this->$mail_to = env('MAIL_FROM');
-        $this->$mail_recipient = env('MAIL_RECIPIENT');
+        $this->mail_from = env('MAIL_FROM');
+        $this->mail_recipient = env('MAIL_RECIPIENT');
     }
 
     public function enroll()

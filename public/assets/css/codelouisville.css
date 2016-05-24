@@ -60,6 +60,8 @@ label {
     width:100%;
 }
 
+.content select { width:100%; }
+
 .content textarea {
     border:1px solid #ddd;
     padding:8px;

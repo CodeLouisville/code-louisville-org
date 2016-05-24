@@ -63,6 +63,20 @@
                                     </div>
                                     <hr>
                                     <div class="row">
+                                        <div class="col-sm-4">
+                                            <label>
+                                                <p>Involvement</p>
+                                                <select name="involvement">
+                                                    <option value="Looking for talent">Looking for talent</option>
+                                                    <option value="Willing to provide mentors">Willing to provide mentors</option>
+                                                    <option value="Willing to host in employer space">Willing to host in employer space</option>
+                                                    <option value="Willing to sponsor events">Willing to sponsor events</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
                                         <div class="col-sm-6">
                                             <label>
                                                 <p>Message</p>

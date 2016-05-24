@@ -15,6 +15,8 @@ use GuzzleHttp;
 class Forms extends Controller
 {
     protected $request;
+    protected $mail_to = env('MAIL_FROM');
+    protected $mail_recipient = env('MAIL_RECIPIENT');
 
     public function __construct(Request $request)
     {
@@ -76,8 +78,8 @@ class Forms extends Controller
 
         Mail::send('emails.register', $data, function ($message) {
             $message->subject('codelouisville.org: New Candidate Registration');
-            $message->from('apply@codelouisville.org', 'Code Louisville');
-            $message->to('speercy@gmail.com');
+            $message->from($mail_from, 'Code Louisville');
+            $message->to($mail_recipient);
         });
 
         return redirect('candidates#register')->withSuccess('success');
@@ -97,8 +99,8 @@ class Forms extends Controller
 
         Mail::send('emails.mentor', $data, function ($message) {
             $message->subject('codelouisville.org: New Mentor Contact');
-            $message->from('apply@codelouisville.org', 'Code Louisville');
-            $message->to('speercy@gmail.com');
+            $message->from($mail_from, 'Code Louisville');
+            $message->to($mail_recipient);
         });
 
         return redirect('mentors#form')->withSuccess('success');
@@ -135,14 +137,15 @@ class Forms extends Controller
         $data = array(
             'name' => $this->request->input('name'),
             'email' => $this->request->input('email'),
+            'involvement' = $this->request->input('involvement'),
             'organization' => $this->request->input('organization'),
             'comment' => $this->request->input('message')
         );
 
         Mail::send('emails.employer', $data, function ($message) {
             $message->subject('codelouisville.org: New Employer Contact');
-            $message->from('apply@codelouisville.org', 'Code Louisville');
-            $message->to('speercy@gmail.com');
+            $message->from($mail_from, 'Code Louisville');
+            $message->to($mail_recipient);
         });
 
         return redirect('employers#form')->withSuccess('success');

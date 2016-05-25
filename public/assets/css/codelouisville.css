@@ -377,6 +377,28 @@ nav .cl-logo {
     line-height:24px;
 }
 
+.grad-cohort label { margin:0; }
+.grad-cohort input { display:none; }
+
+.grad-cohort input + i {
+    cursor:pointer;
+    opacity:0.33;
+}
+
+.grad-cohort input:not(:checked) + i {
+    color:#aaa;
+}
+
+.grad-cohort input:checked + i { opacity:1; }
+
+.graduates .grad { display:none; }
+
+.front-end .front-end,
+.js .js,
+.php .php,
+.net .net,
+.no-results .no-results { display:table-row; }
+
 .graduates td {
     line-height:28px !important;
     vertical-align:middle !important;

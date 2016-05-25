@@ -30,13 +30,41 @@ class Grads extends Model
 
     public function getCohortsAttribute()
     {
-        $cohorts = '';
+        $cohorts = [];
 
-        if($this->front_end) $cohorts .= ' front-end';
-        if($this->full_stack_js) $cohorts .= ' js';
-        if($this->php) $cohorts .= ' php';
-        if($this->dot_net) $cohorts .= ' net';
+        if($this->front_end) array_push($cohorts, 1);
+        if($this->full_stack_js) array_push($cohorts, 2);
+        if($this->php) array_push($cohorts, 4);
+        if($this->dot_net) array_push($cohorts, 8);
 
-        return $cohorts;
+        if(count($cohorts) == 4)
+        {
+            array_push($cohorts, $cohorts[0] + $cohorts[1]);
+            array_push($cohorts, $cohorts[0] + $cohorts[2]);
+            array_push($cohorts, $cohorts[0] + $cohorts[3]);
+            array_push($cohorts, $cohorts[1] + $cohorts[2]);
+            array_push($cohorts, $cohorts[1] + $cohorts[3]);
+            array_push($cohorts, $cohorts[2] + $cohorts[3]);
+            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[2]);
+            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[3]);
+            array_push($cohorts, $cohorts[0] + $cohorts[2] + $cohorts[3]);
+            array_push($cohorts, $cohorts[1] + $cohorts[2] + $cohorts[3]);
+            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[2] + $cohorts[3]);
+        }
+
+        if(count($cohorts) == 3)
+        {
+            array_push($cohorts, $cohorts[0] + $cohorts[1]);
+            array_push($cohorts, $cohorts[0] + $cohorts[2]);
+            array_push($cohorts, $cohorts[1] + $cohorts[2]);
+            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[2]);
+        }
+
+        if(count($cohorts) == 2)
+        {
+            array_push($cohorts, $cohorts[0] + $cohorts[1]);
+        }
+
+        return implode($cohorts, ',');
     }
 }

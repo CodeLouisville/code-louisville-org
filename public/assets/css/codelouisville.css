@@ -391,14 +391,6 @@ nav .cl-logo {
 
 .grad-cohort input:checked + i { opacity:1; }
 
-.graduates .grad { display:none; }
-
-.front-end .front-end,
-.js .js,
-.php .php,
-.net .net,
-.no-results .no-results { display:table-row; }
-
 .graduates td {
     line-height:28px !important;
     vertical-align:middle !important;

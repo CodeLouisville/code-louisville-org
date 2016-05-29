@@ -24,7 +24,7 @@
 ### Employer Section
 
 * ~~Employer showcase~~
-* Sortable Graduate Directory by Software Language
+* ~~Sortable Graduate Directory by Software Language~~
 * ~~Form to inquire about becoming an employer partner~~
 	* ~~Looking for talent~~
 	* ~~Willing to provide mentors~~

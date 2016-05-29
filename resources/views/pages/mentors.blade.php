@@ -51,7 +51,7 @@
                         <hr>
                     </section>
                     <div id="current" class="profiles">
-                        @if (Auth::check() && Auth::user()->admin) <span class="pull-right"><a href="/mentors/add" class="button small pink m1-top"><span class="fa fa-plus"></span> Add mentor</a></span> @endif
+                        @if (Auth::check() && Auth::user()->admin) <span class="pull-right"><a href="/mentors/add" class="button pink">Add mentor</a></span> @endif
                         <h3 class="p1-top m0">Current mentors</h3>
                         <hr>
                         <div class="row">

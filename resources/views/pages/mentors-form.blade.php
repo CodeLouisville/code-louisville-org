@@ -83,7 +83,7 @@
                                             </select>
                                         </label>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <label>
                                             <p>Night</p>
                                             <select name="night">

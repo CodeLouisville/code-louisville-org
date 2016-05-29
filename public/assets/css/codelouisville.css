@@ -276,7 +276,11 @@ nav .cl-logo {
     font-size:14px;
     font-weight:400;
     padding:12px;
+    text-decoration:none;
 }
+
+.button:focus,
+.button:active { text-decoration:none; }
 
 .button-large {
     font-size:21px;
@@ -552,7 +556,7 @@ footer .fa { color:#fff; }
 
 .profiles .photo { width:100%; }
 
-.profiles a {
+.profiles .fa {
     display:inline-block;
     font-size:1.4em;
     line-height:1;
@@ -586,6 +590,11 @@ footer .fa { color:#fff; }
     vertical-align:middle !important;
 }
 
+.graduates .grad-edit {
+    text-align:center;
+    width:40px;
+}
+
 .graduates .grad-name { width:280px; }
 .graduates .grad-email { width:280px; }
 
@@ -600,7 +609,7 @@ footer .fa { color:#fff; }
     height:50px;
 }
 
-.graduates .grad-cohort i {
+.grad-cohort i {
     font-size:24px;
 }
 

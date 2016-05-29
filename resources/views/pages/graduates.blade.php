@@ -15,6 +15,7 @@
                         <table class="table table-bordered table-striped graduates">
                             <thead>
                                 <tr>
+                                    @if (Auth::check() && Auth::user()->admin) <th class="grad-edit"></td> @endif
                                     <th class="grad-name">Name</th>
                                     <th class="grad-email">Email</th>
                                     <th class="grad-connect">Connect</th>
@@ -26,7 +27,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="grad" v-if="filter.length > 0" v-for="grad in grads | filterBy selected in 'cohorts'">
+                                <tr class="grad" v-if="filter.length > 0" v-for="grad in grads | filterBy selected in 'cohorts' | orderBy 'cohort_date' 'name'">
+                                    @if (Auth::check() && Auth::user()->admin) <td class="grad-edit"><a class="pink" href="/employers/graduates/edit/@{{ grad.id }}"><span class="fa fa-edit"></span></a></td>@endif
                                     <td class="grad-name" v-text="grad.name"></td>
                                     <td class="grad-email"><span class="pink" v-text="grad.email"></span></td>
                                     <td class="grad-connect"><a href="https://github.com/@{{ grad.github }}" target="_blank"><span class="fa fa-github-square"></span></a> &nbsp; <a href="https://www.linkedin.com/in/@{{ grad.linkedin }}" target="_blank"><span class="fa fa-linkedin-square"></span></a></td>
@@ -37,11 +39,12 @@
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.net == 1"></span></td>
                                 </tr>
                                 <tr v-if="filter.length == 0">
-                                    <td colspan="8" class="text-right" style="height:50px">Click programming language icons to begin your search <span class="fa fa-level-up"></span></td>
+                                    <td colspan="@if (Auth::check() && Auth::user()->admin) 9 @else 8 @endif" class="text-right" style="height:50px">Click programming language icons to begin your search <span class="fa fa-level-up"></span></td>
                                 </tr>
                             </tbody>
                         </table>
                         <hr>
+                        @if (Auth::check() && Auth::user()->admin) <a class="button pink" href="/employers/graduates/add">Add graduate</a> @endif
                     </section>
                 </div>
             </div>
@@ -61,6 +64,7 @@
                 filter: [],
                 grads: [
                     @foreach($grads as $grad){
+                        id: '{{ $grad->id }}',
                         name: '{{ $grad->name }}',
                         email: '{{ $grad->email }}',
                         github: '{{ $grad->github }}',

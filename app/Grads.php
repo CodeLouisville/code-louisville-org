@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class Grads extends Model
 {
     protected $table = 'grads';
-    protected $appends = array('cohorts');
+    protected $appends = array('cohorts', 'cohort_month', 'cohort_year');
 
     protected $fillable = [
         'name',
@@ -22,10 +22,35 @@ class Grads extends Model
         'dot_net'
     ];
 
-    public function getCohortdateAttribute($value)
+    protected $casts = [
+        'front_end' => 'integer',
+        'full_stack_js' => 'integer',
+        'php' => 'integer',
+        'dot_net' => 'integer'
+    ];
+
+    public function getCohortDateAttribute($value)
     {
         $c = new Carbon($value);
         return $c->format('F Y');
+    }
+
+    public function setCohortDateAttribute($value)
+    {
+        $c = new Carbon("first day of $value", 'America/Louisville');
+        $this->attributes['cohort_date'] = $c;
+    }
+
+    public function getCohortMonthAttribute($value)
+    {
+        $c = new Carbon($this->attributes['cohort_date']);
+        return $c->format('F');
+    }
+
+    public function getCohortYearAttribute($value)
+    {
+        $c = new Carbon($this->attributes['cohort_date']);
+        return $c->format('Y');
     }
 
     public function getCohortsAttribute()

@@ -5,6 +5,29 @@
 
     @include('components.nav', [ 'home' => false ])
 
+    <div class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-connect"></div>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td class="modal-email"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Cohort</td>
+                            <td class="modal-date"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <section id="graduates" class="content background-white p2-top p4-bottom">
         <div class="container">
             <div class="row">
@@ -39,7 +62,7 @@
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.net == 1"></span></td>
                                 </tr>
                                 <tr v-if="filter.length == 0">
-                                    <td colspan="@if (Auth::check() && Auth::user()->admin) 9 @else 8 @endif" class="text-right" style="height:50px">Click programming language icons to begin your search <span class="fa fa-level-up"></span></td>
+                                    <td colspan="@if (Auth::check() && Auth::user()->admin) 9 @else 8 @endif" class="text-right" style="height:50px">Click language icons to begin your search <span class="fa fa-level-up"></span></td>
                                 </tr>
                             </tbody>
                         </table>

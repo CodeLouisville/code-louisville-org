@@ -753,7 +753,6 @@ footer .fa { color:#fff; }
     .icons { margin-top:0; }
     .icons i { font-size:2.5em; }
 
-
     .links {
         border-top:1px solid #f5f5f5;
         padding:0;
@@ -790,6 +789,33 @@ footer .fa { color:#fff; }
     }
 
     .gallery img:nth-child(4n-3) { margin-left:auto; }
+
+    .modal table { width:100%; }
+    .modal-body { line-height:1.75; }
+    .modal-connect {
+        position:absolute;
+        top:6px;
+        right:60px;
+        font-size:2em;
+    }
+
+    .graduates .grad-name {
+        position:relative;
+        width:auto;
+    }
+
+    .graduates td.grad-name:after {
+        content:"\f05a";
+        color:#666;
+        font:normal normal normal 21px/1 FontAwesome;
+        position:absolute;
+        top:15px;
+        right:15px;
+    }
+
+    .graduates .grad-email,
+    .graduates .grad-connect,
+    .graduates .grad-date { display:none; }
 
     footer {
         font-size:13px;

@@ -31,7 +31,7 @@ var App = {
 
             var $subnav = $('.subnav'),
                 $button = $subnav.find('.button'),
-                width = $subnav.outerWidth()
+                width = $subnav.parent().width()
 
             $subnav.css('width', width)
             $button.css('width', width)

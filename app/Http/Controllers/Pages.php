@@ -41,7 +41,7 @@ class Pages extends Controller
         return view('pages.home', $data);
     }
 
-    public function candidates()
+    public function learn()
     {
         $content = Content::all();
 
@@ -67,9 +67,9 @@ class Pages extends Controller
             }
         }
 
-        $data['title'] = 'Candidates';
+        $data['title'] = 'Learn';
 
-        return view('pages.candidates', $data);
+        return view('pages.learn', $data);
     }
 
     public function enroll()
@@ -173,7 +173,7 @@ class Pages extends Controller
         return view('pages.graduates-form', $data);
     }
 
-    public function employers()
+    public function hire()
     {
         $content = Content::all();
 
@@ -199,9 +199,9 @@ class Pages extends Controller
             }
         }
 
-        $data['title'] = 'Employers';
+        $data['title'] = 'Hire';
 
-        return view('pages.employers', $data);
+        return view('pages.hire', $data);
     }
 
     public function graduates()

@@ -85,7 +85,7 @@ class Forms extends Controller
             $message->to($this->mail_recipient);
         });
 
-        return redirect('candidates#register')->withSuccess('success');
+        return redirect('learn#register')->withSuccess('success');
     }
 
     public function mentor()
@@ -135,7 +135,7 @@ class Forms extends Controller
         return Redirect::back()->withSuccess($success);
     }
 
-    public function employer()
+    public function hire()
     {
         $data = array(
             'name' => $this->request->input('name'),
@@ -145,13 +145,13 @@ class Forms extends Controller
             'comment' => $this->request->input('message')
         );
 
-        Mail::send('emails.employer', $data, function ($message) {
+        Mail::send('emails.hire', $data, function ($message) {
             $message->subject('codelouisville.org: New Employer Contact');
             $message->from($this->mail_from, 'Code Louisville');
             $message->to($this->mail_recipient);
         });
 
-        return redirect('employers#form')->withSuccess('success');
+        return redirect('hire#form')->withSuccess('success');
     }
 
     public function graduate_add()

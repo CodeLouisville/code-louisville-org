@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Employers')
+@section('title', 'Hire')
 
 @section('content')
 

@@ -21,27 +21,27 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('mentors/add', ['middleware' => 'admin', 'uses' => 'Pages@mentors_add']);
     Route::get('mentors/edit', function () { return redirect('mentors'); });
     Route::get('mentors/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Pages@mentors_edit']);
-    Route::get('candidates', 'Pages@candidates');
-    Route::get('candidates/enroll', 'Pages@enroll');
-    Route::get('employers', 'Pages@employers');
-    Route::get('employers/graduates', 'Pages@graduates');
-    Route::get('employers/graduates/add', ['middleware' => 'admin', 'uses' => 'Pages@graduates_add']);
-    Route::get('employers/graduates/edit', function () { return redirect('employers/graduates'); });
-    Route::get('employers/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Pages@graduates_edit']);
+    Route::get('learn', 'Pages@learn');
+    Route::get('learn/enroll', 'Pages@enroll');
+    Route::get('hire', 'Pages@hire');
+    Route::get('hire/graduates', 'Pages@graduates');
+    Route::get('hire/graduates/add', ['middleware' => 'admin', 'uses' => 'Pages@graduates_add']);
+    Route::get('hire/graduates/edit', function () { return redirect('hire/graduates'); });
+    Route::get('hire/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Pages@graduates_edit']);
 
     /*
     |---------------------------------------------------------------------------
     | Forms
     |---------------------------------------------------------------------------
     */
-    Route::post('candidates', 'Forms@register');
-    Route::post('candidates/enroll', 'Forms@enroll');
+    Route::post('learn', 'Forms@register');
+    Route::post('learn/enroll', 'Forms@enroll');
     Route::post('mentors', 'Forms@mentor');
-    Route::post('employers', 'Forms@employer');
+    Route::post('hire', 'Forms@hire');
     Route::post('mentors/add', ['middleware' => 'admin', 'uses' => 'Forms@mentor_add']);
     Route::put('mentors/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Forms@mentor_edit']);
-    Route::post('employers/graduates/add', ['middleware' => 'admin', 'uses' => 'Forms@graduate_add']);
-    Route::put('employers/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Forms@graduate_edit']);
+    Route::post('hire/graduates/add', ['middleware' => 'admin', 'uses' => 'Forms@graduate_add']);
+    Route::put('hire/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Forms@graduate_edit']);
 
     /*
     |---------------------------------------------------------------------------

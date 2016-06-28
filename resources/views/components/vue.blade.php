@@ -1,5 +1,5 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-validator/2.0.0/vue-validator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-validator/2.1.3/vue-validator.min.js"></script>
 <script>
     Vue.validator('email', function (v) {
         return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v)

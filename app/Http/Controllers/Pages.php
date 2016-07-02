@@ -103,7 +103,7 @@ class Pages extends Controller
         return view('pages.enroll', $data);
     }
 
-    public function mentors()
+    public function mentor()
     {
         $content = Content::all();
 
@@ -129,29 +129,29 @@ class Pages extends Controller
             }
         }
 
-        $data['title'] = 'Mentors';
+        $data['title'] = 'Mentor';
         $data['mentors'] = Mentors::orderBy('last')->get();
 
-        return view('pages.mentors', $data);
+        return view('pages.mentor', $data);
     }
 
-    public function mentors_add()
+    public function mentor_add()
     {
         $data = [
-            'title' => 'Mentors'
+            'title' => 'Mentor'
         ];
 
-        return view('pages.mentors-form', $data);
+        return view('pages.mentor-form', $data);
     }
 
-    public function mentors_edit($id)
+    public function mentor_edit($id)
     {
         $data = [
-            'title' => 'Mentors',
+            'title' => 'Mentor',
             'mentor' => Mentors::find($id)
         ];
 
-        return view('pages.mentors-form', $data);
+        return view('pages.mentor-form', $data);
     }
 
     public function graduates_add()

@@ -106,7 +106,7 @@ class Forms extends Controller
             $message->to($this->mail_recipient);
         });
 
-        return redirect('mentors#form')->withSuccess('success');
+        return redirect('mentor#form')->withSuccess('success');
     }
 
     public function mentor_add()

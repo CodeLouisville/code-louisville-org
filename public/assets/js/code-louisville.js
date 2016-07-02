@@ -52,8 +52,9 @@ var App = {
     },
     scrollTo: function($t)
     {
-        var top = $t.offset().top - 95
-        console.log(top)
+        var offset = window.innerWidth < 768 ? 95 : 0,
+            top = $t.offset().top - offset
+
         $('html, body').stop().animate({
             'scrollTop': top
         }, 400, 'swing', function(){

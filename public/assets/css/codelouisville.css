@@ -688,6 +688,7 @@ footer .fa { color:#fff; }
 
     .links {
         background:#f5f5f5;
+        border-top:1px solid #eee;
         padding:0;
         position:fixed;
         bottom:0;
@@ -697,6 +698,7 @@ footer .fa { color:#fff; }
     }
 
     .links a {
+        border-top:1px solid #fff;
         padding:12px 0;
     }
 

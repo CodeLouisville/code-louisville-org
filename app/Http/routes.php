@@ -17,10 +17,10 @@ Route::group(['middleware' => ['web']], function () {
     |---------------------------------------------------------------------------
     */
     Route::get('/', 'Pages@home');
-    Route::get('mentors', 'Pages@mentors');
-    Route::get('mentors/add', ['middleware' => 'admin', 'uses' => 'Pages@mentors_add']);
-    Route::get('mentors/edit', function () { return redirect('mentors'); });
-    Route::get('mentors/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Pages@mentors_edit']);
+    Route::get('mentor', 'Pages@mentor');
+    Route::get('mentor/add', ['middleware' => 'admin', 'uses' => 'Pages@mentor_add']);
+    Route::get('mentor/edit', function () { return redirect('mentor'); });
+    Route::get('mentor/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Pages@mentor_edit']);
     Route::get('learn', 'Pages@learn');
     Route::get('learn/enroll', 'Pages@enroll');
     Route::get('hire', 'Pages@hire');
@@ -36,10 +36,10 @@ Route::group(['middleware' => ['web']], function () {
     */
     Route::post('learn', 'Forms@register');
     Route::post('learn/enroll', 'Forms@enroll');
-    Route::post('mentors', 'Forms@mentor');
+    Route::post('mentor', 'Forms@mentor');
     Route::post('hire', 'Forms@hire');
-    Route::post('mentors/add', ['middleware' => 'admin', 'uses' => 'Forms@mentor_add']);
-    Route::put('mentors/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Forms@mentor_edit']);
+    Route::post('mentor/add', ['middleware' => 'admin', 'uses' => 'Forms@mentor_add']);
+    Route::put('mentor/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Forms@mentor_edit']);
     Route::post('hire/graduates/add', ['middleware' => 'admin', 'uses' => 'Forms@graduate_add']);
     Route::put('hire/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Forms@graduate_edit']);
 

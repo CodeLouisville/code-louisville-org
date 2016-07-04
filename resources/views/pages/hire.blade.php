@@ -12,19 +12,27 @@
                     <section id="partners" class="m2-bottom">
                         <h3 class="p1-top m0" @include('edit', ['key' => 'employers_partners_title'])>{!! $employers_partners_title !!}</h3>
                         <hr>
-                        <div class="gallery p2-top p2-bottom" @include('edit', ['key' => 'employers_partners_images'])>
+                        <div class="gallery p2-top" @include('edit', ['key' => 'employers_partners_images'])>
                             {!! $employers_partners_images !!}
                         </div>
-                        <hr>
                     </section>
-                    <section id="why" class="m0-top m2-bottom">
-                        <h3 class="p1-top m0" @include('edit', ['key' => 'employers_why_title'])>{!! $employers_why_title !!}</h3>
+                    <section id="why" class="m2-top m2-bottom">
+                        <hr>
+                        <h3 class="m0" @include('edit', ['key' => 'employers_why_title'])>{!! $employers_why_title !!}</h3>
                         <hr>
                         <div @include('edit', ['key' => 'employers_why_desc'])>
                             {!! $employers_why_desc !!}
                         </div>
-                        <hr>
                     </section>
+                    <section id="questions" class="faqs m2-top m2-bottom">
+                        <hr>
+                        <h3 class="m0" @include('edit', ['key' => 'hire_questions_title'])>{!! $hire_questions_title !!}</h3>
+                        <hr>
+                        <div @include('edit', ['key' => 'hire_questions_desc'])>
+                            {!! $hire_questions_desc !!}
+                        </div>
+                    </section>
+                    <hr>
                     <h3 class="form-title" id="form">Learn more</h3>
                     <section class="employer-form inset">
                         @if(Session::has('success'))
@@ -103,6 +111,7 @@
                         <ul class="nav">
                             <li><a href="#partners">Partners</a></li>
                             <li><a href="#why">Why partner?</a></li>
+                            <li><a href="#questions">FAQs</a></li>
                             <li><a href="#form">Learn more</a></li>
                             <li><a href="/employers/graduates" class="button pink"><i class="fa fa-graduation-cap"></i><span>Grad List</span><span>Graduate List</span></a></li>
                         </ul>

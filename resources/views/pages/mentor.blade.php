@@ -9,24 +9,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <section id="who">
+                    <section id="who" class="m2-bottom">
                         <h3 class="p1-top m0" @include('edit', ['key' => 'mentors_who_title'])>{!! $mentors_who_title !!}</h3>
                         <hr>
                         <div @include('edit', ['key' => 'mentors_who_desc'])>
                             {!! $mentors_who_desc !!}
                         </div>
-                        <hr>
                     </section>
-                    <section id="what">
-                        <h3 class="p1-top m0" @include('edit', ['key' => 'mentors_what_title'])>{!! $mentors_what_title !!}</h3>
+                    <section id="what" class="m2-top m2-bottom">
+                        <hr>
+                        <h3 class="m0" @include('edit', ['key' => 'mentors_what_title'])>{!! $mentors_what_title !!}</h3>
                         <hr>
                         <div @include('edit', ['key' => 'mentors_what_desc'])>
                             {!! $mentors_what_desc !!}
                         </div>
-                        <hr>
                     </section>
-                    <section id="tech">
-                        <h3 class="p1-top m0">Technologies</h3>
+                    <section id="tech" class="m2-top m2-bottom">
+                        <hr>
+                        <h3 class="m0">Technologies</h3>
                         <hr>
                         <p>At the moment, Code Louisville is offering two tracks:</p>
                         <div class="inset m2-bottom">
@@ -48,11 +48,11 @@
                                 <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></div>
                             </div>
                         </div>
-                        <hr>
                     </section>
-                    <div id="current" class="profiles">
+                    <div id="current" class="profiles" class="m2-top m2-bottom">
                         @if (Auth::check() && Auth::user()->admin) <span class="pull-right"><a href="/mentors/add" class="button pink">Add mentor</a></span> @endif
-                        <h3 class="p1-top m0">Current mentors</h3>
+                        <hr>
+                        <h3 class="m0">Current mentors</h3>
                         <hr>
                         <div class="row">
                             @foreach ($mentors as $mentor)
@@ -102,6 +102,14 @@
                             @endforeach
                         </div>
                     </div>
+                    <section id="questions" class="faqs m2-top m2-bottom">
+                        <hr>
+                        <h3 class="m0" @include('edit', ['key' => 'mentor_questions_title'])>{!! $mentor_questions_title !!}</h3>
+                        <hr>
+                        <div @include('edit', ['key' => 'mentor_questions_desc'])>
+                            {!! $mentor_questions_desc !!}
+                        </div>
+                    </section>
                     <hr>
                     <h3 class="form-title anchor" id="form">Become a mentor</h3>
                     <section class="mentor-form inset">
@@ -205,6 +213,7 @@
                             <li><a href="#what">What does it take?</a></li>
                             <li><a href="#tech">Technologies</a></li>
                             <li><a href="#current">Current mentors</a></li>
+                            <li><a href="#questions">FAQs</a></li>
                             <li><a href="#form" class="button pink"><i class="fa fa-clipboard"></i><span>Sign up</span><span>Become a Mentor</span></a></li>
                         </ul>
                     </nav>

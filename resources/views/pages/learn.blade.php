@@ -39,7 +39,7 @@
                             <div class="row">
                                 <div class="col-sm-2">
                                     <p class="m0"><input type="text" name="zip" group="eligibility" v-validate:zip="['required','zip','zipFormat']"></p>
-                                    <p class="error m0" v-if="$eligibility.zip.touched&$eligibility.zip.zipFormat">Invalid zip code</p>
+                                    <p class="error m0" v-if="$learn.zip.touched&$learn.zip.zipFormat">Invalid zip code</p>
                                 </div>
                             </div>
                             <hr>
@@ -58,7 +58,16 @@
                                 <hr>
                                 <div class="eligibility-result inset">
                                     <p class="m0-bottom" v-if="$learn.eligibility.valid"><span class="fa fa-check fa-2x success"></span> Congratulations, you are eligible to participate in Code Louisville!</p>
-                                    <p class="m0-bottom" v-if="$learn.eligibility.invalid"><span class="fa fa-remove fa-2x error"></span> Unfortunately you are not eligible to participate in Code Louisville.</p>
+                                    <div v-if="$learn.eligibility.invalid">
+                                        <p class="m0-bottom"><span class="fa fa-remove fa-2x error"></span> Unfortunately you are not eligible to participate in Code Louisville:</p>
+                                        <ul class="m0-bottom">
+                                            <li v-if="$learn.zip.invalid">You must reside in an area that Code Louisville serves</li>
+                                            <li v-if="$learn.education.invalid">You must have a high school diploma or GED</li>
+                                            <li v-if="$learn.work.invalid">You must be legally able to work in the United States</li>
+                                            <li v-if="$learn.tech.invalid">You must have access to a laptop (or tablet w/ keyboard) and an internet connection</li>
+                                            <li v-if="$learn.conduct.invalid">You must agree to adhere to our Code of Conduct</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </section>

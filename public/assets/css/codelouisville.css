@@ -360,6 +360,8 @@ nav .cl-logo {
     vertical-align:sub;
 }
 
+.eligibility-result ul { margin-left:34px; }
+
 .inset {
     background:#f5f5f5;
     border:1px solid #ddd;

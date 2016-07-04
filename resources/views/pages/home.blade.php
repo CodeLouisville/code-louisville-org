@@ -74,29 +74,5 @@
             </div>
         </div>
     </section>
-    <section class="faqs background-white p4-top p4-bottom">
-        <div class="container">
-            <div class="center">
-                <h2 class="pink m0-top m4-bottom" @include('edit', ['key' => 'faq_title'])>Frequently asked questions</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    @for ($i = 0; $i < ceil(count($faqs) / 2); $i++)
-                        <dl @include('edit', ['key' => $faqs[$i]["key"], 'group' => 'faqs'])>
-                            {!! $faqs[$i]['content'] !!}
-                        </dl>
-                    @endfor
-                </div>
-                <div class="col-sm-6">
-                    @for ($i = ceil(count($faqs) / 2); $i < count($faqs); $i++)
-                        <dl @include('edit', ['key' => $faqs[$i]["key"], 'group' => 'faqs'])>
-                            {!! $faqs[$i]['content'] !!}
-                        </dl>
-                    @endfor
-                    @if(Auth::check() && Auth::user()->admin) <button type="button" class="btn btn-default create" data-group="faqs"><span class="fa fa-plus"></span>&nbsp; Add Question</button> @endif
-                </div>
-            </div>
-        </div>
-    </section>
 
 @endsection

@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <section id="upcoming" class="m0-top m2-bottom">
+                    <section id="upcoming" class="m2-bottom">
                         <h3 class="p1-top m0" @include('edit', ['key' => 'candidates_upcoming_title'])>{!! $candidates_upcoming_title !!}</h3>
                         <hr>
                         <div class="inset">
@@ -34,7 +34,7 @@
                     <hr>
                     <h3 class="form-title" id="eligibility">Eligibility</h3>
                     <validator name="learn" :groups="['eligibility','register']">
-                        <section class="eligiblity-form inset m2-bottom">
+                        <section class="eligiblity-form inset">
                             <p>Please input your zip code</p>
                             <div class="row">
                                 <div class="col-sm-2">
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section id="structure" class="m2-top m2-bottom">
+                        <section id="structure" class="m2-bottom">
                             <hr>
                             <h3 class="m0" @include('edit', ['key' => 'candidates_program_title'])>{!! $candidates_program_title !!}</h3>
                             <hr>
@@ -87,7 +87,7 @@
                                 {!! $candidates_pricing_desc !!}
                             </div>
                         </section>
-                        <section id="questions" class="m2-top m2-bottom">
+                        <section id="questions" class="faqs m2-top m2-bottom">
                             <hr>
                             <h3 class="m0" @include('edit', ['key' => 'candidates_questions_title'])>{!! $candidates_questions_title !!}</h3>
                             <hr>
@@ -95,6 +95,7 @@
                                 {!! $candidates_questions_desc !!}
                             </div>
                         </section>
+                        <hr>
                         <h3 class="form-title" id="register">Registration</h3>
                         <section class="registration-form inset">
                             @if(Session::has('success'))
@@ -160,7 +161,7 @@
                             <li><a href="#eligibility">Eligibility</a></li>
                             <li><a href="#structure">Program structure</a></li>
                             <li><a href="#pricing">Pricing</a></li>
-                            <li><a href="#questions">Questions</a></li>
+                            <li><a href="#questions">FAQs</a></li>
                             <li><a href="#register" class="button pink"><i class="fa fa-clipboard"></i><span>Register</span><span>Register</span></a></li>
                         </ul>
                     </nav>

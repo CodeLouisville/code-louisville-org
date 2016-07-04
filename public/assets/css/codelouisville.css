@@ -6,6 +6,7 @@
 .tooltip.bottom .tooltip-arrow { border-bottom-color:#2C3a42 }
 .tooltip-inner { background-color:#2C3a42; }
 [data-editable]:focus { outline:none; }
+strong, dt { font-weight:600; }
 
 /*
  * |----------------------------------------------------------------------------
@@ -342,6 +343,8 @@ nav .cl-logo {
  * | misc
  * |----------------------------------------------------------------------------
  */
+.content h3 { color:#e91e63; }
+
 .get-involved .fa {
     font-size:3em;
 }

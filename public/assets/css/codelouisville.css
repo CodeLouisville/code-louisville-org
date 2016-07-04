@@ -88,14 +88,14 @@ label {
  * | colors
  * |----------------------------------------------------------------------------
  */
-.blue { color:#3890ce important; }
-.gray { color:#333 important; }
-.green { color:#7dbe56 important; }
-.orange { color:#ef9729 important; }
-.pink { color:#e91e63 important; }
-.white { color:#fff important; }
-.success { color:#43a047 important; }
-.error { color:#c62828 important; }
+.blue { color:#3890ce !important; }
+.gray { color:#333 !important; }
+.green { color:#7dbe56 !important; }
+.orange { color:#ef9729 !important; }
+.pink { color:#e91e63 !important; }
+.white { color:#fff !important; }
+.success { color:#43a047 !important; }
+.error { color:#c62828 !important; }
 
 section.black {
     background:#111;

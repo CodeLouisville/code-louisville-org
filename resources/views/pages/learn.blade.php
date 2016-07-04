@@ -13,7 +13,7 @@
                         <h3 class="p1-top m0" @include('edit', ['key' => 'candidates_upcoming_title'])>{!! $candidates_upcoming_title !!}</h3>
                         <hr>
                         <div class="inset">
-                            <h3 class="m0-top m0-bottom pink">September 2016 &ndash; Full-Stack JavaScript Development</h3>
+                            <h3 class="m0-top m0-bottom blue">September 2016 &ndash; Full-Stack JavaScript Development</h3>
                             <hr>
                             <div class="icons m0">
                                 <div class="row">

@@ -13,7 +13,7 @@ var Edit = {
 
         Edit.bubble.on('click', '.save', function(e)
         {
-            Edit.save($('[name="content"]'))
+            Edit.save($('#ace-editor'))
         })
 
         Edit.bubble.on('click', '.create', function(e)
@@ -25,6 +25,20 @@ var Edit = {
         Edit.bubble.on('click', '.delete', function(e)
         {
             Edit.delete($('[name="content"]'))
+        })
+
+        Edit.bubble.on('shown.bs.modal', function(){
+            var $editor = $('<div/>').attr('id', 'ace-editor').data('key', Edit.editorKey).data('group', Edit.editorGroup)
+            $('.modal-body').append($editor)
+            Edit.editor = ace.edit("ace-editor")
+            Edit.editor.getSession().setMode("ace/mode/html")
+            Edit.editor.getSession().setUseWrapMode(true)
+            Edit.editor.setValue(Edit.editorContent)
+        })
+
+        Edit.bubble.on('hidden.bs.modal', function(){
+            Edit.editor.destroy()
+            Edit.editor.container.remove()
         })
     },
     bubble: $('body'),
@@ -77,7 +91,9 @@ var Edit = {
                 $modal.find('.delete').hide();
             }
 
-            $modal.find('textarea').data('key', key).data('group', group).val(content.replace(/\s\s+/g,''))
+            Edit.editorKey = key
+            Edit.editorGroup = group
+            Edit.editorContent = content.replace(/\s\s+/g,'')
             $modal.modal('show')
         }
         else
@@ -105,16 +121,17 @@ var Edit = {
     {
         var t = $('[name="_token"]').val(),
             k = $_.data('key'),
-            v = $_.val() || $_.html(),
+            v = Edit.editor.getValue(),
             g = $_.data('group')
 
-        if($_.attr('name') === 'content') $('[data-editable][data-key="' + k + '"]').html(v)
+        Edit.putContent(k, v, g, t)
+
+        $('[data-editable][data-key="' + k + '"]').html(v)
 
         $('.screen').remove()
         $_.removeAttr('contenteditable')
         $('.modal').modal('hide');
 
-        Edit.putContent(k, v, g, t)
     }
 }
 

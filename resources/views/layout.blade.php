@@ -29,7 +29,11 @@
     @stack('scripts')
 
     <script src="/assets/js/code-louisville.js"></script>
-    @if (Auth::check()) <script src="/assets/js/edit.js"></script> @endif
+    @if (Auth::check())
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/mode-html.js"></script>
+        <script src="/assets/js/edit.js"></script>
+    @endif
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 </body>
 </html>

@@ -484,14 +484,14 @@ footer .fa { color:#fff; }
     cursor:pointer;
 }
 
-.modal textarea {
-    background:none;
-    border:none;
-    font-size:13px;
-    font-family:monospace;
-    padding:0;
-    width:100%;
-    min-height:200px;
+.modal-body { height:50vh; }
+
+#ace-editor {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
 
 .modal textarea:focus { outline:none; }
@@ -625,6 +625,10 @@ footer .fa { color:#fff; }
  * | responsive
  * |----------------------------------------------------------------------------
  */
+@media (min-width: 768px) {
+    .modal-dialog { width:80%; }
+}
+
 @media (max-width:900px) {
 
     .hero { padding-bottom:120px; }

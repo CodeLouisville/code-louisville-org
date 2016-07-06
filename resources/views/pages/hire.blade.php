@@ -10,15 +10,15 @@
             <div class="row">
                 <div class="col-sm-9">
                     <section id="partners" class="m2-bottom">
-                        <h3 class="p1-top m0" @include('edit', ['key' => 'employers_partners_title'])>{!! $employers_partners_title !!}</h3>
+                        <h3 class="p1-top m0" @include('edit', ['key' => 'hire_partners_title'])>{!! $hire_partners_title !!}</h3>
                         <hr>
-                        <div class="gallery p2-top" @include('edit', ['key' => 'employers_partners_images'])>{!! $employers_partners_images !!}</div>
+                        <div class="gallery p2-top" @include('edit', ['key' => 'hire_partners_images'])>{!! $hire_partners_images !!}</div>
                     </section>
                     <section id="why" class="m2-top m2-bottom">
                         <hr>
-                        <h3 class="m0" @include('edit', ['key' => 'employers_why_title'])>{!! $employers_why_title !!}</h3>
+                        <h3 class="m0" @include('edit', ['key' => 'hire_why_title'])>{!! $hire_why_title !!}</h3>
                         <hr>
-                        <div @include('edit', ['key' => 'employers_why_desc'])>{!! $employers_why_desc !!}</div>
+                        <div @include('edit', ['key' => 'hire_why_desc'])>{!! $hire_why_desc !!}</div>
                     </section>
                     <section id="questions" class="faqs m2-top m2-bottom">
                         <hr>
@@ -107,7 +107,7 @@
                             <li><a href="#why">Why partner?</a></li>
                             <li><a href="#questions">FAQs</a></li>
                             <li><a href="#form">Learn more</a></li>
-                            <li><a href="/employers/graduates" class="button pink"><i class="fa fa-graduation-cap"></i><span>Grad List</span><span>Graduate List</span></a></li>
+                            <li><a href="/hire/graduates" class="button pink"><i class="fa fa-graduation-cap"></i><span>Grad List</span><span>Graduate List</span></a></li>
                         </ul>
                     </nav>
                 </div>

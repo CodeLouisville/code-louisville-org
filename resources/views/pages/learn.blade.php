@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm-9">
                     <section id="upcoming" class="m2-bottom">
-                        <h3 class="p1-top m0" @include('edit', ['key' => 'candidates_upcoming_title'])>{!! $candidates_upcoming_title !!}</h3>
+                        <h3 class="p1-top m0" @include('edit', ['key' => 'learn_upcoming_title'])>{!! $learn_upcoming_title !!}</h3>
                         <hr>
                         <div class="inset">
                             <h4 class="m0-top m0-bottom blue">September 2016 &ndash; Full-Stack JavaScript Development</h4>
@@ -27,7 +27,7 @@
                             <p class="m1-top m0-bottom"><a class="button white" href="#register">Register now</a></p>
                         </div>
                         <hr>
-                        <div @include('edit', ['key' => 'candidates_upcoming_desc'])>{!! $candidates_upcoming_desc !!}</div>
+                        <div @include('edit', ['key' => 'learn_upcoming_desc'])>{!! $learn_upcoming_desc !!}</div>
                     </section>
                     <hr>
                     <h3 class="form-title" id="eligibility">Eligibility</h3>
@@ -71,21 +71,21 @@
                         </section>
                         <section id="structure" class="m2-bottom">
                             <hr>
-                            <h3 class="m0" @include('edit', ['key' => 'candidates_program_title'])>{!! $candidates_program_title !!}</h3>
+                            <h3 class="m0" @include('edit', ['key' => 'learn_program_title'])>{!! $learn_program_title !!}</h3>
                             <hr>
-                            <div @include('edit', ['key' => 'candidates_program_desc'])>{!! $candidates_program_desc !!}</div>
+                            <div @include('edit', ['key' => 'learn_program_desc'])>{!! $learn_program_desc !!}</div>
                         </section>
                         <section id="pricing" class="m2-top m2-bottom">
                             <hr>
-                            <h3 class="m0" @include('edit', ['key' => 'candidates_pricing_title'])>{!! $candidates_pricing_title !!}</h3>
+                            <h3 class="m0" @include('edit', ['key' => 'learn_pricing_title'])>{!! $learn_pricing_title !!}</h3>
                             <hr>
-                            <div @include('edit', ['key' => 'candidates_pricing_desc'])>{!! $candidates_pricing_desc !!}</div>
+                            <div @include('edit', ['key' => 'learn_pricing_desc'])>{!! $learn_pricing_desc !!}</div>
                         </section>
                         <section id="questions" class="faqs m2-top m2-bottom">
                             <hr>
-                            <h3 class="m0" @include('edit', ['key' => 'candidates_questions_title'])>{!! $candidates_questions_title !!}</h3>
+                            <h3 class="m0" @include('edit', ['key' => 'learn_questions_title'])>{!! $learn_questions_title !!}</h3>
                             <hr>
-                            <div @include('edit', ['key' => 'candidates_questions_desc'])>{!! $candidates_questions_desc !!}</div>
+                            <div @include('edit', ['key' => 'learn_questions_desc'])>{!! $learn_questions_desc !!}</div>
                         </section>
                         <hr>
                         <h3 class="form-title" id="register">Registration</h3>
@@ -96,7 +96,7 @@
                                 </div>
                             @else
                                 <div v-if="$learn.eligibility.valid">
-                                    <div class="inset" @include('edit', ['key' => 'candidates_form_desc'])>{!! $candidates_form_desc !!}</div>
+                                    <div class="inset" @include('edit', ['key' => 'learn_form_desc'])>{!! $learn_form_desc !!}</div>
                                     <hr>
                                     <form method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

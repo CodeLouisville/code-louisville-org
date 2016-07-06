@@ -111,7 +111,7 @@
                     <nav class="subnav" data-spy="affix" data-offset-top="83" data-offset-bottom="666">
                         <h1 class="m0-top m0-bottom">{{ $title }}</h1>
                         <ul class="nav">
-                            <li><a href="/mentors"><span class="fa fa-arrow-left"></span> Back to Mentors</a></li>
+                            <li><a href="/mentor"><span class="fa fa-arrow-left"></span> Back to Mentors</a></li>
                         </ul>
                     </nav>
                 </div>

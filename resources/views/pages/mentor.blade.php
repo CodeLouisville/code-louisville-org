@@ -10,43 +10,24 @@
             <div class="row">
                 <div class="col-sm-9">
                     <section id="who" class="m2-bottom">
-                        <h3 class="p1-top m0" @include('edit', ['key' => 'mentors_who_title'])>{!! $mentors_who_title !!}</h3>
+                        <h3 class="p1-top m0" @include('edit', ['key' => 'mentor_who_title'])>{!! $mentor_who_title !!}</h3>
                         <hr>
-                        <div @include('edit', ['key' => 'mentors_who_desc'])>{!! $mentors_who_desc !!}</div>
+                        <div @include('edit', ['key' => 'mentor_who_desc'])>{!! $mentor_who_desc !!}</div>
                     </section>
                     <section id="what" class="m2-top m2-bottom">
                         <hr>
-                        <h3 class="m0" @include('edit', ['key' => 'mentors_what_title'])>{!! $mentors_what_title !!}</h3>
+                        <h3 class="m0" @include('edit', ['key' => 'mentor_what_title'])>{!! $mentor_what_title !!}</h3>
                         <hr>
-                        <div @include('edit', ['key' => 'mentors_what_desc'])>{!! $mentors_what_desc !!}</div>
+                        <div @include('edit', ['key' => 'mentor_what_desc'])>{!! $mentor_what_desc !!}</div>
                     </section>
                     <section id="tech" class="m2-top m2-bottom">
                         <hr>
-                        <h3 class="m0">Technologies</h3>
+                        <h3 class="m0" @include('edit', ['key' => 'mentor_tech_title'])>{!! $mentor_tech_title !!}</h3>
                         <hr>
-                        <p>At the moment, Code Louisville is offering two tracks:</p>
-                        <div class="inset m2-bottom">
-                            <h4 class="m0">Full-stack Javascript <small class="m1-left">Monday, Tuesday, Wednesday, Thursday</small></h4>
-                        </div>
-                        <div class="icons">
-                            <div class="row">
-                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></div>
-                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-mongodb-plain colored" data-original-title="MongoDB"></i></div>
-                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-angularjs-plain colored" data-original-title="AngularJS"></i></div>
-                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-nodejs-plain colored" data-original-title="NodeJS"></i></div>
-                            </div>
-                        </div>
-                        <div class="inset m2-bottom">
-                            <h4 class="m0">PHP <small class="m1-left">Tuesday, Thursday</small></h4>
-                        </div>
-                        <div class="icons">
-                            <div class="row">
-                                <div class="col-lg-2 col-xs-3 m2-bottom"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></div>
-                            </div>
-                        </div>
+                        <div @include('edit', ['key' => 'mentor_tech_desc'])>{!! $mentor_tech_desc !!}</div>
                     </section>
                     <div id="current" class="profiles" class="m2-top m2-bottom">
-                        @if (Auth::check() && Auth::user()->admin) <span class="pull-right"><a href="/mentors/add" class="button pink">Add mentor</a></span> @endif
+                        @if (Auth::check() && Auth::user()->admin) <span class="pull-right"><a href="/mentor/add" class="button pink">Add mentor</a></span> @endif
                         <hr>
                         <h3 class="m0">Current mentors</h3>
                         <hr>
@@ -57,9 +38,9 @@
                                         <div class="card text-center @if ($mentor->active == 0) inactive @endif">
                                             @if(Auth::check())
                                                 @if (Auth::user()->admin)
-                                                    <a class="edit-profile pink" href="/mentors/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
+                                                    <a class="edit-profile pink" href="/mentor/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
                                                 @elseif ($mentor->github_id == Auth::user()->github_id)
-                                                    <a class="edit-profile pink" href="/mentors/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
+                                                    <a class="edit-profile pink" href="/mentor/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
                                                 @endif
                                             @endif
                                             <img class="photo" src="@if ($mentor->github) https://github.com/{{ $mentor->github }}.png @else /assets/img/default-person.png @endif" alt="{{ $mentor->name }}">
@@ -112,7 +93,7 @@
                                 <p class="m0"><span class="fa fa-check success"></span> Thank you for your interest in Code Louisville. We&rsquo;ll be in contact soon.</p>
                             </div>
                         @else
-                            <div class="inset" @include('edit', ['key' => 'mentors_form_desc'])>{!! $mentors_form_desc !!}</div>
+                            <div class="inset" @include('edit', ['key' => 'mentor_form_desc'])>{!! $mentor_form_desc !!}</div>
                             <hr>
                             <validator name="mentor">
                                 <form method="POST">

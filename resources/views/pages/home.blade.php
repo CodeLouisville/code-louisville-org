@@ -7,7 +7,7 @@
         <div class="container">
             <img class="cl-logo" src="{{ env('CLOUDFRONT') }}/assets/img/code-louisville-white.svg" alt="Code Louisville">
             <div>
-                <a href="#intro" class="button button-large white m1-right">Tell me more</a><a href="/candidates#upcoming" class="button button-large pink">Sign up today</a>
+                <a href="#intro" class="button button-large white m1-right">Tell me more</a><a href="/learn#upcoming" class="button button-large pink">Sign up today</a>
             </div>
         </div>
     </header>
@@ -42,33 +42,33 @@
     </section>
     <section class="get-involved center p4-top p4-bottom">
         <div class="container">
-            <h2 class="m0-top m4-bottom" @include('edit', ['key' => 'get_involved_title'])>{!! $get_involved_title !!}</h2>
+            <h2 class="m0-top m4-bottom" @include('edit', ['key' => 'home_get_involved_title'])>{!! $home_get_involved_title !!}</h2>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card">
                         <span class="fa fa-user pink m2-top"></span>
-                        <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'get_involved_col1_title'])>{!! $get_involved_col1_title !!}</h2>
+                        <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'home_get_involved_col1_title'])>{!! $home_get_involved_col1_title !!}</h2>
                         <hr>
-                        <p class="left m2-top m2-bottom" @include('edit', ['key' => 'get_involved_col1_desc'])>{!! $get_involved_col1_desc !!}</p>
-                        <div class="right"><a class="button pink" href="/candidates">Learn more</a></div>
+                        <p class="left m2-top m2-bottom" @include('edit', ['key' => 'home_get_involved_col1_desc'])>{!! $home_get_involved_col1_desc !!}</p>
+                        <div class="right"><a class="button pink" href="/learn">Learn more</a></div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
                         <span class="fa fa-stack-overflow pink m2-top"></span>
-                        <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'get_involved_col2_title'])>{!! $get_involved_col2_title !!}</h2>
+                        <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'home_get_involved_col2_title'])>{!! $home_get_involved_col2_title !!}</h2>
                         <hr>
-                        <p class="left m2-top m2-bottom" @include('edit', ['key' => 'get_involved_col2_desc'])>{!! $get_involved_col2_desc !!}</p>
-                        <div class="right"><a class="button pink" href="/mentors">Learn more</a></div>
+                        <p class="left m2-top m2-bottom" @include('edit', ['key' => 'home_get_involved_col2_desc'])>{!! $home_get_involved_col2_desc !!}</p>
+                        <div class="right"><a class="button pink" href="/mentor">Learn more</a></div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
                         <span class="fa fa-building-o pink m2-top"></span>
-                        <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'get_involved_col3_title'])>{!! $get_involved_col3_title !!}</h2>
+                        <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'home_get_involved_col3_title'])>{!! $home_get_involved_col3_title !!}</h2>
                         <hr>
-                        <p class="left m2-top m2-bottom" @include('edit', ['key' => 'get_involved_col3_desc'])>{!! $get_involved_col3_desc !!}</p>
-                        <div class="right"><a class="button pink" href="/employers">Learn more</a></div>
+                        <p class="left m2-top m2-bottom" @include('edit', ['key' => 'home_get_involved_col3_desc'])>{!! $home_get_involved_col3_desc !!}</p>
+                        <div class="right"><a class="button pink" href="/hire">Learn more</a></div>
                     </div>
                 </div>
             </div>

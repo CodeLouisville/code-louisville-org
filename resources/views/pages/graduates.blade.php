@@ -51,7 +51,7 @@
                             </thead>
                             <tbody>
                                 <tr class="grad" v-if="filter.length > 0" v-for="grad in grads | filterBy selected in 'cohorts' | orderBy 'cohort_date' 'name'">
-                                    @if (Auth::check() && Auth::user()->admin) <td class="grad-edit"><a class="pink" href="/employers/graduates/edit/@{{ grad.id }}"><span class="fa fa-edit"></span></a></td>@endif
+                                    @if (Auth::check() && Auth::user()->admin) <td class="grad-edit"><a class="pink" href="/hire/graduates/edit/@{{ grad.id }}"><span class="fa fa-edit"></span></a></td>@endif
                                     <td class="grad-name" v-text="grad.name"></td>
                                     <td class="grad-email"><span class="pink" v-text="grad.email"></span></td>
                                     <td class="grad-connect"><a href="https://github.com/@{{ grad.github }}" target="_blank"><span class="fa fa-github-square"></span></a> &nbsp; <a href="https://www.linkedin.com/in/@{{ grad.linkedin }}" target="_blank"><span class="fa fa-linkedin-square"></span></a></td>
@@ -67,7 +67,7 @@
                             </tbody>
                         </table>
                         <hr>
-                        @if (Auth::check() && Auth::user()->admin) <a class="button pink" href="/employers/graduates/add">Add graduate</a> @endif
+                        @if (Auth::check() && Auth::user()->admin) <a class="button pink" href="/hire/graduates/add">Add graduate</a> @endif
                     </section>
                 </div>
             </div>

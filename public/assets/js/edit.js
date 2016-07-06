@@ -13,7 +13,7 @@ var Edit = {
 
         Edit.bubble.on('click', '.save', function(e)
         {
-            Edit.save($('#ace-editor'))
+            Edit.save($('#ace-editor'), true)
         })
 
         Edit.bubble.on('click', '.create', function(e)
@@ -117,11 +117,11 @@ var Edit = {
             dataType: 'json'
         })
     },
-    save: function($_)
+    save: function($_, ace = false)
     {
         var t = $('[name="_token"]').val(),
             k = $_.data('key'),
-            v = Edit.editor.getValue(),
+            v = ace ? Edit.editor.getValue() : $_.val() || $_.html(),
             g = $_.data('group')
 
         Edit.putContent(k, v, g, t)
@@ -131,7 +131,6 @@ var Edit = {
         $('.screen').remove()
         $_.removeAttr('contenteditable')
         $('.modal').modal('hide');
-
     }
 }
 

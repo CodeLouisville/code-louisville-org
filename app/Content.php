@@ -11,9 +11,4 @@ class Content extends Model
     protected $fillable = [
         'key', 'group', 'content'
     ];
-
-    public function setContentAttribute($value)
-    {
-        $this->attributes['content'] = preg_replace('/\s\s+/', '', $value);
-    }
 }

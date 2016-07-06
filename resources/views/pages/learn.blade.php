@@ -12,20 +12,7 @@
                     <section id="upcoming" class="m2-bottom">
                         <h3 class="p1-top m0" @include('edit', ['key' => 'learn_upcoming_title'])>{!! $learn_upcoming_title !!}</h3>
                         <hr>
-                        <div class="inset">
-                            <h4 class="m0-top m0-bottom blue">September 2016 &ndash; Full-Stack JavaScript Development</h4>
-                            <hr>
-                            <div class="icons m0">
-                                <div class="row">
-                                    <div class="col-lg-2 col-xs-3"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></div>
-                                    <div class="col-lg-2 col-xs-3"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-mongodb-plain colored" data-original-title="MongoDB"></i></div>
-                                    <div class="col-lg-2 col-xs-3"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-angularjs-plain colored" data-original-title="AngularJS"></i></div>
-                                    <div class="col-lg-2 col-xs-3"><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-nodejs-plain colored" data-original-title="NodeJS"></i></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <p class="m1-top m0-bottom"><a class="button white" href="#register">Register now</a></p>
-                        </div>
+                        <div @include('edit', ['key' => 'learn_upcoming_sessions'])>{!! $learn_upcoming_sessions !!}</div>
                         <hr>
                         <div @include('edit', ['key' => 'learn_upcoming_desc'])>{!! $learn_upcoming_desc !!}</div>
                     </section>

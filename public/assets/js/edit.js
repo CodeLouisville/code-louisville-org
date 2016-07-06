@@ -93,7 +93,7 @@ var Edit = {
 
             Edit.editorKey = key
             Edit.editorGroup = group
-            Edit.editorContent = content.replace(/\s\s+/g,'')
+            Edit.editorContent = content
             $modal.modal('show')
         }
         else

@@ -12,17 +12,13 @@
                     <section id="who" class="m2-bottom">
                         <h3 class="p1-top m0" @include('edit', ['key' => 'mentors_who_title'])>{!! $mentors_who_title !!}</h3>
                         <hr>
-                        <div @include('edit', ['key' => 'mentors_who_desc'])>
-                            {!! $mentors_who_desc !!}
-                        </div>
+                        <div @include('edit', ['key' => 'mentors_who_desc'])>{!! $mentors_who_desc !!}</div>
                     </section>
                     <section id="what" class="m2-top m2-bottom">
                         <hr>
                         <h3 class="m0" @include('edit', ['key' => 'mentors_what_title'])>{!! $mentors_what_title !!}</h3>
                         <hr>
-                        <div @include('edit', ['key' => 'mentors_what_desc'])>
-                            {!! $mentors_what_desc !!}
-                        </div>
+                        <div @include('edit', ['key' => 'mentors_what_desc'])>{!! $mentors_what_desc !!}</div>
                     </section>
                     <section id="tech" class="m2-top m2-bottom">
                         <hr>
@@ -106,9 +102,7 @@
                         <hr>
                         <h3 class="m0" @include('edit', ['key' => 'mentor_questions_title'])>{!! $mentor_questions_title !!}</h3>
                         <hr>
-                        <div @include('edit', ['key' => 'mentor_questions_desc'])>
-                            {!! $mentor_questions_desc !!}
-                        </div>
+                        <div @include('edit', ['key' => 'mentor_questions_desc'])>{!! $mentor_questions_desc !!}</div>
                     </section>
                     <hr>
                     <h3 class="form-title anchor" id="form">Become a mentor</h3>
@@ -118,9 +112,7 @@
                                 <p class="m0"><span class="fa fa-check success"></span> Thank you for your interest in Code Louisville. We&rsquo;ll be in contact soon.</p>
                             </div>
                         @else
-                            <div class="inset" @include('edit', ['key' => 'mentors_form_desc'])>
-                                {!! $mentors_form_desc !!}
-                            </div>
+                            <div class="inset" @include('edit', ['key' => 'mentors_form_desc'])>{!! $mentors_form_desc !!}</div>
                             <hr>
                             <validator name="mentor">
                                 <form method="POST">

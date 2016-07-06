@@ -101,7 +101,7 @@ class Pages extends Controller
             }
         }
 
-        $data['title'] = 'Candidates';
+        $data['title'] = 'Enroll';
         $data['secure'] = $secure;
 
         return view('pages.enroll', $data);

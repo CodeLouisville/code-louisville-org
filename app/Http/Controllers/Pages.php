@@ -7,6 +7,7 @@ use App\Content;
 use App\Grads;
 use App\Mentors;
 use App\Http\Controllers\Controller;
+use Request;
 
 class Pages extends Controller
 {
@@ -74,6 +75,8 @@ class Pages extends Controller
 
     public function enroll()
     {
+        $secure = false; if (Request::server('HTTP_X_FORWARDED_PROTO') == 'https') $secure = true;
+
         $content = Content::all();
 
         $data = [];
@@ -99,6 +102,7 @@ class Pages extends Controller
         }
 
         $data['title'] = 'Candidates';
+        $data['secure'] = $secure;
 
         return view('pages.enroll', $data);
     }

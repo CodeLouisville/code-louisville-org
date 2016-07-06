@@ -27,8 +27,8 @@
                         <div @include('edit', ['key' => 'mentor_tech_desc'])>{!! $mentor_tech_desc !!}</div>
                     </section>
                     <div id="current" class="profiles" class="m2-top m2-bottom">
-                        @if (Auth::check() && Auth::user()->admin) <span class="pull-right"><a href="/mentor/add" class="button pink">Add mentor</a></span> @endif
                         <hr>
+                        @if (Auth::check() && Auth::user()->admin) <a href="/mentor/add" class="button small pink pull-right">Add mentor</a> @endif
                         <h3 class="m0">Current mentors</h3>
                         <hr>
                         <div class="row">

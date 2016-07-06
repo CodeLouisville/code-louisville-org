@@ -75,7 +75,7 @@ class Pages extends Controller
 
     public function enroll()
     {
-        $secure = false; if (Request::server('HTTP_X_FORWARDED_PROTO') == 'https') $secure = true;
+        $secure = 'false'; if (Request::secure()) $secure = 'true';
 
         $content = Content::all();
 

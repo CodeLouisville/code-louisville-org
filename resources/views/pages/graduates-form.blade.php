@@ -23,25 +23,23 @@
                                             <input type="text" name="name" value="@if(isset($grad)){{ $grad->name }}@endif" v-validate:name="['required']">
                                         </label>
                                     </div>
-                                    <div class="col-sm-4 col-sm-offset-4 grad-cohort">
+                                    <div class="col-sm-6 col-sm-offset-2 grad-cohort">
                                         <p class="m1-bottom">Cohorts</p>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <input type="hidden" name="front_end" value="@{{ front_end }}">
-                                                <label><input type="checkbox" v-model="front_end" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->front_end == 1) checked @endif><i data-toggle="tooltip" data-placement="top" title="" class="devicon-html5-plain colored" data-original-title="Front End"></i></label>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="hidden" name="full_stack_js" value="@{{ full_stack_js }}">
-                                                <label><input type="checkbox" v-model="full_stack_js" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->full_stack_js == 1) checked @endif><i data-toggle="tooltip" data-placement="top" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></label>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="hidden" name="php" value="@{{ php }}">
-                                                <label><input type="checkbox" v-model="php" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->php == 1) checked @endif><i data-toggle="tooltip" data-placement="top" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></label>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="hidden" name="dot_net" value="@{{ dot_net }}">
-                                                <label><input type="checkbox" v-model="dot_net" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->dot_net == 1) checked @endif><i data-toggle="tooltip" data-placement="top" title="" class="devicon-dot-net-plain colored" data-original-title=".NET"></i></label>
-                                            </div>
+                                        <div>
+                                            <input type="hidden" name="front_end" value="@{{ front_end }}">
+                                            <label><input type="checkbox" v-model="front_end" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->front_end == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-html5-plain colored" data-original-title="Front End"></i></label>
+                                            <input type="hidden" name="full_stack_js" value="@{{ full_stack_js }}">
+                                            <label><input type="checkbox" v-model="full_stack_js" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->full_stack_js == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></label>
+                                            <input type="hidden" name="php" value="@{{ php }}">
+                                            <label><input type="checkbox" v-model="php" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->php == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></label>
+                                            <input type="hidden" name="dot_net" value="@{{ dot_net }}">
+                                            <label><input type="checkbox" v-model="dot_net" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->dot_net == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-dot-net-plain colored" data-original-title=".NET"></i></label>
+                                            <input type="hidden" name="rails" value="@{{ rails }}">
+                                            <label><input type="checkbox" v-model="rails" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->rails == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails (discontinued)"></i></label>
+                                            <input type="hidden" name="ios" value="@{{ ios }}">
+                                            <label><input type="checkbox" v-model="ios" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->ios == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-apple-plain colored" data-original-title="iOS (discontinued)"></i></label>
+                                            <input type="hidden" name="android" value="@{{ android }}">
+                                            <label><input type="checkbox" v-model="android" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->android == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-android-plain colored" data-original-title="Android (discontinued)"></i></label>
                                         </div>
                                     </div>
                                 </div>

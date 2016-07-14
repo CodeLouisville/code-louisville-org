@@ -21,12 +21,14 @@ strong, dt { font-weight:600; }
  * |----------------------------------------------------------------------------
  */
 body {
-    background:#f5f5f5;
+    background:#2c3a42;
     color:#2c3a42;
     font-family:"Source Sans Pro", Helvetica, sans-serif;
     font-size:16px;
     font-weight:400;
 }
+
+body > section { background:#f5f5f5; }
 
 h1, h2, h3, h4, h5, h6 { font-weight:600; }
 
@@ -387,6 +389,12 @@ nav .cl-logo {
 }
 
 .grad-cohort label { margin:0; }
+
+div.grad-cohort label {
+    margin-right:24px;
+    width:auto;
+}
+
 .grad-cohort input { display:none; }
 
 .grad-cohort input + i {
@@ -600,7 +608,7 @@ footer .fa { color:#fff; }
     width:40px;
 }
 
-.graduates .grad-name { width:280px; }
+.graduates .grad-name { width:240px; }
 .graduates .grad-email { width:280px; }
 
 .graduates .grad-connect {

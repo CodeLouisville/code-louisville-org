@@ -25,7 +25,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('learn/enroll', 'Pages@enroll');
     Route::get('hire', 'Pages@hire');
     Route::get('hire/graduates', 'Pages@graduates');
-    Route::get('hire/graduates/add', ['middleware' => 'admin', 'uses' => 'Pages@graduates_add']);
+    Route::get('hire/graduates/add', ['uses' => 'Pages@graduates_add']);
     Route::get('hire/graduates/edit', function () { return redirect('hire/graduates'); });
     Route::get('hire/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Pages@graduates_edit']);
 

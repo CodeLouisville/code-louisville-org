@@ -19,14 +19,20 @@ class Grads extends Model
         'front_end',
         'full_stack_js',
         'php',
-        'dot_net'
+        'dot_net',
+        'rails',
+        'ios',
+        'android'
     ];
 
     protected $casts = [
         'front_end' => 'integer',
         'full_stack_js' => 'integer',
         'php' => 'integer',
-        'dot_net' => 'integer'
+        'dot_net' => 'integer',
+        'rails' => 'integer',
+        'ios' => 'integer',
+        'android' => 'integer'
     ];
 
     public function getCohortDateAttribute($value)
@@ -55,41 +61,37 @@ class Grads extends Model
 
     public function getCohortsAttribute()
     {
-        $cohorts = [];
+        $cohorts = [0];
 
         if($this->front_end) array_push($cohorts, 1);
         if($this->full_stack_js) array_push($cohorts, 2);
         if($this->php) array_push($cohorts, 4);
         if($this->dot_net) array_push($cohorts, 8);
+        if($this->rails) array_push($cohorts, 16);
+        if($this->ios) array_push($cohorts, 32);
+        if($this->android) array_push($cohorts, 64);
 
-        if(count($cohorts) == 4)
-        {
-            array_push($cohorts, $cohorts[0] + $cohorts[1]);
-            array_push($cohorts, $cohorts[0] + $cohorts[2]);
-            array_push($cohorts, $cohorts[0] + $cohorts[3]);
-            array_push($cohorts, $cohorts[1] + $cohorts[2]);
-            array_push($cohorts, $cohorts[1] + $cohorts[3]);
-            array_push($cohorts, $cohorts[2] + $cohorts[3]);
-            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[2]);
-            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[3]);
-            array_push($cohorts, $cohorts[0] + $cohorts[2] + $cohorts[3]);
-            array_push($cohorts, $cohorts[1] + $cohorts[2] + $cohorts[3]);
-            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[2] + $cohorts[3]);
-        }
-
-        if(count($cohorts) == 3)
-        {
-            array_push($cohorts, $cohorts[0] + $cohorts[1]);
-            array_push($cohorts, $cohorts[0] + $cohorts[2]);
-            array_push($cohorts, $cohorts[1] + $cohorts[2]);
-            array_push($cohorts, $cohorts[0] + $cohorts[1] + $cohorts[2]);
-        }
-
-        if(count($cohorts) == 2)
-        {
-            array_push($cohorts, $cohorts[0] + $cohorts[1]);
-        }
+        $cohorts_ = $this->permute($cohorts);
 
         return implode($cohorts, ',');
+    }
+
+    private function permute($set)
+    {
+        $additions = array();
+
+        for($i = 0; $i < pow(2, count($set)); $i++){
+            $sum = 0;
+            for($j = count($set)-1; $j >= 0; $j--) {
+                if(pow(2, $j) & $i) {
+                    $sum += $set[$j];
+                }
+            }
+            $additions[] = $sum;
+        }
+
+        sort($additions);
+
+        return $additions;
     }
 }

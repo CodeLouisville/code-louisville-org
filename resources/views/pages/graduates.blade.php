@@ -53,7 +53,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="grad" data-cohorts="@{{ grad.cohorts }}"v-if="filter.length > 0" v-for="grad in grads | filterBy selected in 'cohorts' | orderBy 'cohort_date' 'name'">
+                                <tr class="grad" data-cohorts="@{{ grad.cohorts }}" v-if="filter.length > 0" v-for="grad in grads | filterBy selected in 'cohorts' | orderBy 'cohort_date' 'name'">
                                     @if (Auth::check() && Auth::user()->admin) <td class="grad-edit"><a class="pink" href="/hire/graduates/edit/@{{ grad.id }}"><span class="fa fa-edit"></span></a></td>@endif
                                     <td class="grad-name" v-text="grad.name"></td>
                                     <td class="grad-email"><span class="pink" v-text="grad.email"></span></td>
@@ -99,7 +99,7 @@
                         github: '{{ $grad->github }}',
                         linkedin: '{{ $grad->linkedin }}',
                         cohort_date: '{{ $grad->cohort_date }}',
-                        cohorts: [{!! $grad->cohorts !!}],
+                        cohorts: '{!! $grad->cohorts !!}',
                         front_end: '{{ $grad->front_end }}',
                         js: '{{ $grad->full_stack_js }}',
                         php: '{{ $grad->php }}',
@@ -110,7 +110,7 @@
                     },
                     @endforeach
                 ],
-                selected: 0
+                selected: "|0|"
             }
         })
 
@@ -119,7 +119,7 @@
             $.each(val, function(){
                 sum += parseInt(this)
             })
-            this.selected = sum
+            this.selected = '|' + sum.toString() + '|'
         })
     </script>
 

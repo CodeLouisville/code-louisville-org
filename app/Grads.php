@@ -61,7 +61,7 @@ class Grads extends Model
 
     public function getCohortsAttribute()
     {
-        $cohorts = [0];
+        $cohorts = [];
 
         if($this->front_end) array_push($cohorts, 1);
         if($this->full_stack_js) array_push($cohorts, 2);
@@ -73,7 +73,7 @@ class Grads extends Model
 
         $cohorts_ = $this->permute($cohorts);
 
-        return implode($cohorts, ',');
+        return '|'.implode('|', $cohorts_).'|';
     }
 
     private function permute($set)
@@ -87,7 +87,7 @@ class Grads extends Model
                     $sum += $set[$j];
                 }
             }
-            $additions[] = $sum;
+            $additions[] = (string)$sum;
         }
 
         sort($additions);

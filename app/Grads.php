@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class Grads extends Model
 {
     protected $table = 'grads';
-    protected $appends = array('cohorts', 'cohort_month', 'cohort_year');
+    protected $appends = array('cohorts', 'cohort_month', 'cohort_year', 'cohort_datetime');
 
     protected $fillable = [
         'name',
@@ -39,6 +39,12 @@ class Grads extends Model
     {
         $c = new Carbon($value);
         return $c->format('F Y');
+    }
+
+    public function getCohortDateTimeAttribute($value)
+    {
+        $c = new Carbon($this->attributes['cohort_date']);
+        return $c;
     }
 
     public function setCohortDateAttribute($value)

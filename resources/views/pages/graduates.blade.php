@@ -33,7 +33,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <section id="graduates" class="m2-bottom">
-                        <h3 class="p1-top m0">{{ $title }}</h3>
+                        <div class="pull-right grad-tip">Click on the icons to narrow your results</div>
+                        <h3 class="p1-top m0">{{ $title }} </h3>
                         <hr>
                         <table class="table table-bordered table-striped graduates">
                             <thead>

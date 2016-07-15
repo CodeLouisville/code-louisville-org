@@ -388,6 +388,17 @@ nav .cl-logo {
     line-height:24px;
 }
 
+.grad-tip {
+    color:#666;
+    display:inline-block;
+    font-size:13px;
+    font-weight:600;
+    margin-top:36px;
+    text-align:center;
+    text-transform:uppercase;
+    width:350px;
+}
+
 .grad-cohort label { margin:0; }
 
 div.grad-cohort label {

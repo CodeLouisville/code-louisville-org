@@ -43,7 +43,11 @@
                                                     <a class="edit-profile pink" href="/mentor/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
                                                 @endif
                                             @endif
-                                            <img class="photo" src="@if ($mentor->github) https://github.com/{{ $mentor->github }}.png @else /assets/img/default-person.png @endif" alt="{{ $mentor->name }}">
+                                            @if ($mentor->github)
+                                                <img class="photo" src="https://github.com/{{ $mentor->github }}.png" alt="{{ $mentor->name }}">
+                                            @else
+                                                <img class="photo" src="/assets/img/default-person.png" alt="{{ $mentor->name }}">
+                                            @endif
                                             <div class="info">
                                                 <div>
                                                     <h4 class="name">{{ $mentor->first }} <small>{{ $mentor->last }}</small></h4>

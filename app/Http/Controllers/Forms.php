@@ -116,7 +116,7 @@ class Forms extends Controller
         $user = $data['github'];
 
         $client = new GuzzleHttp\Client();
-        $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id;
+        if( $data['github'] ) { $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id; }
 
         Mentors::updateOrCreate(['id' => ''], $data);
         return Redirect::back()->withSuccess($success);

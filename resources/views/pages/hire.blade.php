@@ -18,7 +18,7 @@
                         <hr>
                         <h3 class="m0" @include('edit', ['key' => 'hire_partners_title'])>{!! $hire_partners_title !!}</h3>
                         <hr>
-                        <div class="gallery p2-top" @include('edit', ['key' => 'hire_partners_images'])>{!! $hire_partners_images !!}</div>
+                        <div class="gallery" @include('edit', ['key' => 'hire_partners_images'])>{!! $hire_partners_images !!}</div>
                     </section>
                     <section id="questions" class="faqs m2-top m2-bottom">
                         <hr>

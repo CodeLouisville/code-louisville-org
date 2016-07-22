@@ -46,7 +46,7 @@
                                             @if ($mentor->github)
                                                 <img class="photo" src="https://github.com/{{ $mentor->github }}.png" alt="{{ $mentor->name }}">
                                             @else
-                                                <img class="photo" src="/assets/img/default-person.png" alt="{{ $mentor->name }}">
+                                                <img class="photo" src="https://deppclvsgi2as.cloudfront.net/assets/img/default-person.png" alt="{{ $mentor->name }}">
                                             @endif
                                             <div class="info">
                                                 <div>

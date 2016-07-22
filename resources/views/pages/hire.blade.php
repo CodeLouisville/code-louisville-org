@@ -10,13 +10,13 @@
             <div class="row">
                 <div class="col-sm-9">
                     <section id="why" class="m2-top m2-bottom">
-                        <hr>
-                        <h3 class="m0" @include('edit', ['key' => 'hire_why_title'])>{!! $hire_why_title !!}</h3>
+                        <h3 class="p1-top m0" @include('edit', ['key' => 'hire_why_title'])>{!! $hire_why_title !!}</h3>
                         <hr>
                         <div @include('edit', ['key' => 'hire_why_desc'])>{!! $hire_why_desc !!}</div>
                     </section>
                     <section id="partners" class="m2-bottom">
-                        <h3 class="p1-top m0" @include('edit', ['key' => 'hire_partners_title'])>{!! $hire_partners_title !!}</h3>
+                        <hr>
+                        <h3 class="m0" @include('edit', ['key' => 'hire_partners_title'])>{!! $hire_partners_title !!}</h3>
                         <hr>
                         <div class="gallery p2-top" @include('edit', ['key' => 'hire_partners_images'])>{!! $hire_partners_images !!}</div>
                     </section>

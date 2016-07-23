@@ -588,7 +588,10 @@ footer .fa { color:#fff; }
     font-weight:normal;
 }
 
-.profiles .photo { width:100%; }
+.profiles .photo {
+    border-radius:6px 6px 0 0;
+    width:100%;
+}
 
 .profiles .fa {
     font-size:1.4em;

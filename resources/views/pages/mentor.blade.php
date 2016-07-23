@@ -36,18 +36,20 @@
                                 @if ( $mentor->active == 1 || ( Auth::check() && Auth::user()->admin ) )
                                     <div class="col-md-2 col-sm-3 col-xs-4">
                                         <div class="card text-center @if ($mentor->active == 0) inactive @endif">
-                                            @if(Auth::check())
-                                                @if (Auth::user()->admin)
-                                                    <a class="edit-profile pink" href="/mentor/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
-                                                @elseif ($mentor->github_id == Auth::user()->github_id)
-                                                    <a class="edit-profile pink" href="/mentor/edit/{{ $mentor->id }}"> <span class="fa fa-edit"></span></a>
+                                            <div class="img-holder">
+                                                @if(Auth::check())
+                                                    @if (Auth::user()->admin)
+                                                        <a class="edit-profile" href="/mentor/edit/{{ $mentor->id }}"><span class="fa fa-edit"></span></a>
+                                                    @elseif ($mentor->github_id == Auth::user()->github_id)
+                                                        <a class="edit-profile" href="/mentor/edit/{{ $mentor->id }}"><span class="fa fa-edit"></span></a>
+                                                    @endif
                                                 @endif
-                                            @endif
-                                            @if ($mentor->github)
-                                                <img class="photo" src="https://github.com/{{ $mentor->github }}.png" alt="{{ $mentor->name }}">
-                                            @else
-                                                <img class="photo" src="https://deppclvsgi2as.cloudfront.net/assets/img/default-person.png" alt="{{ $mentor->name }}">
-                                            @endif
+                                                @if ($mentor->github)
+                                                    <img class="photo" src="https://github.com/{{ $mentor->github }}.png" alt="{{ $mentor->name }}">
+                                                @else
+                                                    <img class="photo" src="https://deppclvsgi2as.cloudfront.net/assets/img/default-person.png" alt="{{ $mentor->name }}">
+                                                @endif
+                                            </div>
                                             <div class="info">
                                                 <div>
                                                     <h4 class="name">{{ $mentor->first }} <small>{{ $mentor->last }}</small></h4>

@@ -504,6 +504,8 @@ footer .fa { color:#fff; }
     color:#fff;
 }
 
+.edit-profile .fa { margin:40% 0 0 3px; }
+
 .edit-source {
     position:absolute;
     left:-10px;
@@ -553,7 +555,7 @@ footer .fa { color:#fff; }
     transition:transform .2s ease-in-out;
 }
 
-.profiles .card .photo:hover ~ .info {
+.profiles .card .img-holder:hover ~ .info {
     transform:translate3d(-50%, 0px, 0px);
 }
 
@@ -590,8 +592,6 @@ footer .fa { color:#fff; }
 
 .profiles .fa {
     font-size:1.4em;
-    margin-left:3px;
-    margin-top:40%;
 }
 
 .profiles .cohort {

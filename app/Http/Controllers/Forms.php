@@ -76,6 +76,7 @@ class Forms extends Controller
     {
         $data = array(
             'name' => $this->request->input('first').' '.$this->request->input('last'),
+            'first' => $this->request->input('first'),
             'email' => $this->request->input('email')
         );
 
@@ -83,6 +84,12 @@ class Forms extends Controller
             $message->subject('codelouisville.org: New Candidate Registration');
             $message->from($this->mail_from, 'Code Louisville');
             $message->to($this->mail_recipient);
+        });
+
+        Mail::send('emails.register-thanks', $data, function ($message) {
+            $message->subject('Thank you for your registration');
+            $message->from($this->mail_from, 'Code Louisville');
+            $message->to($this->request->input('email'));
         });
 
         return redirect('learn#register')->withSuccess('success');

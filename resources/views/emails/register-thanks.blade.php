@@ -15,11 +15,14 @@
                             <tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
                                 <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
                                     <img style="border-bottom:1px dotted #ddd; margin-bottom:20px; padding:0 20% 20px; width:60%" src="https://codelouisville.s3.amazonaws.com/assets/img/code-louisville-email.png">
-                                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: bold; margin: 0 0 10px; padding: 0;">
-                                        {{ $first }}, thank you for registering to participate in CodeLouisville. We have received your information and will be in touch with next steps.
+                                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                        {{ $first }},
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        &mdash;<br>The CodeLouisville Team
+                                        Thank you for registering to participate in CodeLouisville. We have received your information and will be in touch with next steps.
+                                    </p>
+                                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                        &mdash;<br>The Code Louisville team
                                     </p>
                                 </td>
                             </tr>

@@ -16,13 +16,23 @@
                                 <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
                                     <img style="border-bottom:1px dotted #ddd; margin-bottom:20px; padding:0 20% 20px; width:60%" src="https://codelouisville.s3.amazonaws.com/assets/img/code-louisville-email.png">
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        {{ $first }},
+                                        Hi {{ $first }},
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        Thank you for registering to participate in Code Louisville. We have received your information and will be in touch with next steps.
+                                        Thank you for applying to participate in Code Louisville! We have received your information and you have been added to our list to contact when the next available session is open for enrollment.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        &mdash;<br>The Code Louisville team
+                                        We are currently enrolling for the <strong>September 2017</strong> session, as our January and May sessions are already full. Approximately 90 days before your class begins, you will be contacted by Code Louisville with instructions on the requirements to enter the program. Along with that email you will receive access to Treehouse, our online learning partner, where you will learn your new programming skills. During this time, you will have 30 days to complete a set of pre-work courses on Treehouse. If you completed the pre-work, you will be signed up for the September session of Code Louisville beginning August 28th.
+                                    </p>
+                                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                        You are encouraged to add the @codelouisville.org and @teamtreehouse.com domains to your email&rsquo;s safe list to ensure the emails do not get sent to your Spam or Promotions folder.
+                                    </p>
+                                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                        If you have any questions or wish to withdraw your application, please contact <a href="mailto:apply@codelouisville.org">apply@codelouisville.org</a>.
+                                    </p>
+                                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                        Thank you and we look forward to working with you!<br>
+                                        The Code Louisville Team
                                     </p>
                                 </td>
                             </tr>

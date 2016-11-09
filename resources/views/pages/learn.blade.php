@@ -75,7 +75,7 @@
                             <div @include('edit', ['key' => 'learn_questions_desc'])>{!! $learn_questions_desc !!}</div>
                         </section>
                         <hr>
-                        <h3 class="form-title" id="register">Registration</h3>
+                        <h3 class="form-title" id="apply">Application</h3>
                         <section class="registration-form inset">
                             @if(Session::has('success'))
                                 <div class="inset">
@@ -124,7 +124,7 @@
                                     </form>
                                 </div>
                                 <div v-if="!$learn.eligibility.valid">
-                                    <p class="m0-bottom">You must meet our <a href="#eligibility">eligibility requirements</a> before registering.</p>
+                                    <p class="m0-bottom">You must meet our <a href="#eligibility">eligibility requirements</a> before applying.</p>
                                 </div>
                             @endif
                         </section>
@@ -139,7 +139,7 @@
                             <li><a href="#structure">Program structure</a></li>
                             <li><a href="#pricing">Pricing</a></li>
                             <li><a href="#questions">FAQs</a></li>
-                            <li><a href="#register" class="button pink"><i class="fa fa-clipboard"></i><span>Register</span><span>Register</span></a></li>
+                            <li><a href="#apply" class="button pink"><i class="fa fa-clipboard"></i><span>Apply</span><span>Apply</span></a></li>
                         </ul>
                     </nav>
                 </div>

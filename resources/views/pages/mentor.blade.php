@@ -127,8 +127,9 @@
                                             <label>
                                                 <p>Which track would you like to mentor?</p>
                                                 <select name="track" v-model="track">
-                                                    <option value="Javascript" selected>Full-stack Javascript</option>
+                                                    <option value="Front-End">Front-End</option>
                                                     <option value=".NET">.NET</option>
+                                                    <option value="Javascript" selected>Full-stack Javascript</option>
                                                     <option value="PHP">PHP</option>
                                                 </select>
                                             </label>
@@ -138,9 +139,9 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p>Which day(s) are you available to mentor?</p>
-                                            <p v-if="track == 'Javascript'"><input type="checkbox" name="availability[]" value="M" v-validate:availability="['required']"> &nbsp; Monday</p>
+                                            <p><input type="checkbox" name="availability[]" value="M" v-validate:availability="['required']"> &nbsp; Monday</p>
                                             <p><input type="checkbox" name="availability[]" value="T" v-validate:availability> &nbsp; Tuesday</p>
-                                            <p v-if="track == 'Javascript'"><input type="checkbox" name="availability[]" value="W" v-validate:availability> &nbsp; Wednesday</p>
+                                            <p><input type="checkbox" name="availability[]" value="W" v-validate:availability> &nbsp; Wednesday</p>
                                             <p><input type="checkbox" name="availability[]" value="Th" v-validate:availability> &nbsp; Thursday</p>
                                         </div>
                                     </div>

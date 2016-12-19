@@ -92,7 +92,7 @@ class Forms extends Controller
             $message->to($this->request->input('email'));
         });
 
-        return redirect('learn#register')->withSuccess('success');
+        return redirect('learn#apply')->withSuccess('success');
     }
 
     public function mentor()

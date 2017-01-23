@@ -31,7 +31,7 @@
                                         You are encouraged to add the @codelouisville.org and @teamtreehouse.com domains to your email&rsquo;s safe list to ensure the emails do not get sent to your Spam or Promotions folder.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        If you have any questions or wish to withdraw your application, please contact <a href="mailto:apply@codelouisville.org">apply@codelouisville.org</a>.
+                                    If you have any questions or wish to withdraw your application, please contact <a href="mailto:apply@codelouisville.org">apply@codelouisville.org</a>. If you are a veteran, please email us as you may be eligible for priority of service allowing early enrollment.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
                                         Thank you and we look forward to working with you!<br>

@@ -80,7 +80,6 @@
                                                 <option value="php" @if (isset($mentor) && $mentor->track == 'php') selected @endif>PHP</option>
                                                 <option value="dotnet" @if (isset($mentor) && $mentor->track == 'dotnet') selected @endif>.NET</option>
                                                 <option value="ruby" @if (isset($mentor) && $mentor->track == 'ruby') selected @endif>Ruby</option>
-                                                <option value="swift" @if (isset($mentor) && $mentor->track == 'swift') selected @endif>Swift</option>
                                             </select>
                                         </label>
                                     </div>

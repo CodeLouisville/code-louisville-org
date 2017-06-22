@@ -24,9 +24,9 @@ class CreateEnrollmentsTable extends Migration
                 $table->string('state')->nullable();
                 $table->string('countycode')->nullable();
                 $table->string('zipcode')->nullable();
-                $table->string('email')->nullable();
-                $table->string('msgphone')->nullable();
                 $table->string('birthdate')->nullable();
+                $table->string('msgphone')->nullable();
+                $table->string('email')->nullable();
                 $table->string('gender')->nullable();
                 $table->string('amerindian')->nullable();
                 $table->string('asian')->nullable();
@@ -51,9 +51,19 @@ class CreateEnrollmentsTable extends Migration
                 $table->string('codelou_lou')->nullable();
                 $table->string('codelou_jeff')->nullable();
                 $table->string('codelou_lagrange')->nullable();
+                $table->string('selectiveservice')->nullable();
+                $table->string('incomelevel')->nullable();
                 $table->string('codelouenrolleduniv')->nullable();
                 $table->string('codelouwhatunivdegree')->nullable();
-                $table->string('codeloucodeofconduct')->nullable();
+                $table->string('codeloucat1dslwrk')->nullable();
+                $table->string('codeloucat1ds2wrk')->nullable();
+                $table->string('codeloucat1ds3wrk')->nullable();
+                $table->string('codeloucat1ds4wrk')->nullable();
+                $table->string('codeloucat1ds5wrk')->nullable();
+                $table->string('codelounumhouse')->nullable();
+                $table->string('rectanf')->nullable();
+                $table->string('recgeneralasst')->nullable();
+                $table->string('recother')->nullable();
                 $table->timestamps();
             });
         }

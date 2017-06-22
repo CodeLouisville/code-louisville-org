@@ -12,19 +12,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-
-            $table->increments('id');
-            $table->tinyInteger('admin');
-
-            $table->string('github_id')->unique();
-            $table->string('name');
-            $table->string('email');
-            $table->string('avatar');
-
-            $table->rememberToken();
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('users'))
+        {
+            Schema::create('users', function (Blueprint $table) {
+                $table->increments('id');
+                $table->tinyInteger('admin');
+                $table->string('github_id')->unique();
+                $table->string('name');
+                $table->string('email');
+                $table->string('avatar');
+                $table->rememberToken();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

@@ -160,7 +160,8 @@ return [
          * Other Service Providers...
          */
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Artisaninweb\SoapWrapper\ServiceProvider::class
+        Artisaninweb\SoapWrapper\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -185,6 +186,7 @@ return [
         'Cookie'      => Illuminate\Support\Facades\Cookie::class,
         'Crypt'       => Illuminate\Support\Facades\Crypt::class,
         'DB'          => Illuminate\Support\Facades\DB::class,
+        'Debugbar'    => Barryvdh\Debugbar\Facade::class,
         'Eloquent'    => Illuminate\Database\Eloquent\Model::class,
         'Event'       => Illuminate\Support\Facades\Event::class,
         'File'        => Illuminate\Support\Facades\File::class,
@@ -202,7 +204,7 @@ return [
         'Route'       => Illuminate\Support\Facades\Route::class,
         'Schema'      => Illuminate\Support\Facades\Schema::class,
         'Session'     => Illuminate\Support\Facades\Session::class,
-        'SoapWrapper' => Artisaninweb\SoapWrapper\Facades\SoapWrapper::class,
+        'SoapWrapper' => Artisaninweb\SoapWrapper\Facade\SoapWrapper::class,
         'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
         'Storage'     => Illuminate\Support\Facades\Storage::class,
         'URL'         => Illuminate\Support\Facades\URL::class,

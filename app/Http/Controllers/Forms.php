@@ -4,26 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Auth;
+use GuzzleHttp;
+use Illuminate\Http\Request;
 use Mail;
 use Redirect;
-use Illuminate\Http\Request;
-use SoapWrapper;
-use App\Mentors;
+use Artisaninweb\SoapWrapper\SoapWrapper;
+
+use App\Enrollments;
 use App\Grads;
-use GuzzleHttp;
+use App\Mentors;
 
 class Forms extends Controller
 {
     protected $request;
+    protected $soapWrapper;
 
     private $mail_from;
     private $mail_recipient;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request, SoapWrapper $soapWrapper)
     {
         $this->request = $request;
         $this->mail_from = env('MAIL_FROM');
         $this->mail_recipient = env('MAIL_RECIPIENT');
+        $this->soapWrapper = $soapWrapper;
     }
 
     public function enroll()
@@ -32,7 +36,7 @@ class Forms extends Controller
             'PassPhrase' => env('ENROLL_PASS'),
             'FirstName' => $this->request->input('FirstName'),
             'LastName' => $this->request->input('LastName'),
-            'SSN' => $this->request->input('ssn'),
+            'SSN' => $this->request->input('SSN'),
             'Address' => $this->request->input('Address'),
             'City' => $this->request->input('City'),
             'State' => $this->request->input('State'),
@@ -54,22 +58,52 @@ class Forms extends Controller
             'Citizenship' => $this->request->input('Citizenship'),
             'VeteranStatus' => $this->request->input('VeteranStatus'),
             'EmploymentStatus' => $this->request->input('EmploymentStatus'),
-            'JobRateOfPay' => $this->request->input('JobRateOfPay'),
-            'WagePeriod' => $this->request->input('WagePeriod'),
             'UIStatus' => $this->request->input('UIStatus'),
             'DisablingCondition' => $this->request->input('DisablingCondition'),
             'HaveFelony' => $this->request->input('HaveFelony'),
-            'FelonyExplain' => $this->request->input('FelonyExplain'),
             'CodeLouEdLevel' => $this->request->input('CodeLouEdLevel'),
-            'DegreeWhatType' => $this->request->input('DegreeWhatType')
+            'EmployedTech' => $this->request->input('EmployedTech'),
+            'JobMainDuties' => $this->request->input('JobMainDuties'),
+            'InterestedTech' => $this->request->input('InterestedTech'),
+            'JobInterest' => $this->request->input('JobInterest'),
+            'SelectiveService' => $this->request->input('SelectiveService'),
+            'IncomeLevel' => $this->request->input('IncomeLevel'),
+            'CodeLouCat1DslWrk' => $this->request->input('CodeLouCat1DslWrk'),
+            'CodeLouCat2DslWrk' => $this->request->input('CodeLouCat2DslWrk'),
+            'CodeLouCat3DslWrk' => $this->request->input('CodeLouCat3DslWrk'),
+            'CodeLouCat4DslWrk' => $this->request->input('CodeLouCat4DslWrk'),
+            'CodeLouCat5DslWrk' => $this->request->input('CodeLouCat5DslWrk'),
+            'CodeLouNumHouse' => $this->request->input('CodeLouNumHouse'),
+            'RecTANF' => $this->request->input('RecTANF'),
+            'RecGeneralAsst' => $this->request->input('RecGeneralAsst'),
+            'RecOther' => $this->request->input('RecOther'),
+            'CodeLou_Lou' => $this->request->input('CodeLou_Lou'),
+            'CodeLou_Jeff' => $this->request->input('CodeLou_Jeff'),
+            'CodeLou_LaGrange' => $this->request->input('CodeLou_LaGrange'),
+            'CodeLouEnrolledUniv' => $this->request->input('CodeLouEnrolledUniv'),
+            'CodeLouWhatUnivDegree' => $this->request->input('CodeLouWhatUnivDegree'),
+            'CodeLouCodeOfConduct' => $this->request->input('CodeLouCodeOfConduct'),
         ];
 
-        SoapWrapper::add(function ($service) { $service->name('SelfRegister')->wsdl(env('ENROLL_URL')); });
+        if (env('ENROLL_LOCAL') == 'true')
+        {
+            $data = array_change_key_case($data, CASE_LOWER);
+            $enrollment = Enrollments::create($data);
 
-        SoapWrapper::service('SelfRegister', function ($service) use ($data) {
+            return view('pages.enroll-thanks', $enrollment);
+        }
+        else
+        {
+            $this->soapWrapper->add('CodeLouis', function ($service) {
+                $service
+                    ->wsdl(env('ENROLL_URL'))
+                    ->trace(true);
+            });
 
-            var_dump($service->call('SelfRegister', [$data]));
-        });
+            $response = $this->soapWrapper->call('CodeLouis.SelfRegister', $data);
+
+            var_dump($response);
+        }
     }
 
     public function register()

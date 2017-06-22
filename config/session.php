@@ -135,7 +135,7 @@ return [
     |
     */
 
-    'domain' => 'codelouisville.org',
+    'domain' => env('SESSION_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------

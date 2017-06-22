@@ -124,12 +124,12 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p>What is your race(s)?</p>
-                                            <p><input type="checkbox" name="AmerIndian"> &nbsp; American Indian / Alaskan Native</p>
-                                            <p><input type="checkbox" name="Asian"> &nbsp; Asian</p>
-                                            <p><input type="checkbox" name="Black"> &nbsp; Black</p>
-                                            <p><input type="checkbox" name="White"> &nbsp; White</p>
-                                            <p><input type="checkbox" name="Islander"> &nbsp; Native Hawaiian or Other Pacific Islander</p>
-                                            <p><input type="checkbox" name="DidNotIdentifyRace"> &nbsp; I do not choose to identify</p>
+                                            <p><input type="checkbox" value="1" name="AmerIndian"> &nbsp; American Indian / Alaskan Native</p>
+                                            <p><input type="checkbox" value="1" name="Asian"> &nbsp; Asian</p>
+                                            <p><input type="checkbox" value="1" name="Black"> &nbsp; Black</p>
+                                            <p><input type="checkbox" value="1" name="White"> &nbsp; White</p>
+                                            <p><input type="checkbox" value="1" name="Islander"> &nbsp; Native Hawaiian or Other Pacific Islander</p>
+                                            <p><input type="checkbox" value="1" name="DidNotIdentifyRace"> &nbsp; I do not choose to identify</p>
                                         </div>
                                     </div>
                                     <hr>
@@ -320,17 +320,6 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <div v-if="eduLevel == 5 || eduLevel == 6 || eduLevel == 7 || eduLevel == 8">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <label>
-                                                    <p>If you hold a degree, what was your major?</p>
-                                                    <input type="text" name="DegreeWhatType">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label>
@@ -572,18 +561,18 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <p>Please check any of the following benefits that apply to you:</p>
-                                            <p><input type="checkbox" name="RecTANF"> &nbsp; Public Assistance (cash) income support through programs such as TANF/KTAP, SSI</p>
-                                            <p><input type="checkbox" name="RecGeneralAsst"> &nbsp; SNAP</p>
-                                            <p><input type="checkbox" name="RecOther"> &nbsp; Homeless temporary residence/shelter</p>
+                                            <p><input type="checkbox" value="1" name="RecTANF"> &nbsp; Public Assistance (cash) income support through programs such as TANF/KTAP, SSI</p>
+                                            <p><input type="checkbox" value="1" name="RecGeneralAsst"> &nbsp; SNAP</p>
+                                            <p><input type="checkbox" value="1" name="RecOther"> &nbsp; Homeless temporary residence/shelter</p>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p>What classroom locations are you available to attend?</p>
-                                            <p><input type="checkbox" name="CodeLou_Lou"> &nbsp; Downtown Louisville</p>
-                                            <p><input type="checkbox" name="CodeLou_Jeff"> &nbsp; Jeffersonville, IN</p>
-                                            <p><input type="checkbox" name="CodeLou_LaGrange"> &nbsp; La Grange, KY</p>
+                                            <p><input type="checkbox" value="1" name="CodeLou_Lou"> &nbsp; Downtown Louisville</p>
+                                            <p><input type="checkbox" value="1" name="CodeLou_Jeff"> &nbsp; Jeffersonville, IN</p>
+                                            <p><input type="checkbox" value="1" name="CodeLou_LaGrange"> &nbsp; La Grange, KY</p>
                                         </div>
                                     </div>
                                     <hr>

@@ -655,7 +655,7 @@ footer .fa { color:#fff; }
  * | responsive
  * |----------------------------------------------------------------------------
  */
-@media (min-width: 768px) {
+@media (min-width:768px) {
     .modal-dialog { width:80%; }
 }
 
@@ -877,4 +877,24 @@ footer .fa { color:#fff; }
         margin:0 0 16px !important;
         width:100%;
     }
+}
+
+.invalid + span,
+.valid + span {
+    color:#ac040f;
+    text-transform:uppercase;
+    font-size:.75em;
+    display:inline-block;
+    margin-top:8px;
+}
+
+.invalid + span:after,
+.valid + span:after {
+    content:'Required';
+}
+
+.valid + span { color:#c0c0c0; }
+
+[name="ZipCode"].invalid.dirty + span:after {
+    content:'Not a valid / eligible zip code';
 }

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Enrollment Form')
+@section('title', 'Application Form')
 
 @section('content')
 
@@ -9,7 +9,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h3 class="form-title" id="enrollment">Enrollment Form</h3>
+                    <section id="structure" class="m2-bottom">
+                        <h3 class="m0" @include('edit', ['key' => 'apply_intro_title'])>{!! $apply_intro_title !!}</h3>
+                        <hr>
+                        <div @include('edit', ['key' => 'apply_intro_desc'])>{!! $apply_intro_desc !!}</div>
+                    </section>
+                    <h3 class="form-title" id="enrollment">Application Form</h3>
                     @if ($secure == 'true')
                         <section class="enrollment-form inset">
                             <validator name="enroll">
@@ -20,12 +25,14 @@
                                             <label>
                                                 <p>First name</p>
                                                 <input type="text" name="FirstName" v-validate:FirstName="['required']">
+                                                <span></span>
                                             </label>
                                         </div>
                                         <div class="col-sm-4">
                                             <label>
                                                 <p>Last name</p>
                                                 <input type="text" name="LastName" v-validate:LastName="['required']">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -35,6 +42,7 @@
                                             <label>
                                                 <p>Social Security Number</p>
                                                 <input type="text" name="SSN" v-validate:ssn="['required']" placeholder="xxx-xx-xxxx">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -44,6 +52,7 @@
                                             <label>
                                                 <p>Address</p>
                                                 <input type="text" name="Address" v-validate:Address="['required']">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -53,27 +62,21 @@
                                             <label>
                                                 <p>City</p>
                                                 <input type="text" name="City" v-validate:City="['required']">
+                                                <span></span>
                                             </label>
                                         </div>
                                         <div class="col-sm-4">
                                             <label>
                                                 <p>State</p>
                                                 <input type="text" name="State" v-validate:State="['required']">
+                                                <span></span>
                                             </label>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <label>
-                                                <p>County</p>
-                                                <input type="text" name="CountyCode" v-validate:CountyCode="['required']">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
                                         <div class="col-sm-4">
                                             <label>
                                                 <p>Zip code</p>
-                                                <input type="text" name="ZipCode" v-validate:ZipCode="['required','zip','zipFormat']">
+                                                <input type="text" name="ZipCode" maxlength="5" v-validate:ZipCode="['required','zip','zipFormat']">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -83,6 +86,7 @@
                                             <label>
                                                 <p>Birth date</p>
                                                 <input type="text" name="BirthDate" v-validate:BirthDate="['required','dob']" placeholder="mm/dd/yyyy">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -92,6 +96,7 @@
                                             <label>
                                                 <p>Phone</p>
                                                 <input type="text" name="MsgPhone" v-validate:MsgPhone="['required','phone']" placeholder="xxx-xxx-xxxx">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -101,6 +106,7 @@
                                             <label>
                                                 <p>Email address</p>
                                                 <input type="text" name="Email" v-validate:Email="['required','email']">
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -113,10 +119,8 @@
                                                     <option value="" selected>- Select -</option>
                                                     <option value="2">Male</option>
                                                     <option value="1">Female</option>
-                                                    <option value="3">Transgender female to male</option>
-                                                    <option value="5">Transgender male to female</option>
-                                                    <option value="6">Other</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -143,6 +147,7 @@
                                                     <option value="2">No</option>
                                                     <option value="3">Unknown</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -156,6 +161,7 @@
                                                     <option value="1">Yes</option>
                                                     <option value="2">No</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -165,11 +171,12 @@
                                             <div class="col-sm-4">
                                                 <label>
                                                     <p>Is your primary language Spanish?</p>
-                                                    <select name="PrimaryLangSpan" v-validate:PrimaryLangSpan="">
+                                                    <select name="PrimaryLangSpan" v-validate:PrimaryLangSpan="['required']">
                                                         <option value="" selected>- Select -</option>
                                                         <option value="1">Yes</option>
                                                         <option value="2">No</option>
                                                     </select>
+                                                    <span></span>
                                                 </label>
                                             </div>
                                         </div>
@@ -185,6 +192,7 @@
                                                     <option value="2">Non-Citizen Eligible for Work</option>
                                                     <option value="3">Non-Citizen Ineligible for Work</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -193,21 +201,49 @@
                                         <div class="col-sm-6">
                                             <label>
                                                 <p>Are you a veteran?</p>
-                                                <select name="VeteranStatus" v-validate:VeteranStatus="['required']">
+                                                <select name="VeteranStatus" v-model="veteranStatus" v-validate:veteranStatus="['required']">
                                                     <option value="" selected>- Select -</option>
                                                     <option value="1">Yes - Served more than 180 days</option>
                                                     <option value="4">Yes - Served 180 days or less</option>
+                                                    <option value="3">Spouse of a veteran</option>
                                                     <option value="2">No</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
                                     <hr>
+                                    <div v-if="veteranStatus == '3'">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <label>
+                                                    <p>Do you meet one or more of the following?</p>
+                                                    <ul>
+                                                        <li>A spouse of any veteran who died of a service-connected disability</li>
+                                                        <li>A spouse of someone on active duty who is listed as missing in action, captured, or detained by a foreign power</li>
+                                                        <li>Spouse of a veteran who has a total disability resulting from service-connected disability</li>
+                                                        <li>A spouse of any veteran who died while a disability was in existence</li>
+                                                    </ul>
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <select name="CodeLouCat5DslWrk" v-model="codeLouCat5DslWrk" v-validate:codeLouCat5DslWrk="['required']">
+                                                                <option value="" selected>- Select -</option>
+                                                                <option value="1">Yes</option>
+                                                                <option value="2">No</option>
+                                                            </select>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label>
                                                 <p>What is your employment status?</p>
-                                                <select name="EmploymentStatus" v-model="employment" v-validate:EmploymentStatus="['required']">
+                                                <select name="EmploymentStatus" v-model="employmentStatus" v-validate:employmentStatus="['required']">
                                                     <option value="" selected>- Select -</option>
                                                     <option value="1">Employed Full Time</option>
                                                     <option value="2">Employed Part Time</option>
@@ -216,34 +252,11 @@
                                                     <option value="5">Self Employed</option>
                                                     <option value="6">Freelance / Contractor</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
                                     <hr>
-                                    <div v-if="employment == 1 || employment == 2 || employment == 5 || employment == 6">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <label>
-                                                    <p>What is your current wage?</p>
-                                                    <input type="text" name="JobRateOfPay" v-validate:JobRateOfPay="['required']">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <label>
-                                                    <p>Wage hourly or annually?</p>
-                                                    <select name="WagePeriod" v-validate:WagePeriod="['required']">
-                                                        <option value="" selected>- Select -</option>
-                                                        <option value="H">Hourly</option>
-                                                        <option value="A">Annually</option>
-                                                    </select>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
                                     <div class="row">
                                         <div class="col-sm-8">
                                             <label>
@@ -254,12 +267,13 @@
                                                     <option value="1">Receiving unemployment insurance</option>
                                                     <option value="3">Exhausted unemployment insurance</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <label>
                                                 <p>Are you disabled?</p>
                                                 <select name="DisablingCondition" v-validate:DisablingCondition="['required']">
@@ -268,7 +282,17 @@
                                                     <option value="2">Yes, doesn't keep me from working</option>
                                                     <option value="3">No</option>
                                                 </select>
+                                                <span></span>
                                             </label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p>Please check any of the following benefits that apply to you:</p>
+                                            <p><input type="checkbox" value="1" name="RecTANF"> &nbsp; Public Assistance (cash) income support through programs such as TANF/KTAP, SSI</p>
+                                            <p><input type="checkbox" value="1" name="RecGeneralAsst"> &nbsp; SNAP</p>
+                                            <p><input type="checkbox" value="1" name="RecOther"> &nbsp; Homeless temporary residence/shelter</p>
                                         </div>
                                     </div>
                                     <hr>
@@ -283,6 +307,7 @@
                                                             <option value="1">Yes</option>
                                                             <option value="2">No</option>
                                                         </select>
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
@@ -294,7 +319,8 @@
                                             <div class="col-sm-6">
                                                 <label>
                                                     <p>If yes, please explain, so we can better assist you:</p>
-                                                    <textarea name="FelonyExplain"></textarea>
+                                                    <textarea name="FelonyExplain" v-validate:felonyExplain="['required']"></textarea>
+                                                    <span></span>
                                                 </label>
                                             </div>
                                         </div>
@@ -316,6 +342,7 @@
                                                     <option value="8">Ph. D.</option>
                                                     <option value="9">None of the above</option>
                                                 </select>
+                                                <span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -331,6 +358,7 @@
                                                             <option value="1">Yes</option>
                                                             <option value="2">No</option>
                                                         </select>
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
@@ -344,7 +372,8 @@
                                                     <p>What college or university, and what degree are you pursuing?</p>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <input type="text" name="CodeLouWhatUnivDegree">
+                                                            <input type="text" name="CodeLouWhatUnivDegree" v-validate:codeLouWhatUnivDegree="['required']">
+                                                            <span></span>
                                                         </div>
                                                     </div>
                                                 </label>
@@ -364,6 +393,7 @@
                                                             <option value="2">No</option>
                                                             <option value="3">Unsure</option>
                                                         </select>
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
@@ -375,83 +405,13 @@
                                             <div class="col-sm-6">
                                                 <label>
                                                     <p>If yes, what is your current job title?</p>
-                                                    <input type="text" name="JobMainDuties">
+                                                    <input type="text" name="JobMainDuties" v-validate:jobMainDuties="['required']">
+                                                    <span></span>
                                                 </label>
                                             </div>
                                         </div>
                                         <hr>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <label>
-                                                <p>Are you interested in gaining employment as a software developer or in a software development-related position?</p>
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <select name="InterestedTech" v-model="interestedTech" v-validate:interestedTech="['required']">
-                                                            <option value="" selected>- Select -</option>
-                                                            <option value="1">Yes</option>
-                                                            <option value="2">No</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div v-if="interestedTech == 'Yes'">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <label>
-                                                    <p>What are your plans for the training you'll receive through Code Louisville?  For example, what type of job are you interested in obtaining?</p>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <textarea name="JobInterest"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <label>
-                                                <p>Are you registered for the selective service?</p>
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">
-                                                            <option value="" selected>- Select -</option>
-                                                            <option value="1">Yes, registered</option>
-                                                            <option value="2">No, not registered</option>
-                                                            <option value="4">Not required</option>
-                                                            <option value="9">N/A</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <label>
-                                                <p>What is your annual household income?</p>
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <select name="IncomeLevel" v-model="incomeLevel" v-validate:incomeLevel="['required']">
-                                                            <option value="" selected>- Select -</option>
-                                                            <option value="1">$0 &ndash; $19,999</option>
-                                                            <option value="2">$20,000 &ndash; $39,999</option>
-                                                            <option value="3">$40,000 &ndash; $59,999</option>
-                                                            <option value="4">$60,000 &ndash; $79,999</option>
-                                                            <option value="5">$80,000+</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <hr>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label>
@@ -459,10 +419,11 @@
                                                 <div class="row">
                                                     <div class="col-sm-4">
                                                         <select name="CodeLouCat1DslWrk" v-model="codeLouCat1DslWrk" v-validate:codeLouCat1DslWrk="['required']">
-                                                            <option value="" selected>- Select -</option>
+                                                            <option value="">- Select -</option>
                                                             <option value="1">Yes</option>
-                                                            <option value="2">No</option>
+                                                            <option value="2" selected>No</option>
                                                         </select>
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
@@ -481,6 +442,7 @@
                                                                 <option value="1">Yes</option>
                                                                 <option value="2">No</option>
                                                             </select>
+                                                            <span></span>
                                                         </div>
                                                     </div>
                                                 </label>
@@ -491,88 +453,141 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label>
-                                                <p>Are you formerly self-employed and now unemployed as a result of general economic conditions in the community in which you reside, or due to natural disaster?</p>
+                                                <p>Are you interested in gaining employment as a software developer or in a software development-related position?</p>
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <select name="CodeLouCat3DslWrk" v-model="codeLouCat3DslWrk" v-validate:codeLouCat3DslWrk="['required']">
+                                                        <select name="InterestedTech" v-model="interestedTech" v-validate:interestedTech="['required']">
                                                             <option value="" selected>- Select -</option>
                                                             <option value="1">Yes</option>
                                                             <option value="2">No</option>
+                                                            <option value="3">I am already employed in this area</option>
                                                         </select>
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
                                         </div>
                                     </div>
                                     <hr>
+                                    <div v-if="interestedTech == '1'">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <label>
+                                                    <p>What are your plans for the training you'll receive through Code Louisville?  For example, what type of job are you interested in obtaining?</p>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <textarea name="JobInterest" v-validate:jobInterest="['required']"></textarea>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div v-if="gender == '2'">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <label>
+                                                    <p>Are you registered for the selective service?</p>
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">
+                                                                <option value="" selected>- Select -</option>
+                                                                <option value="1">Yes, registered</option>
+                                                                <option value="2">No, not registered</option>
+                                                                <option value="4">Not required</option>
+                                                                <option value="9">N/A</option>
+                                                            </select>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label>
-                                                <p>Have you been providing unpaid services to family members while dependent on the income of another family member, and are no longer supported by that income?</p>
+                                                <p>What is your annual household income?</p>
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <select name="CodeLouCat4DslWrk" v-model="codeLouCat4DslWrk" v-validate:codeLouCat4DslWrk="['required']">
+                                                        <select name="IncomeLevel" v-model="incomeLevel" v-validate:incomeLevel="['required']">
                                                             <option value="" selected>- Select -</option>
-                                                            <option value="1">Yes</option>
-                                                            <option value="2">No</option>
+                                                            <option value="1">$0 &ndash; $19,999</option>
+                                                            <option value="2">$20,000 &ndash; $39,999</option>
+                                                            <option value="3">$40,000 &ndash; $59,999</option>
+                                                            <option value="4">$60,000 &ndash; $79,999</option>
+                                                            <option value="5">$80,000+</option>
                                                         </select>
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
                                         </div>
                                     </div>
                                     <hr>
+                                    <div v-if="employmentStatus == '3' || employmentStatus == '4'">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <label>
+                                                    <p>Are you formerly self-employed and now unemployed as a result of general economic conditions in the community in which you reside, or due to natural disaster?</p>
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <select name="CodeLouCat3DslWrk" v-model="codeLouCat3DslWrk" v-validate:codeLouCat3DslWrk="['required']">
+                                                                <option value="" selected>- Select -</option>
+                                                                <option value="1">Yes</option>
+                                                                <option value="2">No</option>
+                                                            </select>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <label>
+                                                    <p>Have you been providing unpaid services to family members while dependent on the income of another family member, and are no longer supported by that income?</p>
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <select name="CodeLouCat4DslWrk" v-model="codeLouCat4DslWrk" v-validate:codeLouCat4DslWrk="['required']">
+                                                                <option value="" selected>- Select -</option>
+                                                                <option value="1">Yes</option>
+                                                                <option value="2">No</option>
+                                                            </select>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label>
-                                                <p>Do you meet one or more of the following?</p>
-                                                <ul>
-                                                    <li>A spouse of any veteran who died of a service-connected disability</li>
-                                                    <li>A spouse of someone on active duty who is listed as missing in action, captured, or detained by a foreign power</li>
-                                                    <li>Spouse of a veteran who has a total disability resulting from service-connected disability</li>
-                                                    <li>A spouse of any veteran who died while a disability was in existence</li>
-                                                </ul>
+                                                <p>How many family members reside in your household?</p>
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <select name="CodeLouCat5DslWrk" v-model="codeLouCat5DslWrk" v-validate:codeLouCat5DslWrk="['required']">
-                                                            <option value="" selected>- Select -</option>
-                                                            <option value="1">Yes</option>
-                                                            <option value="2">No</option>
-                                                        </select>
+                                                        <input type="text" name="CodeLouNumHouse" value="1" v-validate:codeLouNumHouse="['required']">
+                                                        <span></span>
                                                     </div>
                                                 </div>
                                             </label>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <label>
-                                                <p>How many family members share reside in your household?</p>
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <input type="text" name="CodeLouNumHouse" v-validate:codeLouNumHouse="['required']">
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <p>Please check any of the following benefits that apply to you:</p>
-                                            <p><input type="checkbox" value="1" name="RecTANF"> &nbsp; Public Assistance (cash) income support through programs such as TANF/KTAP, SSI</p>
-                                            <p><input type="checkbox" value="1" name="RecGeneralAsst"> &nbsp; SNAP</p>
-                                            <p><input type="checkbox" value="1" name="RecOther"> &nbsp; Homeless temporary residence/shelter</p>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p>What classroom locations are you available to attend?</p>
-                                            <p><input type="checkbox" value="1" name="CodeLou_Lou"> &nbsp; Downtown Louisville</p>
-                                            <p><input type="checkbox" value="1" name="CodeLou_Jeff"> &nbsp; Jeffersonville, IN</p>
-                                            <p><input type="checkbox" value="1" name="CodeLou_LaGrange"> &nbsp; La Grange, KY</p>
+                                            <p><input type="checkbox" value="1" v-model="locLou" name="CodeLou_Lou"> &nbsp; Downtown Louisville</p>
+                                            <p><input type="checkbox" value="1" v-model="locJeff" name="CodeLou_Jeff"> &nbsp; Jeffersonville, IN</p>
+                                            <p><input type="checkbox" value="1" v-model="locLaGrange" name="CodeLou_LaGrange"> &nbsp; La Grange, KY</p>
+                                            <input type="hidden" v-model="location" v-validate:location="['required']">
+                                            <span></span>
                                         </div>
                                     </div>
                                     <hr>
@@ -619,7 +634,18 @@
         new Vue({
             el: '#enroll',
             data: {
-
+                locLou: 1,
+                locJeff: 0,
+                locLaGrange: 0
+            },
+            computed: {
+                location: function () {
+                    if (this.locLou || this.locJeff || this.locLaGrange) {
+                        return 'yes'
+                    } else {
+                        return ''
+                    }
+                }
             },
             methods: {
                 onReset: function () {

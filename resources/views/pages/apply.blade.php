@@ -67,13 +67,6 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <label>
-                                                <p>State</p>
-                                                <input type="text" name="State" v-validate:State="['required']">
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label>
                                                 <p>Zip code</p>
                                                 <input type="text" name="ZipCode" maxlength="5" v-validate:ZipCode="['required','zip','zipFormat']">
                                                 <span></span>
@@ -128,12 +121,14 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p>What is your race(s)?</p>
-                                            <p><input type="checkbox" value="1" name="AmerIndian"> &nbsp; American Indian / Alaskan Native</p>
-                                            <p><input type="checkbox" value="1" name="Asian"> &nbsp; Asian</p>
-                                            <p><input type="checkbox" value="1" name="Black"> &nbsp; Black</p>
-                                            <p><input type="checkbox" value="1" name="White"> &nbsp; White</p>
-                                            <p><input type="checkbox" value="1" name="Islander"> &nbsp; Native Hawaiian or Other Pacific Islander</p>
-                                            <p><input type="checkbox" value="1" name="DidNotIdentifyRace"> &nbsp; I do not choose to identify</p>
+                                            <p><input type="checkbox" value="1" v-model="amerIndian" name="AmerIndian"> &nbsp; American Indian / Alaskan Native</p>
+                                            <p><input type="checkbox" value="1" v-model="asian" name="Asian"> &nbsp; Asian</p>
+                                            <p><input type="checkbox" value="1" v-model="black" name="Black"> &nbsp; Black</p>
+                                            <p><input type="checkbox" value="1" v-model="white" name="White"> &nbsp; White</p>
+                                            <p><input type="checkbox" value="1" v-model="islander" name="Islander"> &nbsp; Native Hawaiian or Other Pacific Islander</p>
+                                            <p><input type="checkbox" value="1" v-model="didNotIdentifyRace" name="DidNotIdentifyRace"> &nbsp; I do not choose to identify</p>
+                                            <input type="hidden" v-model="race" v-validate:race="['required']">
+                                            <span></span>
                                         </div>
                                     </div>
                                     <hr>
@@ -641,6 +636,13 @@
             computed: {
                 location: function () {
                     if (this.locLou || this.locJeff || this.locLaGrange) {
+                        return 'yes'
+                    } else {
+                        return ''
+                    }
+                },
+                race: function () {
+                    if (this.amerIndian || this.asian || this.black || this.white || this.islander || this.didNotIdentifyRace) {
                         return 'yes'
                     } else {
                         return ''

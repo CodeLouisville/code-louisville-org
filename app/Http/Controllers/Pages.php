@@ -73,7 +73,7 @@ class Pages extends Controller
         return view('pages.learn', $data);
     }
 
-    public function enroll()
+    public function apply()
     {
         $secure = 'false'; if (Request::secure()) $secure = 'true';
 
@@ -101,10 +101,10 @@ class Pages extends Controller
             }
         }
 
-        $data['title'] = 'Enroll';
+        $data['title'] = 'Apply';
         $data['secure'] = $secure;
 
-        return view('pages.enroll', $data);
+        return view('pages.apply', $data);
     }
 
     public function mentor()

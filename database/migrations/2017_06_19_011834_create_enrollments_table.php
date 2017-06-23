@@ -56,10 +56,10 @@ class CreateEnrollmentsTable extends Migration
                 $table->string('codelouenrolleduniv')->nullable();
                 $table->string('codelouwhatunivdegree')->nullable();
                 $table->string('codeloucat1dslwrk')->nullable();
-                $table->string('codeloucat1ds2wrk')->nullable();
-                $table->string('codeloucat1ds3wrk')->nullable();
-                $table->string('codeloucat1ds4wrk')->nullable();
-                $table->string('codeloucat1ds5wrk')->nullable();
+                $table->string('codeloucat2dslwrk')->nullable();
+                $table->string('codeloucat3dslwrk')->nullable();
+                $table->string('codeloucat4dslwrk')->nullable();
+                $table->string('codeloucat5dslwrk')->nullable();
                 $table->string('codelounumhouse')->nullable();
                 $table->string('rectanf')->nullable();
                 $table->string('recgeneralasst')->nullable();

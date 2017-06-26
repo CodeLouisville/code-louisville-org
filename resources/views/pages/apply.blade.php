@@ -18,7 +18,7 @@
                     @if ($secure == 'true')
                         <section class="enrollment-form inset">
                             <validator name="enroll">
-                                <form action="/learn/enroll" method="POST">
+                                <form action="/learn/apply" method="POST">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="row">
                                         <div class="col-sm-4">

@@ -311,6 +311,12 @@ nav .cl-logo {
     border-bottom:3px solid #bbb;
 }
 
+.button.disabled {
+    background:#ddd;
+    border-bottom:3px solid #c2c2c2;
+    color:#999;
+}
+
 .button:hover {
     color:#3a3a3a;
     text-decoration:none;
@@ -877,6 +883,11 @@ footer .fa { color:#fff; }
         margin:0 0 16px !important;
         width:100%;
     }
+}
+
+.required-alert {
+    color:#ac040f;
+    line-height:47px;
 }
 
 .invalid + span,

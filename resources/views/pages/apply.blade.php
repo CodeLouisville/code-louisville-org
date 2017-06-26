@@ -45,6 +45,10 @@
                                                 <span></span>
                                             </label>
                                         </div>
+                                        <div class="col-sm-8">
+                                            <p><small><em>We need your SSN in order to verify your eligibility for the Code Louisville program and the services provided through KentuckianaWorks.</em></small></p>
+                                            <p><small><em>Your information will be securely stored and will never be shared with any 3rd parties.</em></small></p>
+                                        </div>
                                     </div>
                                     <hr>
                                     <div class="row">
@@ -309,18 +313,6 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <div v-if="felony == 1">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <label>
-                                                    <p>If yes, please explain, so we can better assist you:</p>
-                                                    <textarea name="FelonyExplain" v-validate:felonyExplain="['required']"></textarea>
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label>

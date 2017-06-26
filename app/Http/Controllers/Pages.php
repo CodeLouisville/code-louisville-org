@@ -2,40 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Auth;
+use Request;
+
 use App\Content;
 use App\Grads;
 use App\Mentors;
-use App\Http\Controllers\Controller;
-use Request;
+
+use App\Traits\GetContent;
 
 class Pages extends Controller
 {
+    use GetContent;
+
     public function home()
     {
-        $content = Content::all();
-
-        $data = [];
-
-        foreach($content as $item)
-        {
-            $k = $item->key;
-            $g = $item->group;
-            $c = $item->content;
-
-            if($g)
-            {
-                if( !isset($data[$g]) ) $data[$g] = [];
-
-                $array = ['key' => $k, 'content' => $c];
-
-                array_push($data[$g], $array);
-            }
-            else
-            {
-                $data[$k] = $c;
-            }
-        }
+        $data = $this->fetch_content();
 
         $data['title'] = 'Home';
 
@@ -44,29 +27,7 @@ class Pages extends Controller
 
     public function learn()
     {
-        $content = Content::all();
-
-        $data = [];
-
-        foreach($content as $item)
-        {
-            $k = $item->key;
-            $g = $item->group;
-            $c = $item->content;
-
-            if($g)
-            {
-                if( !isset($data[$g]) ) $data[$g] = [];
-
-                $array = ['key' => $k, 'content' => $c];
-
-                array_push($data[$g], $array);
-            }
-            else
-            {
-                $data[$k] = $c;
-            }
-        }
+        $data = $this->fetch_content();
 
         $data['title'] = 'Learn';
 
@@ -77,29 +38,7 @@ class Pages extends Controller
     {
         $secure = 'false'; if (Request::secure()) $secure = 'true';
 
-        $content = Content::all();
-
-        $data = [];
-
-        foreach($content as $item)
-        {
-            $k = $item->key;
-            $g = $item->group;
-            $c = $item->content;
-
-            if($g)
-            {
-                if( !isset($data[$g]) ) $data[$g] = [];
-
-                $array = ['key' => $k, 'content' => $c];
-
-                array_push($data[$g], $array);
-            }
-            else
-            {
-                $data[$k] = $c;
-            }
-        }
+        $data = $this->fetch_content();
 
         $data['title'] = 'Apply';
         $data['secure'] = $secure;
@@ -109,29 +48,7 @@ class Pages extends Controller
 
     public function mentor()
     {
-        $content = Content::all();
-
-        $data = [];
-
-        foreach($content as $item)
-        {
-            $k = $item->key;
-            $g = $item->group;
-            $c = $item->content;
-
-            if($g)
-            {
-                if( !isset($data[$g]) ) $data[$g] = [];
-
-                $array = ['key' => $k, 'content' => $c];
-
-                array_push($data[$g], $array);
-            }
-            else
-            {
-                $data[$k] = $c;
-            }
-        }
+        $data = $this->fetch_content();
 
         $data['title'] = 'Mentor';
         $data['mentors'] = Mentors::orderBy('last')->get();
@@ -179,29 +96,7 @@ class Pages extends Controller
 
     public function hire()
     {
-        $content = Content::all();
-
-        $data = [];
-
-        foreach($content as $item)
-        {
-            $k = $item->key;
-            $g = $item->group;
-            $c = $item->content;
-
-            if($g)
-            {
-                if( !isset($data[$g]) ) $data[$g] = [];
-
-                $array = ['key' => $k, 'content' => $c];
-
-                array_push($data[$g], $array);
-            }
-            else
-            {
-                $data[$k] = $c;
-            }
-        }
+        $data = $this->fetch_content();
 
         $data['title'] = 'Hire';
 

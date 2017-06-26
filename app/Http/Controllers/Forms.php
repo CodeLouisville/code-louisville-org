@@ -14,8 +14,12 @@ use App\Enrollments;
 use App\Grads;
 use App\Mentors;
 
+use App\Traits\GetContent;
+
 class Forms extends Controller
 {
+    use GetContent;
+
     protected $request;
     protected $soapWrapper;
 
@@ -89,7 +93,10 @@ class Forms extends Controller
             $data_lc = array_change_key_case($data, CASE_LOWER);
             $enrollment = Enrollments::create($data_lc);
 
-            return view('pages.apply-thanks', $enrollment);
+            $data = $this->fetch_content();
+            $data['enrollment'] = $enrollment;
+
+            return view('pages.apply-thanks', $data);
         }
         else
         {

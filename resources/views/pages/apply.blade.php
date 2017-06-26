@@ -598,12 +598,23 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div v-if="!$enroll.valid">
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <button type="button" class="button button-block disabled" @click="submitted = 'true'">Submit</button>
+                                            </div>
+                                            <div class="col-sm-4" v-if="submitted == 'true'">
+                                                <span class="required-alert">Please fill in ALL required fields</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </validator>
                         </section>
                     @else
                         <section class="enrollment-form inset">
-                            <p class="m0">Enrollment is down. Please check back soon, we&rsquo;re working hard to fix this issue.</p>
+                            <p class="m0">Application is down. Please check back soon, we&rsquo;re working hard to fix this issue.</p>
                         </section>
                     @endif
                 </div>
@@ -626,12 +637,13 @@
     @include('components.vue')
 
     <script>
-        new Vue({
+        const vm = new Vue({
             el: '#enroll',
             data: {
                 locLou: 1,
                 locJeff: 0,
-                locLaGrange: 0
+                locLaGrange: 0,
+                submitted: false
             },
             computed: {
                 location: function () {

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Thanks for Enrolling')
+@section('title', 'Thanks for Applying')
 
 @section('content')
 
@@ -9,9 +9,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h3 class="p1-top m0">Your enrollment has been submitted.</h3>
+                    <h3 class="m0" @include('edit', ['key' => 'apply_thanks_title'])>{!! $apply_thanks_title !!}</h3>
                     <hr>
-                    <p>Thank you</p>
+                    <div @include('edit', ['key' => 'apply_thanks_desc'])>{!! $apply_thanks_desc !!}</div>
                 </div>
             </div>
         </div>

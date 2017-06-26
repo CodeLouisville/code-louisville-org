@@ -16,7 +16,7 @@
                                 <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
                                     <img style="border-bottom:1px dotted #ddd; margin-bottom:20px; padding:0 20% 20px; width:60%" src="https://codelouisville.s3.amazonaws.com/assets/img/code-louisville-email.png">
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        Hi {{ $first }},
+                                        Hi {{ $FirstName }},
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
                                         Thank you for applying to participate in Code Louisville! We have received your information and you have been added to our list to contact when the next available session is open for enrollment.

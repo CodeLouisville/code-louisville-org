@@ -35,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
     |---------------------------------------------------------------------------
     */
     Route::post('learn', 'Forms@register');
-    Route::post('learn/enroll', 'Forms@enroll');
+    Route::post('learn/apply', 'Forms@apply');
     Route::post('mentor', 'Forms@mentor');
     Route::post('hire', 'Forms@hire');
     Route::post('mentor/add', ['middleware' => 'admin', 'uses' => 'Forms@mentor_add']);

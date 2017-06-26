@@ -30,7 +30,7 @@ class Forms extends Controller
         $this->soapWrapper = $soapWrapper;
     }
 
-    public function enroll()
+    public function apply()
     {
         $data = [
             'PassPhrase' => env('ENROLL_PASS'),
@@ -86,10 +86,10 @@ class Forms extends Controller
 
         if (env('ENROLL_LOCAL') == 'true')
         {
-            $data = array_change_key_case($data, CASE_LOWER);
-            $enrollment = Enrollments::create($data);
+            $data_lc = array_change_key_case($data, CASE_LOWER);
+            $enrollment = Enrollments::create($data_lc);
 
-            return view('pages.enroll-thanks', $enrollment);
+            return view('pages.apply-thanks', $enrollment);
         }
         else
         {
@@ -103,6 +103,18 @@ class Forms extends Controller
 
             var_dump($response);
         }
+
+        Mail::send('emails.register', $data, function ($message) {
+            $message->subject('codelouisville.org: New Candidate Application');
+            $message->from($this->mail_from, 'Code Louisville');
+            $message->to($this->mail_recipient);
+        });
+
+        Mail::send('emails.register-thanks', $data, function ($message) {
+            $message->subject('Thank you for your application');
+            $message->from($this->mail_from, 'Code Louisville');
+            $message->to($this->request->input('Email'));
+        });
     }
 
     public function register()

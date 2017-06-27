@@ -33,6 +33,8 @@ class Forms extends Controller
 
     public function apply()
     {
+        $data = $this->fetch_content();
+
         $locality = $this->get_locality($this->request->input('ZipCode'));
 
         $params = [
@@ -102,13 +104,13 @@ class Forms extends Controller
                 $message->to($this->request->input('Email'));
             });
 
-            $data = $this->fetch_content();
-
             return view('pages.apply-thanks', $data);
 
         } else {
 
-            echo 'No';
+            $data['error'] = true;
+
+            return view('pages.apply', $data);
         }
     }
 

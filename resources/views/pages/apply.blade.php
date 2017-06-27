@@ -14,6 +14,9 @@
                         <hr>
                         <div @include('edit', ['key' => 'apply_intro_desc'])>{!! $apply_intro_desc !!}</div>
                     </section>
+                    @if ($error)
+                        <div class="alert alert-danger">There was an error with submitting your form. Please try again later.</div>
+                    @endif
                     <h3 class="form-title" id="enrollment">Application Form</h3>
                     @if ($secure == 'true')
                         <section class="enrollment-form inset">
@@ -42,7 +45,7 @@
                                             <div class="col-sm-4">
                                                 <label>
                                                     <p>Social Security Number</p>
-                                                    <input type="text" name="SSN" v-validate:ssn="['required']" placeholder="xxx-xx-xxxx">
+                                                    <input type="text" name="SSN" v-validate:ssn="['required','ssn']" placeholder="xxx-xx-xxxx">
                                                     <span></span>
                                                 </label>
                                             </div>
@@ -560,7 +563,7 @@
                                                     <p>How many family members reside in your household?</p>
                                                     <div class="row">
                                                         <div class="col-sm-4">
-                                                            <input type="text" name="CodeLouNumHouse" value="1" v-validate:codeLouNumHouse="['required']">
+                                                            <input type="number" name="CodeLouNumHouse" value="1" v-validate:codeLouNumHouse="['required']">
                                                             <span></span>
                                                         </div>
                                                     </div>
@@ -644,9 +647,10 @@
         const vm = new Vue({
             el: '#enroll',
             data: {
-                locLou: 1,
+                locLou: 0,
                 locJeff: 0,
                 locLaGrange: 0,
+                codeOfConduct: 0,
                 submitted: false
             },
             computed: {

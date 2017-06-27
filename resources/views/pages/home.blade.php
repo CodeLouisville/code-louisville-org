@@ -2,7 +2,9 @@
 @section('content')
 
     <header class="hero center p5-top p5-bottom">
-        <video autoplay="" loop="" width="100%"><source type="video/mp4" src="{{ env('CLOUDFRONT') }}/assets/vid/code.mp4"></video>
+        <video autoplay loop width="100%">
+            <source type="video/mp4" src="{{ env('CLOUDFRONT') }}/assets/vid/code.mp4">
+        </video>
         <div class="vid-overlay"></div>
         <div class="container">
             <img class="cl-logo" src="{{ env('CLOUDFRONT') }}/assets/img/code-louisville-white.svg" alt="Code Louisville">

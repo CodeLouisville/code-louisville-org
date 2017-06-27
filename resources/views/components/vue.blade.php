@@ -5,6 +5,18 @@
         return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v)
     })
 
+    Vue.validator('ssn', function (v) {
+        return /^(\d{3})(-)(\d{2})(-)(\d{4})$/.test(v)
+    })
+
+    Vue.validator('phone', function (v) {
+        return /^(\d{3})(-)(\d{3})(-)(\d{4})$/.test(v)
+    })
+
+    Vue.validator('dob', function (v) {
+        return /^(\d{2})(\/)(\d{2})(\/)(\d{4})$/.test(v)
+    })
+
     Vue.validator('true', function (v) {
         return /^y$/.test(v)
     })

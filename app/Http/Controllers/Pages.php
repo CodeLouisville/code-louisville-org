@@ -41,6 +41,7 @@ class Pages extends Controller
         $data = $this->fetch_content();
 
         $data['title'] = 'Apply';
+        $data['error'] = false;
         $data['secure'] = $secure;
 
         return view('pages.apply', $data);

@@ -36,13 +36,11 @@ class Pages extends Controller
 
     public function apply()
     {
-        $secure = 'false'; if (Request::secure()) $secure = 'true';
-
         $data = $this->fetch_content();
 
         $data['title'] = 'Apply';
         $data['error'] = false;
-        $data['secure'] = $secure;
+        $data['secure'] = Request::secure() ? 'true' : 'false';
 
         return view('pages.apply', $data);
     }

@@ -36,7 +36,7 @@ class Forms extends Controller
         $locality = $this->get_locality($this->request->input('ZipCode'));
 
         $params = [
-            'PassPhrase' => env('ENROLL_PASS'),
+            'PassPhrase' => env('APPLY_PASS'),
             'FirstName' => $this->request->input('FirstName'),
             'LastName' => $this->request->input('LastName'),
             'SSN' => $this->request->input('SSN'),
@@ -262,7 +262,7 @@ class Forms extends Controller
 
     private function send_to_clienttrack($params)
     {
-        $client = new \SoapClient(env('ENROLL_URL'));
+        $client = new \SoapClient(env('APPLY_URL'));
 
         $response = $client->__soapCall("SelfRegister", [$params]);
 

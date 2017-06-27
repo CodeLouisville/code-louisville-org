@@ -578,6 +578,14 @@
                                         </div>
                                     </div>
                                     <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p><input type="checkbox" value="1" name="CodeOfConduct" v-model="codeOfConduct"> &nbsp; I will adhere to the Code Louisville <a href="https://drive.google.com/file/d/0B28qs3pVLuXSTGhWbU1JWng0YWM/view" target="_blank">Code of Conduct</a></p>
+                                            <input type="hidden" v-model="coc" v-validate:coc="['required']">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="inset notes m1-bottom" @include('edit', ['key' => 'enroll_form_desc'])>
                                         {!! $enroll_form_desc !!}
                                     </div>
@@ -638,6 +646,9 @@
                 submitted: false
             },
             computed: {
+                coc: function () {
+                    return this.codeOfConduct == true ? true : null
+                },
                 location: function () {
                     if (this.locLou || this.locJeff || this.locLaGrange) {
                         return 'yes'

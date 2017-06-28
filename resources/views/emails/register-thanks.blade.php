@@ -19,22 +19,22 @@
                                         Hi {{ $FirstName }},
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        Thank you for applying to participate in Code Louisville! We have received your information and you have been added to our list to contact when the next available session is open for enrollment.
+                                        Thank you for applying to participate in Code Louisville! We have received your information and you have been added to our waiting list.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        Due to the popularity of the program, we are already scheduled through September 2017. We are not able to let you know at this time when you will be enrolled, but you will be contacted several months prior to starting so that you may adjust your schedule and plan appropriately.
+                                        Code Louisville is a grant-funded program provided through KentuckianaWorks and Metro Louisville with the goal of helping people obtain jobs in the technology sector. Interest in the program is exceptionally high and thus it may be some time before your class begins. We are unable to provide estimates at this time as to when your class will begin, but you will be notified well in advance.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        Further, approximately 90 days before your class begins, you will be contacted by Code Louisville with instructions on the requirements to enter the program. Along with that email you will receive access to Treehouse, our online learning partner, where you will learn your new programming skills. During this time, you will have 30 days to complete a set of pre-work courses on Treehouse. If you complete the pre-work, you will be signed up for the next session of Code Louisville.
+                                        Approximately 60 days before your class is to begin, you will be contacted and asked to complete pre-work. This pre-work is a requirement of entering the program and you will have a set time limit in which to complete it. Successful completion will allow you to get into the next scheduled class. More information on this will be provided when it is sent.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        You are encouraged to add the @codelouisville.org and @teamtreehouse.com domains to your email&rsquo;s safe list to ensure the emails do not get sent to your Spam or Promotions folder.
+                                        You are encouraged to add the @codelouisville.org and @teamtreehouse.com domains to your email&rsquo;s safe list to ensure the emails do not get sent to your Spam or Promotions folder. If we are unable to contact you when it comes time to start your class, we will open the slot to the next person in line.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                    If you have any questions or wish to withdraw your application, please contact <a href="mailto:apply@codelouisville.org">apply@codelouisville.org</a>. If you are a veteran, please email us as you may be eligible for priority of service allowing early enrollment.
+                                        If you have any questions, please contact <a href="mailto:apply@codelouisville.org">apply@codelouisville.org</a>.
                                     </p>
                                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
-                                        Thank you and we look forward to working with you!<br>
+                                        Thank you and we look forward to having you in the program!<br>
                                         The Code Louisville Team
                                     </p>
                                 </td>

@@ -91,7 +91,9 @@ class Forms extends Controller
             'CodeLouCodeOfConduct' => $this->request->input('CodeLouCodeOfConduct')
         ];
 
-        if ($this->send_to_clienttrack($params)) {
+        $result = $this->send_to_clienttrack($params);
+
+        if (strpos($result, 'Success')) {
 
             Mail::send('emails.register', $params, function ($message) {
                 $message->subject('codelouisville.org: New Candidate Application');
@@ -271,6 +273,6 @@ class Forms extends Controller
 
         $response = $client->__soapCall("SelfRegister", [$params]);
 
-        return strpos($response->SelfRegisterResult, 'Success') !== false ? true : false;
+        return $response->SelfRegisterResult;
     }
 }

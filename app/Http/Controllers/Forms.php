@@ -94,7 +94,7 @@ class Forms extends Controller
 
         $result = $this->send_to_clienttrack($params);
 
-        if (strpos($result, 'Success')) {
+        if (strpos($result, 'Success') !== false) {
 
             Mail::send('emails.register', $params, function ($message) {
                 $message->subject('codelouisville.org: New Candidate Application');

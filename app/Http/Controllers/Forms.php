@@ -8,6 +8,7 @@ use GuzzleHttp;
 use Illuminate\Http\Request;
 use Mail;
 use Redirect;
+use Sentry;
 
 use App\Enrollments;
 use App\Grads;
@@ -110,6 +111,13 @@ class Forms extends Controller
             return view('pages.apply-thanks', $data);
 
         } else {
+
+            Sentry::captureException(new \Exception, [
+                'extra' => [
+                    'type' => 'ClientTrack Error',
+                    'response' => $result
+                ]
+            ]);
 
             $data['title'] = 'Apply';
             $data['error'] = true;

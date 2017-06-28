@@ -495,7 +495,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <label>
-                                                        <p>Are you registered for the selective service?</p>
+                                                        <p>Are you registered for the selective service (the draft)?</p>
                                                         <div class="row">
                                                             <div class="col-sm-4">
                                                                 <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">

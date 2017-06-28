@@ -293,9 +293,12 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <p>Please check any of the following benefits that apply to you:</p>
-                                                <p><input type="checkbox" value="1" name="RecTANF"> &nbsp; Public Assistance (cash) income support through programs such as TANF/KTAP, SSI</p>
-                                                <p><input type="checkbox" value="1" name="RecGeneralAsst"> &nbsp; SNAP</p>
-                                                <p><input type="checkbox" value="1" name="RecOther"> &nbsp; Homeless temporary residence/shelter</p>
+                                                <p><input type="checkbox" v-model="tRecTANF"> &nbsp; Public Assistance (cash) income support through programs such as TANF/KTAP, SSI</p>
+                                                <p><input type="checkbox" v-model="tRecGeneralAsst"> &nbsp; SNAP</p>
+                                                <p><input type="checkbox" v-model="tRecOther"> &nbsp; Homeless temporary residence/shelter</p>
+                                                <input type="hidden" v-model="recTANF" name="RecTANF">
+                                                <input type="hidden" v-model="recGeneralAsst" name="RecGeneralAsst">
+                                                <input type="hidden" v-model="recOther" name="RecOther">
                                             </div>
                                         </div>
                                         <hr>
@@ -670,6 +673,15 @@
                     } else {
                         return ''
                     }
+                },
+                recTANF: function () {
+                    return this.tRecTANF ? 'Y' : 'N'
+                },
+                recGeneralAsst: function () {
+                    return this.tRecGeneralAsst ? 'Y' : 'N'
+                },
+                recOther: function () {
+                    return this.tRecOther ? 'Y' : 'N'
                 }
             },
             methods: {

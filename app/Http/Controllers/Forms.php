@@ -110,7 +110,7 @@ class Forms extends Controller
         } else {
 
             $data['error'] = true;
-            $data['secure'] = Request::secure() ? 'true' : 'false';
+            $data['secure'] = $this->request->secure() ? 'true' : 'false';
 
             return view('pages.apply', $data);
         }

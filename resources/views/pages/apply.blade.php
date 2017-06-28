@@ -687,13 +687,13 @@
                     }
                 },
                 recTANF: function () {
-                    return this.tRecTANF ? 1 : 0
+                    return this.tRecTANF ? 'Y' : 'N'
                 },
                 recGeneralAsst: function () {
-                    return this.tRecGeneralAsst ? 1 : 0
+                    return this.tRecGeneralAsst ? 'Y' : 'N'
                 },
                 recOther: function () {
-                    return this.tRecOther ? 1 : 0
+                    return this.tRecOther ? 'Y' : 'N'
                 }
             },
             methods: {

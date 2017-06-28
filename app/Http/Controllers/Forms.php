@@ -109,6 +109,7 @@ class Forms extends Controller
 
         } else {
 
+            $data['title'] = 'Apply';
             $data['error'] = true;
             $data['secure'] = $this->request->secure() ? 'true' : 'false';
 

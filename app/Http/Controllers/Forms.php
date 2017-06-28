@@ -67,6 +67,7 @@ class Forms extends Controller
             'DisablingCondition' => $this->request->input('DisablingCondition'),
             'HaveFelony' => $this->request->input('HaveFelony'),
             'CodeLouEdLevel' => $this->request->input('CodeLouEdLevel'),
+            'DegreeWhatType' => $this->request->input('DegreeWhatType'),
             'EmployedTech' => $this->request->input('EmployedTech'),
             'JobMainDuties' => $this->request->input('JobMainDuties'),
             'InterestedTech' => $this->request->input('InterestedTech'),

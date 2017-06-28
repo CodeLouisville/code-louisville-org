@@ -341,6 +341,18 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div v-if="eduLevel == 5 || eduLevel == 6 || eduLevel == 7 || eduLevel == 8">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>
+                                                        <p>If you hold a degree, what was your major?</p>
+                                                        <input type="text" name="DegreeWhatType" v-validate:DegreeWhatType="['required']">
+                                                        <span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <label>

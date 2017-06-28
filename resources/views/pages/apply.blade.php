@@ -116,7 +116,7 @@
                                             <div class="col-sm-4">
                                                 <label>
                                                     <p>What is your gender?</p>
-                                                    <select name="Gender" v-validate:Gender="['required']">
+                                                    <select name="Gender" v-model="gender" v-validate:Gender="['required']">
                                                         <option value="" selected>- Select -</option>
                                                         <option value="2">Male</option>
                                                         <option value="1">Female</option>

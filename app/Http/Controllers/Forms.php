@@ -95,7 +95,6 @@ class Forms extends Controller
         $result = $this->send_to_clienttrack($params);
 
         if (strpos($result, 'Success') !== false) {
-
             Mail::send('emails.register', $params, function ($message) {
                 $message->subject('codelouisville.org: New Candidate Application');
                 $message->from($this->mail_from, 'Code Louisville');
@@ -109,9 +108,7 @@ class Forms extends Controller
             });
 
             return view('pages.apply-thanks', $data);
-
         } else {
-
             Sentry::captureException(new \Exception, [
                 'extra' => [
                     'type' => 'ClientTrack Error',
@@ -129,11 +126,11 @@ class Forms extends Controller
 
     public function register()
     {
-        $data = array(
+        $data = [
             'name' => $this->request->input('first').' '.$this->request->input('last'),
             'first' => $this->request->input('first'),
             'email' => $this->request->input('email')
-        );
+        ];
 
         Mail::send('emails.register', $data, function ($message) {
             $message->subject('codelouisville.org: New Candidate Registration');
@@ -152,7 +149,7 @@ class Forms extends Controller
 
     public function mentor()
     {
-        $data = array(
+        $data = [
             'name' => $this->request->input('name'),
             'email' => $this->request->input('email'),
             'track' => $this->request->input('track'),
@@ -160,7 +157,7 @@ class Forms extends Controller
             'experience' => $this->request->input('experience'),
             'employer' => $this->request->input('employer'),
             'questions' => $this->request->input('questions')
-        );
+        ];
 
         Mail::send('emails.mentor', $data, function ($message) {
             $message->subject('codelouisville.org: New Mentor Contact');
@@ -178,7 +175,9 @@ class Forms extends Controller
         $user = $data['github'];
 
         $client = new GuzzleHttp\Client();
-        if( $data['github'] ) { $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id; }
+        if ($data['github']) {
+            $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id;
+        }
 
         Mentors::updateOrCreate(['id' => ''], $data);
         return Redirect::back()->withSuccess($success);
@@ -191,7 +190,9 @@ class Forms extends Controller
         $user = $data['github'];
 
         $client = new GuzzleHttp\Client();
-        if( $data['github'] ) { $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id; }
+        if ($data['github']) {
+            $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id;
+        }
 
         Mentors::updateOrCreate(['id' => $id], $data);
         return Redirect::back()->withSuccess($success);
@@ -199,13 +200,13 @@ class Forms extends Controller
 
     public function hire()
     {
-        $data = array(
+        $data = [
             'name' => $this->request->input('name'),
             'email' => $this->request->input('email'),
             'involvement' => $this->request->input('involvement'),
             'organization' => $this->request->input('organization'),
             'comment' => $this->request->input('message')
-        );
+        ];
 
         Mail::send('emails.hire', $data, function ($message) {
             $message->subject('codelouisville.org: New Employer Contact');

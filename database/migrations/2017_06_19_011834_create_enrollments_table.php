@@ -12,8 +12,7 @@ class CreateEnrollmentsTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('enrollments'))
-        {
+        if (!Schema::hasTable('enrollments')) {
             Schema::create('enrollments', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('firstname')->nullable();

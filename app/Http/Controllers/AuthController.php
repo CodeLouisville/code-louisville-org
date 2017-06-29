@@ -95,9 +95,10 @@ class AuthController extends Controller
 
         $admin = false;
 
-        foreach($orgs as $org)
-        {
-            if($org->organization->id == 6510199 && $org->role == 'admin') $admin  = true;
+        foreach ($orgs as $org) {
+            if ($org->organization->id == 6510199 && $org->role == 'admin') {
+                $admin  = true;
+            }
         }
 
         return $admin;
@@ -112,7 +113,6 @@ class AuthController extends Controller
     private function findOrCreateUser($githubUser, $isAdmin = false)
     {
         if ($authUser = User::where('github_id', $githubUser->id)->first()) {
-
             $authUser->admin = $isAdmin;
             $authUser->save();
 

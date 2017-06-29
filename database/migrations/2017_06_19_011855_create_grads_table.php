@@ -12,8 +12,7 @@ class CreateGradsTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('grads'))
-        {
+        if (!Schema::hasTable('grads')) {
             Schema::create('grads', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('name');

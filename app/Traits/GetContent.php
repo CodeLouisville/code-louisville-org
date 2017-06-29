@@ -12,22 +12,20 @@ trait GetContent
 
         $data = [];
 
-        foreach($content as $item)
-        {
+        foreach ($content as $item) {
             $k = $item->key;
             $g = $item->group;
             $c = $item->content;
 
-            if($g)
-            {
-                if( !isset($data[$g]) ) $data[$g] = [];
+            if ($g) {
+                if (!isset($data[$g])) {
+                    $data[$g] = [];
+                }
 
                 $array = ['key' => $k, 'content' => $c];
 
                 array_push($data[$g], $array);
-            }
-            else
-            {
+            } else {
                 $data[$k] = $c;
             }
         }

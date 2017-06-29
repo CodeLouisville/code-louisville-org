@@ -12,8 +12,7 @@ class CreateMentorsTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('mentors'))
-        {
+        if (!Schema::hasTable('mentors')) {
             Schema::create('mentors', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('first');

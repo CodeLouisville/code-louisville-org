@@ -95,7 +95,6 @@ class Forms extends Controller
         $result = $this->send_to_clienttrack($params);
 
         if (strpos($result, 'Success') !== false) {
-
             Mail::send('emails.register', $params, function ($message) {
                 $message->subject('codelouisville.org: New Candidate Application');
                 $message->from($this->mail_from, 'Code Louisville');
@@ -109,9 +108,7 @@ class Forms extends Controller
             });
 
             return view('pages.apply-thanks', $data);
-
         } else {
-
             Sentry::captureException(new \Exception, [
                 'extra' => [
                     'type' => 'ClientTrack Error',
@@ -178,7 +175,9 @@ class Forms extends Controller
         $user = $data['github'];
 
         $client = new GuzzleHttp\Client();
-        if( $data['github'] ) { $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id; }
+        if ($data['github']) {
+            $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id;
+        }
 
         Mentors::updateOrCreate(['id' => ''], $data);
         return Redirect::back()->withSuccess($success);
@@ -191,7 +190,9 @@ class Forms extends Controller
         $user = $data['github'];
 
         $client = new GuzzleHttp\Client();
-        if( $data['github'] ) { $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id; }
+        if ($data['github']) {
+            $data['github_id'] = json_decode($client->request('GET', "https://api.github.com/users/$user")->getBody())->id;
+        }
 
         Mentors::updateOrCreate(['id' => $id], $data);
         return Redirect::back()->withSuccess($success);

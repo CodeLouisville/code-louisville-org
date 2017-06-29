@@ -9,18 +9,12 @@ class Admin
 {
     public function handle($request, Closure $next, $guard = null)
     {
-        if ( Auth::check() && Auth::user()->admin == 1 )
-        {
+        if (Auth::check() && Auth::user()->admin == 1) {
             return $next($request);
-        }
-        else
-        {
-            if ($request->ajax())
-            {
+        } else {
+            if ($request->ajax()) {
                 return response('Unauthorized.', 401);
-            }
-            else
-            {
+            } else {
                 abort(401);
             }
         }

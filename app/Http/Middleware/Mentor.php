@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-Use App\Mentors;
+use App\Mentors;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,18 +12,12 @@ class Mentor
     {
         $mentor = Mentors::find($request->id);
 
-        if ( Auth::check() && ( Auth::user()->admin == 1 || Auth::user()->github_id == $mentor->github_id ) )
-        {
+        if (Auth::check() && ( Auth::user()->admin == 1 || Auth::user()->github_id == $mentor->github_id )) {
             return $next($request);
-        }
-        else
-        {
-            if ($request->ajax())
-            {
+        } else {
+            if ($request->ajax()) {
                 return response('Unauthorized.', 401);
-            }
-            else
-            {
+            } else {
                 abort(401);
             }
         }

@@ -12,8 +12,7 @@ class CreateContentTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('content'))
-        {
+        if (!Schema::hasTable('content')) {
             Schema::create('content', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('key');

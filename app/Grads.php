@@ -74,13 +74,27 @@ class Grads extends Model
     {
         $cohorts = [];
 
-        if($this->front_end) array_push($cohorts, 1);
-        if($this->full_stack_js) array_push($cohorts, 2);
-        if($this->php) array_push($cohorts, 4);
-        if($this->dot_net) array_push($cohorts, 8);
-        if($this->rails) array_push($cohorts, 16);
-        if($this->ios) array_push($cohorts, 32);
-        if($this->android) array_push($cohorts, 64);
+        if ($this->front_end) {
+            array_push($cohorts, 1);
+        }
+        if ($this->full_stack_js) {
+            array_push($cohorts, 2);
+        }
+        if ($this->php) {
+            array_push($cohorts, 4);
+        }
+        if ($this->dot_net) {
+            array_push($cohorts, 8);
+        }
+        if ($this->rails) {
+            array_push($cohorts, 16);
+        }
+        if ($this->ios) {
+            array_push($cohorts, 32);
+        }
+        if ($this->android) {
+            array_push($cohorts, 64);
+        }
 
         $cohorts_ = $this->permute($cohorts);
 
@@ -91,10 +105,10 @@ class Grads extends Model
     {
         $additions = array();
 
-        for($i = 0; $i < pow(2, count($set)); $i++){
+        for ($i = 0; $i < pow(2, count($set)); $i++) {
             $sum = 0;
-            for($j = count($set)-1; $j >= 0; $j--) {
-                if(pow(2, $j) & $i) {
+            for ($j = count($set)-1; $j >= 0; $j--) {
+                if (pow(2, $j) & $i) {
                     $sum += $set[$j];
                 }
             }

@@ -19,14 +19,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'Pages@home');
     Route::get('mentor', 'Pages@mentor');
     Route::get('mentor/add', ['middleware' => 'admin', 'uses' => 'Pages@mentor_add']);
-    Route::get('mentor/edit', function () { return redirect('mentor'); });
+    Route::get('mentor/edit', function () {
+        return redirect('mentor');
+    });
     Route::get('mentor/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Pages@mentor_edit']);
     Route::get('learn', 'Pages@learn');
     Route::get('learn/apply', 'Pages@apply');
     Route::get('hire', 'Pages@hire');
     Route::get('hire/graduates', 'Pages@graduates');
     Route::get('hire/graduates/add', ['uses' => 'Pages@graduates_add']);
-    Route::get('hire/graduates/edit', function () { return redirect('hire/graduates'); });
+    Route::get('hire/graduates/edit', function () {
+        return redirect('hire/graduates');
+    });
     Route::get('hire/graduates/edit/{id}', ['middleware' => 'admin', 'uses' => 'Pages@graduates_edit']);
 
     /*
@@ -48,12 +52,14 @@ Route::group(['middleware' => ['web']], function () {
     | API
     |---------------------------------------------------------------------------
     */
-    Route::get('api/content', function(){ return App\Content::all(); });
-    Route::put('api/content', ['middleware' => 'admin', function() {
+    Route::get('api/content', function () {
+        return App\Content::all();
+    });
+    Route::put('api/content', ['middleware' => 'admin', function () {
         App\Content::updateOrCreate(['key' => Request::input('key')], Request::all());
     }]);
     Route::put('api/content/create', ['middleware' => 'admin', 'uses' => 'Api@create']);
-    Route::delete('api/content', ['middleware' => 'admin', function() {
+    Route::delete('api/content', ['middleware' => 'admin', function () {
         App\Content::where('key', Request::input('key'))->delete();
     }]);
 });

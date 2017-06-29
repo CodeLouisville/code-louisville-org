@@ -103,7 +103,7 @@ class Grads extends Model
 
     private function permute($set)
     {
-        $additions = array();
+        $additions = [];
 
         for ($i = 0; $i < pow(2, count($set)); $i++) {
             $sum = 0;

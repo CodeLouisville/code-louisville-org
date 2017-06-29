@@ -104,10 +104,10 @@ class Pages extends Controller
 
     public function graduates()
     {
-        $data = array(
+        $data = [
             'title' => 'Graduates',
             'grads' => Grads::all()
-        );
+        ];
 
         return view('pages.graduates', $data);
     }

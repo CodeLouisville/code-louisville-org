@@ -126,11 +126,11 @@ class Forms extends Controller
 
     public function register()
     {
-        $data = array(
+        $data = [
             'name' => $this->request->input('first').' '.$this->request->input('last'),
             'first' => $this->request->input('first'),
             'email' => $this->request->input('email')
-        );
+        ];
 
         Mail::send('emails.register', $data, function ($message) {
             $message->subject('codelouisville.org: New Candidate Registration');
@@ -149,7 +149,7 @@ class Forms extends Controller
 
     public function mentor()
     {
-        $data = array(
+        $data = [
             'name' => $this->request->input('name'),
             'email' => $this->request->input('email'),
             'track' => $this->request->input('track'),
@@ -157,7 +157,7 @@ class Forms extends Controller
             'experience' => $this->request->input('experience'),
             'employer' => $this->request->input('employer'),
             'questions' => $this->request->input('questions')
-        );
+        ];
 
         Mail::send('emails.mentor', $data, function ($message) {
             $message->subject('codelouisville.org: New Mentor Contact');
@@ -200,13 +200,13 @@ class Forms extends Controller
 
     public function hire()
     {
-        $data = array(
+        $data = [
             'name' => $this->request->input('name'),
             'email' => $this->request->input('email'),
             'involvement' => $this->request->input('involvement'),
             'organization' => $this->request->input('organization'),
             'comment' => $this->request->input('message')
-        );
+        ];
 
         Mail::send('emails.hire', $data, function ($message) {
             $message->subject('codelouisville.org: New Employer Contact');

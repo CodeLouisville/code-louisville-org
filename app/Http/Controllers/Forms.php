@@ -67,6 +67,7 @@ class Forms extends Controller
             'UIStatus' => $this->request->input('UIStatus'),
             'DisablingCondition' => $this->request->input('DisablingCondition'),
             'HaveFelony' => $this->request->input('HaveFelony'),
+            'FelonyExplain' => $this->request->input('FelonyExplain'),
             'CodeLouEdLevel' => $this->request->input('CodeLouEdLevel'),
             'DegreeWhatType' => $this->request->input('DegreeWhatType'),
             'EmployedTech' => $this->request->input('EmployedTech'),
@@ -76,6 +77,7 @@ class Forms extends Controller
             'CodeLou_Lou' => $this->request->input('CodeLou_Lou'),
             'CodeLou_Jeff' => $this->request->input('CodeLou_Jeff'),
             'CodeLou_LaGrange' => $this->request->input('CodeLou_LaGrange'),
+            'CodeLouMeetupDay' => $this->request->input('CodeLouMeetupDay'),
             'SelectiveService' => $this->request->input('SelectiveService'),
             'IncomeLevel' => $this->request->input('IncomeLevel'),
             'CodeLouEnrolledUniv' => $this->request->input('CodeLouEnrolledUniv'),
@@ -88,8 +90,7 @@ class Forms extends Controller
             'CodeLouNumHouse' => $this->request->input('CodeLouNumHouse'),
             'RecTANF' => $this->request->input('RecTANF'),
             'RecGeneralAsst' => $this->request->input('RecGeneralAsst'),
-            'RecOther' => $this->request->input('RecOther'),
-            'CodeLouCodeOfConduct' => $this->request->input('CodeLouCodeOfConduct')
+            'RecOther' => $this->request->input('RecOther')
         ];
 
         $result = $this->send_to_clienttrack($params);

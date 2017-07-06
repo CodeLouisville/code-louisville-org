@@ -320,6 +320,18 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div v-if="felony == '1'">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <label>
+                                                        <p>If yes, please explain, so we can better assist you:</p>
+                                                        <textarea name="FelonyExplain" v-validate:felonyExplain="['required']"></textarea>
+                                                        <span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <label>

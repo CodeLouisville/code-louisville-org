@@ -31,8 +31,5 @@
 	* ~~Willing to host in employer space~~
 	* ~~Willing to sponsor events~~
 
-### News & Events
-
-* Upcoming CL events
-* In the News
-* Hash tag feed?
+## Further Development
+* Please contact Brian if you are interested in contributing to the site. There are always new features and functionality to add!

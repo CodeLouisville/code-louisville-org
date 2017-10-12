@@ -515,7 +515,6 @@
                                                                     <option value="1">Yes, registered</option>
                                                                     <option value="2">No, not registered</option>
                                                                     <option value="4">Not required</option>
-                                                                    <option value="9">N/A</option>
                                                                 </select>
                                                                 <span></span>
                                                             </div>

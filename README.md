@@ -9,7 +9,6 @@
 ### Student Section
 
 * Student success stories (showcase)
-* Annual cohort calendar with links to New Student Application
 * ~~Form for New Student Application (@Work)~~
 	* ~~Posts contact & personal info to @Work Solutions' database~~
 
@@ -31,8 +30,5 @@
 	* ~~Willing to host in employer space~~
 	* ~~Willing to sponsor events~~
 
-### News & Events
-
-* Upcoming CL events
-* In the News
-* Hash tag feed?
+## Further Development
+* Please contact Brian if you are interested in contributing to the site. There are always new features and functionality to add!

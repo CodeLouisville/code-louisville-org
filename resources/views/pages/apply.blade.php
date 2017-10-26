@@ -126,6 +126,27 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div v-if="gender == '2'">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <label>
+                                                        <p>Are you registered for the selective service (the draft)?</p>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">
+                                                                    <option value="" selected>- Select -</option>
+                                                                    <option value="1">Yes, registered</option>
+                                                                    <option value="2">No, not registered</option>
+                                                                    <option value="4">Not required</option>
+                                                                </select>
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <p>What is your race(s)?</p>
@@ -495,27 +516,6 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <textarea name="JobInterest" v-validate:jobInterest="['required']"></textarea>
-                                                                <span></span>
-                                                            </div>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div v-if="gender == '2'">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <label>
-                                                        <p>Are you registered for the selective service (the draft)?</p>
-                                                        <div class="row">
-                                                            <div class="col-sm-4">
-                                                                <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">
-                                                                    <option value="" selected>- Select -</option>
-                                                                    <option value="1">Yes, registered</option>
-                                                                    <option value="2">No, not registered</option>
-                                                                    <option value="4">Not required</option>
-                                                                </select>
                                                                 <span></span>
                                                             </div>
                                                         </div>

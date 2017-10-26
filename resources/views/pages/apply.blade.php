@@ -433,7 +433,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <label>
-                                                    <p>Have you been terminated, laid off, or have you received notice of termination or layoff from your current or most recent employer?</p>
+                                                    <p>Have you been laid off or have you received notice of layoff from your current or most recent employer?</p>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <select name="CodeLouCat1DslWrk" v-model="codeLouCat1DslWrk" v-validate:codeLouCat1DslWrk="['required']">

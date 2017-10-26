@@ -126,6 +126,27 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div v-if="gender == '2'">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <label>
+                                                        <p>Are you registered for the selective service (the draft)?</p>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">
+                                                                    <option value="" selected>- Select -</option>
+                                                                    <option value="1">Yes, registered</option>
+                                                                    <option value="2">No, not registered</option>
+                                                                    <option value="4">Not required</option>
+                                                                </select>
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <p>What is your race(s)?</p>
@@ -433,7 +454,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <label>
-                                                    <p>Have you been terminated, laid off, or have you received notice of termination or layoff from your current or most recent employer?</p>
+                                                    <p>Have you been laid off or have you received notice of layoff from your current or most recent employer?</p>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <select name="CodeLouCat1DslWrk" v-model="codeLouCat1DslWrk" v-validate:codeLouCat1DslWrk="['required']">
@@ -495,27 +516,6 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <textarea name="JobInterest" v-validate:jobInterest="['required']"></textarea>
-                                                                <span></span>
-                                                            </div>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div v-if="gender == '2'">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <label>
-                                                        <p>Are you registered for the selective service (the draft)?</p>
-                                                        <div class="row">
-                                                            <div class="col-sm-4">
-                                                                <select name="SelectiveService" v-model="selectiveService" v-validate:selectiveService="['required']">
-                                                                    <option value="" selected>- Select -</option>
-                                                                    <option value="1">Yes, registered</option>
-                                                                    <option value="2">No, not registered</option>
-                                                                    <option value="4">Not required</option>
-                                                                </select>
                                                                 <span></span>
                                                             </div>
                                                         </div>
@@ -605,26 +605,6 @@
                                                 <p><input type="checkbox" value="1" v-model="locLaGrange" name="CodeLou_LaGrange"> &nbsp; La Grange, KY</p>
                                                 <input type="hidden" v-model="location" v-validate:location="['required']">
                                                 <span></span>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <label>
-                                                    <p>Which day would you prefer to attend?</p>
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <select name="CodeLouMeetupDay" v-model="codeLouMeetupDay" v-validate:codeLouMeetupDay="['required']">
-                                                                <option value="" selected>- Select -</option>
-                                                                <option value="1">Monday</option>
-                                                                <option value="2">Tuesday</option>
-                                                                <option value="3">Wednesday</option>
-                                                                <option value="4">Thursday</option>
-                                                            </select>
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
-                                                </label>
                                             </div>
                                         </div>
                                         <hr>

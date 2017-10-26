@@ -610,26 +610,6 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <label>
-                                                    <p>Which day would you prefer to attend?</p>
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <select name="CodeLouMeetupDay" v-model="codeLouMeetupDay" v-validate:codeLouMeetupDay="['required']">
-                                                                <option value="" selected>- Select -</option>
-                                                                <option value="1">Monday</option>
-                                                                <option value="2">Tuesday</option>
-                                                                <option value="3">Wednesday</option>
-                                                                <option value="4">Thursday</option>
-                                                            </select>
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-12">
                                                 <p><input type="checkbox" value="1" name="CodeLouCodeOfConduct" v-model="codeOfConduct"> &nbsp; I will adhere to the Code Louisville <a href="https://drive.google.com/file/d/0B28qs3pVLuXSTGhWbU1JWng0YWM/view" target="_blank">Code of Conduct</a></p>
                                                 <input type="hidden" v-model="coc" v-validate:coc="['required']">
                                                 <span></span>

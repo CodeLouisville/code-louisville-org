@@ -130,7 +130,7 @@
                                                     <option value="Front-End">Front-End</option>
                                                     <option value=".NET">.NET</option>
                                                     <option value="Javascript" selected>Full-stack Javascript</option>
-                                                    <option value="PHP">PHP</option>
+                                                    <option value="Python">Python</option>
                                                 </select>
                                             </label>
                                         </div>

@@ -530,14 +530,7 @@
                                                     <p>What is your annual household income?</p>
                                                     <div class="row">
                                                         <div class="col-sm-4">
-                                                            <select name="IncomeLevel" v-model="incomeLevel" v-validate:incomeLevel="['required']">
-                                                                <option value="" selected>- Select -</option>
-                                                                <option value="1">$0 &ndash; $19,999</option>
-                                                                <option value="2">$20,000 &ndash; $39,999</option>
-                                                                <option value="3">$40,000 &ndash; $59,999</option>
-                                                                <option value="4">$60,000 &ndash; $79,999</option>
-                                                                <option value="5">$80,000+</option>
-                                                            </select>
+                                                            $<input type="number" name="CodeLouAnnualIncome" v-validate:codeLouAnnualIncome="['required']">
                                                             <span></span>
                                                         </div>
                                                     </div>

@@ -65,8 +65,8 @@ Route::delete('api/content', ['middleware' => 'admin', function () {
 Route::get('api/enrollments/exists', function () {
     // check if one or more submissions have been made with the email
     if (App\Enrollments::where("email", Input::get("email"))->count() >= 1) {
-        return response()->json(['exists' => 'true']); // found submissions
+        return response()->json(['exists' => true]); // found submissions
     } else {
-        return response()->json(['exists' => 'false']); // no submissions
+        return response()->json(['exists' => false]); // no submissions
     }
 });

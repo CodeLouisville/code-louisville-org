@@ -48,8 +48,9 @@
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="2"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-javascript-plain colored" data-original-title="Javascript"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="4"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-php-plain colored" data-original-title="PHP"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="8"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-dot-net-plain colored" data-original-title=".NET"></i></label></th>
+                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="32"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-apple-plain colored" data-original-title="iOS Swift Development"></i></label></th>
+                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="32"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-python-plain colored" data-original-title="Python"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="16"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails (discontinued)"></i></label></th>
-                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="32"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-apple-plain colored" data-original-title="iOS (discontinued)"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="64"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-android-plain colored" data-original-title="Android (discontinued)"></i></label></th>
                                 </tr>
                             </thead>
@@ -64,8 +65,9 @@
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.js == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.php == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.net == 1"></span></td>
-                                    <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.rails == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.ios == 1"></span></td>
+                                    <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.python == 1"></span></td>
+                                    <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.rails == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.android == 1"></span></td>
                                 </tr>
                                 <tr v-if="filter.length == 0">

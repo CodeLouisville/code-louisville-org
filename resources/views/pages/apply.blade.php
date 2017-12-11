@@ -106,10 +106,16 @@
                                             <div class="col-sm-4">
                                                 <label>
                                                     <p>Email address</p>
-                                                    <input type="text" name="Email" v-validate:Email="['required','email']">
+                                                    <input type="text" name="Email" v-model="email" detect-change="on" v-validate:Email="{
+                                                        required: { rule: true },
+                                                        exists: { rule: true, initial: 'on' }
+                                                        }">
                                                     <span></span>
                                                 </label>
                                             </div>
+                                            <div class="col-sm-4 error">
+                                                @{{emailAlreadyExists ? "That email is already in use. Please contact apply@codelouisville.org if you need to change your information or have any questions." : ""}}
+                                        </div>
                                         </div>
                                         <hr>
                                         <div class="row">
@@ -670,7 +676,8 @@
                 locJeff: 0,
                 locLaGrange: 0,
                 codeOfConduct: 0,
-                submitted: false
+                submitted: false,
+                emailAlreadyExists: false
             },
             computed: {
                 coc: function () {
@@ -698,6 +705,35 @@
                 },
                 recOther: function () {
                     return this.tRecOther ? 'Y' : 'N'
+                }
+            },
+            validators: {
+                exists(val) {
+                    if (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)) {
+                        return fetch(`/api/enrollments/exists?email=${val}`, {
+                            method: 'get',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            }
+                        })
+                            .then(res => res.json())
+                            .then(res => { 
+                                if (res.exists) {
+                                    // email exists, let the user know
+                                    this.vm.emailAlreadyExists = true;
+                                    return Promise.reject();
+                                } else {
+                                    // email does not exist
+                                    this.vm.emailAlreadyExists = false;
+                                    return Promise.resolve()
+                                }
+                            })
+                    } else {
+                        // not a valid email
+                        this.vm.emailAlreadyExists = false;
+                        return false
+                    }
                 }
             },
             methods: {

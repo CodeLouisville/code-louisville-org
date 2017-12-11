@@ -60,3 +60,13 @@ Route::put('api/content/create', ['middleware' => 'admin', 'uses' => 'Api@create
 Route::delete('api/content', ['middleware' => 'admin', function () {
     App\Content::where('key', Request::input('key'))->delete();
 }]);
+
+// Example Usage: /api/enrollments/exists?email=youremail@gmail.com
+Route::get('api/enrollments/exists', function () {
+    // check if one or more submissions have been made with the email
+    if (App\Enrollments::where("email", Input::get("email"))->count() >= 1) {
+        return response()->json(['exists' => true]); // found submissions
+    } else {
+        return response()->json(['exists' => false]); // no submissions
+    }
+});

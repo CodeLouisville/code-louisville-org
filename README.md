@@ -2,7 +2,7 @@
 
 ### Overall design features
 
-* Sections: ~~Students~~, ~~Mentors~~, ~~Employers~~, ~~News & Events~~
+* Sections: ~~Students~~, ~~Mentors~~, ~~Employers~~, News & Events
 * ~~Forms for: Student Application, Mentor Application, Employer inquiry~~
 * ~~Social Media Links~~
 

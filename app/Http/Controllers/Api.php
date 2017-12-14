@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mentors;
 use App\Content;
-use App\Enrollments;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

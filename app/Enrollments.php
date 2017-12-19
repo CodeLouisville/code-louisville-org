@@ -43,7 +43,7 @@ class Enrollments extends Model
             'codelou_jeff',
             'codelou_lagrange',
             'selectiveservice',
-            'codelouannualincome',
+            'incomelevel',
             'codelouenrolleduniv',
             'codelouwhatunivdegree',
             'codeloucat1dslwrk',

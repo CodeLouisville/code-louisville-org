@@ -79,7 +79,7 @@ class Forms extends Controller
             'CodeLou_LaGrange' => $this->request->input('CodeLou_LaGrange'),
             'CodeLouMeetupDay' => $this->request->input('CodeLouMeetupDay'),
             'SelectiveService' => $this->request->input('SelectiveService'),
-            'IncomeLevel' => $this->request->input('IncomeLevel'),
+            'CodeLouAnnualIncome' => floatval($this->request->input('CodeLouAnnualIncome')),
             'CodeLouEnrolledUniv' => $this->request->input('CodeLouEnrolledUniv'),
             'CodeLouWhatUnivDegree' => $this->request->input('CodeLouWhatUnivDegree'),
             'CodeLouCat1DslWrk' => $this->request->input('CodeLouCat1DslWrk'),

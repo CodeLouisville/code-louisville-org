@@ -38,12 +38,13 @@ class CreateSeeds extends Command
      */
     public function handle()
     {
+        $host = env('DB_HOST');
         $user = env('DB_USERNAME');
         $pass = env('DB_PASSWORD');
 
-        $getContent = new Process("mysqldump -u $user -p$pass codelouisville content > storage/app/laravel-db-seeds/content.sql");
+        $getContent = new Process("mysqldump -h $host -u $user -p$pass codelouisville content > storage/app/laravel-db-seeds/content.sql");
         $getContent->run();
-        $getGrads = new Process("mysqldump -u $user -p$pass codelouisville grads > storage/app/laravel-db-seeds/grads.sql");
+        $getGrads = new Process("mysqldump -h $host -u $user -p$pass codelouisville grads > storage/app/laravel-db-seeds/grads.sql");
         $getGrads->run();
 
         $this->info('Seeds created!');

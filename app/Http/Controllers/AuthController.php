@@ -47,7 +47,7 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        return redirect('/');
+        return redirect($this->redirectTo);
     }
 
     /**
@@ -65,7 +65,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect(URL::previous());
+        return redirect($this->redirectTo);
     }
 
     /**

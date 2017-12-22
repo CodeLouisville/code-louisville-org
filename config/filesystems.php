@@ -48,6 +48,13 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'seeds' => [
+            'driver' => 'local',
+            'root' => storage_path('app/laravel-db-seeds'),
+            'url' => env('APP_URL').'/assets/seeds',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

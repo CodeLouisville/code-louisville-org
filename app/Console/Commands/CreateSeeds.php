@@ -46,7 +46,9 @@ class CreateSeeds extends Command
         $getContent->run();
         $getGrads = new Process("mysqldump -h $host -u $user -p$pass codelouisville grads > storage/app/laravel-db-seeds/grads.sql");
         $getGrads->run();
+        $getMentors = new Process("mysqldump -h $host -u $user -p$pass codelouisville mentors > storage/app/laravel-db-seeds/mentors.sql");
+        $getMentors->run();
 
-        $this->info('Seeds created!');
+        $this->info('Database seeds created!');
     }
 }

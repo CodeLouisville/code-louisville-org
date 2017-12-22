@@ -40,5 +40,7 @@ class GetSeeds extends Command
     {
         Storage::disk('seeds')->put('content.sql', file_get_contents(env('SEED_URL') . '/content.sql'));
         Storage::disk('seeds')->put('grads.sql', file_get_contents(env('SEED_URL') . '/grads.sql'));
+        Storage::disk('seeds')->put('mentors.sql', file_get_contents(env('SEED_URL') . '/mentors.sql'));
+        $this->info('Database seeds fetched!');
     }
 }

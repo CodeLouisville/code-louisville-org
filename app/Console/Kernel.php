@@ -13,7 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\CreateSeeds::class
+        Commands\CreateSeeds::class,
+        Commands\GetSeeds::class,
+        Commands\DbUp::class
     ];
 
     /**

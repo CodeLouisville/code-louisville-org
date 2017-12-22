@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class GradTableSeeder extends Seeder
+class MentorsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class GradTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::unprepared(File::get('storage/app/laravel-db-seeds/grads.sql'));
+        DB::unprepared(File::get('storage/app/laravel-db-seeds/mentors.sql'));
     }
 }

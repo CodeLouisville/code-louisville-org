@@ -38,7 +38,9 @@ class DbUp extends Command
     public function handle()
     {
         $this->call('seeds:get');
-        $this->call('migrate:refresh');
-        $this->call('db:seed');
+        $this->callSilent('migrate:refresh');
+        $this->info('Database migrations refreshed!');
+        $this->callSilent('db:seed');
+        $this->info('Database seeded!');
     }
 }

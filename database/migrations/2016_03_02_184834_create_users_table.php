@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
         if (!Schema::hasTable('users')) {
             Schema::create('users', function (Blueprint $table) {
                 $table->increments('id');
-                $table->tinyInteger('admin');
+                $table->tinyInteger('admin')->default(0);
                 $table->string('github_id')->unique();
                 $table->string('name');
                 $table->string('email');

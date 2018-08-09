@@ -498,7 +498,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <label>
-                                                    <p>Are you interested in gaining employment as a software developer or in a software development-related position?</p>
+                                                    <p>Are you interested in gaining employment or improving your existing employment as a software developer or in a technology-related job?</p>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <select name="InterestedTech" v-model="interestedTech" v-validate:interestedTech="['required']">
@@ -530,17 +530,19 @@
                                             </div>
                                             <hr>
                                         </div>
+
+                                        <hr>
                                         <div class="row">
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-4">
                                                 <label>
                                                     <p>What is your annual household income?</p>
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            $<input type="number" name="CodeLouAnnualIncome" v-validate:codeLouAnnualIncome="['required']">
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
+                                                    $<input type="number" name="CodeLouAnnualIncome" v-validate:codeLouAnnualIncome="['required']">
+                                                    <span></span>
                                                 </label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <p><small><em>This includes spouse and any dependent children. Income is used to determine if you meet certain requirements that would allow you to be moved to the front of the waiting list.</em></small></p>
+                                                <p><small><em>You will be asked to verify this information via paystubs or other methods if you are selected for Priority of Service.</em></small></p>
                                             </div>
                                         </div>
                                         <hr>
@@ -566,7 +568,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <label>
-                                                        <p>Have you been providing unpaid services to family members while dependent on the income of another family member, and are no longer supported by that income?</p>
+                                                        <p>Have you been providing unpaid services to family members while dependent on the income of another family member, and are recently no longer supported by that income?</p>
                                                         <div class="row">
                                                             <div class="col-sm-4">
                                                                 <select name="CodeLouCat4DslWrk" v-model="codeLouCat4DslWrk" v-validate:codeLouCat4DslWrk="['required']">
@@ -585,7 +587,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <label>
-                                                    <p>How many family members reside in your household?</p>
+                                                    <p>How many family members reside in your household? This includes your spouse and any dependent children</p>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <input type="number" name="CodeLouNumHouse" value="1" v-validate:codeLouNumHouse="['required']">

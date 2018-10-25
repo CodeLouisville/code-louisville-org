@@ -7,6 +7,8 @@ use Auth;
 use GuzzleHttp;
 use Illuminate\Http\Request;
 use Mail;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 use Redirect;
 use Sentry;
 
@@ -93,7 +95,8 @@ class Forms extends Controller
             'RecOther' => $this->request->input('RecOther')
         ];
 
-        $result = $this->send_to_clienttrack($params);
+        $result = $this->sendToClienttrack($params);
+        $this->sendToLog($params);
 
         if (strpos($result, 'Success') !== false) {
             Mail::send('emails.register', $params, function ($message) {
@@ -277,7 +280,18 @@ class Forms extends Controller
         ];
     }
 
-    private function send_to_clienttrack($params)
+    private function sendToLog($params)
+    {
+        $log = [
+            'name' => $params['FirstName'] . ' ' . $params['LastName'],
+            'email' => $params['Email']
+        ];
+        $applyLog = new Logger('apply');
+        $applyLog->pushHandler(new StreamHandler(storage_path('logs/apply.log')), Logger::INFO);
+        $applyLog->info('Apply', $log);
+    }
+
+    private function sendToClienttrack($params)
     {
         $client = new \SoapClient(env('APPLY_URL'));
 

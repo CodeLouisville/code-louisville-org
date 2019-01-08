@@ -70,7 +70,6 @@
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.python == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.java == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.rails == 1"></span></td>
-                                    <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.ios == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.android == 1"></span></td>
                                 </tr>
                                 <tr v-if="filter.length == 0">

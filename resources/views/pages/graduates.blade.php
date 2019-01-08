@@ -51,8 +51,8 @@
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="32"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-apple-plain colored" data-original-title="iOS Swift Development"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="128"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-python-plain colored" data-original-title="Python"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="256"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-java-plain colored" data-original-title="Java"></i></label></th>
-                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="16"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails (discontinued)"></i></label></th>
-                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="64"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-android-plain colored" data-original-title="Android (discontinued)"></i></label></th>
+                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="16"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails"></i></label></th>
+                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="64"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-android-plain colored" data-original-title="Android"></i></label></th>
                                 </tr>
                             </thead>
                             <tbody>

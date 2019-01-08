@@ -140,8 +140,13 @@
                                                 <select name="track" v-model="track">
                                                     <option value="Front-End">Front-End</option>
                                                     <option value=".NET">.NET</option>
+                                                    <option value="Android">Android</option>
                                                     <option value="Javascript" selected>Full-stack Javascript</option>
+                                                    <option value="iOS">iOS (Swift)</option>
+                                                    <option value="Java">Java</option>
+                                                    <option value="PHP">PHP</option>
                                                     <option value="Python">Python</option>
+                                                    <option value="Ruby">Ruby</option>
                                                 </select>
                                             </label>
                                         </div>

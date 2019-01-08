@@ -76,6 +76,17 @@
                                                     @elseif ($mentor->track == 'dotnet')
                                                         <h4 class="name">.NET <small>{{ $mentor->night }}</small></h4>
                                                         <a><span class="devicon-dot-net-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'python')
+                                                        <h4 class="name">Python <small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-python-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'salesforce')
+                                                        <h4 class="name">Salesforce <small>{{ $mentor->night }}</small></h4>
+                                                    @elseif ($mentor->track == 'android')
+                                                        <h4 class="name">Android<small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-android-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'java')
+                                                        <h4 class="name">Java <small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-java-plain colored"></span></a>
                                                     @endif
                                                 </div>
                                             </div>

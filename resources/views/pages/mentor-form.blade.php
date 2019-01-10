@@ -80,6 +80,11 @@
                                                 <option value="php" @if (isset($mentor) && $mentor->track == 'php') selected @endif>PHP</option>
                                                 <option value="dotnet" @if (isset($mentor) && $mentor->track == 'dotnet') selected @endif>.NET</option>
                                                 <option value="ruby" @if (isset($mentor) && $mentor->track == 'ruby') selected @endif>Ruby</option>
+                                                <option value="python" @if (isset($mentor) && $mentor->track == 'python') selected @endif>Python</option>
+                                                <option value="salesforce" @if (isset($mentor) && $mentor->track == 'salesforce') selected @endif>Salesforce</option>
+                                                <option value="android" @if (isset($mentor) && $mentor->track == 'android') selected @endif>Android</option>
+                                                <option value="java" @if (isset($mentor) && $mentor->track == 'java') selected @endif>Java</option>
+                                                <option value="ios" @if (isset($mentor) && $mentor->track == 'ios') selected @endif>iOS (Swift)</option>
                                             </select>
                                         </label>
                                     </div>

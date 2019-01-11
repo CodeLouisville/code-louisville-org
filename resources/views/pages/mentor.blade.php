@@ -89,6 +89,7 @@
                                                         <a><span class="devicon-java-plain colored"></span></a>
                                                     @elseif ($mentor->track == 'ios')
                                                         <h4 class="name">iOS (Swift) <small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-apple-plain colored"></span></a>
                                                         <a><span class="devicon-swift-plain colored"></span></a>
                                                     @endif
                                                 </div>

@@ -35,11 +35,15 @@
                                             <input type="hidden" name="dot_net" value="@{{ dot_net }}">
                                             <label><input type="checkbox" v-model="dot_net" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->dot_net == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-dot-net-plain colored" data-original-title=".NET"></i></label>
                                             <input type="hidden" name="rails" value="@{{ rails }}">
-                                            <label><input type="checkbox" v-model="rails" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->rails == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails (discontinued)"></i></label>
+                                            <label><input type="checkbox" v-model="rails" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->rails == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails"></i></label>
                                             <input type="hidden" name="ios" value="@{{ ios }}">
-                                            <label><input type="checkbox" v-model="ios" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->ios == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-apple-plain colored" data-original-title="iOS (discontinued)"></i></label>
+                                            <label><input type="checkbox" v-model="ios" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->ios == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-apple-plain colored" data-original-title="iOS"></i></label>
                                             <input type="hidden" name="android" value="@{{ android }}">
-                                            <label><input type="checkbox" v-model="android" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->android == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-android-plain colored" data-original-title="Android (discontinued)"></i></label>
+                                            <label><input type="checkbox" v-model="android" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->android == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-android-plain colored" data-original-title="Android"></i></label>
+                                            <input type="hidden" name="python" value="@{{ python }}">
+                                            <label><input type="checkbox" v-model="python" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->python == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-python-plain colored" data-original-title="Python"></i></label>
+                                            <input type="hidden" name="java" value="@{{ java }}">
+                                            <label><input type="checkbox" v-model="java" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->java == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-java-plain colored" data-original-title="Java"></i></label>
                                         </div>
                                     </div>
                                 </div>

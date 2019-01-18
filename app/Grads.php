@@ -43,7 +43,7 @@ class Grads extends Model
         'android' => 'integer',
         'python' => 'integer',
         'java' => 'integer',
-        'groupproject',
+        'groupproject' => 'integer',
     ];
 
     public function getCohortDateAttribute($value)

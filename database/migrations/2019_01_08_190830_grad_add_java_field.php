@@ -14,7 +14,7 @@ class GradAddJavaField extends Migration
     public function up()
     {
         Schema::table('grads', function (Blueprint $table) {
-            $table->tinyInteger('java');
+            $table->tinyInteger('java')->nullable()->default(0);
         });
     }
 

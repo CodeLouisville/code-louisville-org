@@ -30,6 +30,7 @@ class Grads extends Model
         'android',
         'python',
         'java',
+        'groupproject',
     ];
 
     protected $casts = [
@@ -42,6 +43,7 @@ class Grads extends Model
         'android' => 'integer',
         'python' => 'integer',
         'java' => 'integer',
+        'groupproject' => 'integer',
     ];
 
     public function getCohortDateAttribute($value)
@@ -104,6 +106,9 @@ class Grads extends Model
         }
         if ($this->java) {
             array_push($cohorts, 256);
+        }
+        if ($this->groupproject) {
+            array_push($cohorts, 512);
         }
         $cohorts_ = $this->permute($cohorts);
 

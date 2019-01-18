@@ -76,6 +76,21 @@
                                                     @elseif ($mentor->track == 'dotnet')
                                                         <h4 class="name">.NET <small>{{ $mentor->night }}</small></h4>
                                                         <a><span class="devicon-dot-net-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'python')
+                                                        <h4 class="name">Python <small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-python-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'salesforce')
+                                                        <h4 class="name">Salesforce <small>{{ $mentor->night }}</small></h4>
+                                                    @elseif ($mentor->track == 'android')
+                                                        <h4 class="name">Android<small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-android-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'java')
+                                                        <h4 class="name">Java <small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-java-plain colored"></span></a>
+                                                    @elseif ($mentor->track == 'ios')
+                                                        <h4 class="name">iOS (Swift) <small>{{ $mentor->night }}</small></h4>
+                                                        <a><span class="devicon-apple-plain colored"></span></a>
+                                                        <a><span class="devicon-swift-plain colored"></span></a>
                                                     @endif
                                                 </div>
                                             </div>
@@ -129,8 +144,13 @@
                                                 <select name="track" v-model="track">
                                                     <option value="Front-End">Front-End</option>
                                                     <option value=".NET">.NET</option>
+                                                    <option value="Android">Android</option>
                                                     <option value="Javascript" selected>Full-stack Javascript</option>
+                                                    <option value="iOS">iOS (Swift)</option>
+                                                    <option value="Java">Java</option>
+                                                    <option value="PHP">PHP</option>
                                                     <option value="Python">Python</option>
+                                                    <option value="Ruby">Ruby</option>
                                                 </select>
                                             </label>
                                         </div>

@@ -27,7 +27,10 @@ class Grads extends Model
         'dot_net',
         'rails',
         'ios',
-        'android'
+        'android',
+        'python',
+        'java',
+        'groupproject',
     ];
 
     protected $casts = [
@@ -37,7 +40,10 @@ class Grads extends Model
         'dot_net' => 'integer',
         'rails' => 'integer',
         'ios' => 'integer',
-        'android' => 'integer'
+        'android' => 'integer',
+        'python' => 'integer',
+        'java' => 'integer',
+        'groupproject' => 'integer',
     ];
 
     public function getCohortDateAttribute($value)
@@ -95,7 +101,15 @@ class Grads extends Model
         if ($this->android) {
             array_push($cohorts, 64);
         }
-
+        if ($this->python) {
+            array_push($cohorts, 128);
+        }
+        if ($this->java) {
+            array_push($cohorts, 256);
+        }
+        if ($this->groupproject) {
+            array_push($cohorts, 512);
+        }
         $cohorts_ = $this->permute($cohorts);
 
         return '|'.implode('|', $cohorts_).'|';

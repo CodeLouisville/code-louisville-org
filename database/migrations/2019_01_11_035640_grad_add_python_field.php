@@ -14,7 +14,7 @@ class GradAddPythonField extends Migration
     public function up()
     {
         Schema::table('grads', function (Blueprint $table) {
-            $table->tinyInteger('python');
+            $table->tinyInteger('python')->nullable()->default(0);
         });
     }
 

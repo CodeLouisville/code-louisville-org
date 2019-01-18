@@ -53,6 +53,7 @@
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="256"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-java-plain colored" data-original-title="Java"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="16"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-rails-plain colored" data-original-title="Ruby on Rails"></i></label></th>
                                     <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="64"><i data-toggle="tooltip" data-placement="top" title="" class="devicon-android-plain colored" data-original-title="Android"></i></label></th>
+                                    <th class="grad-cohort"><label><input type="checkbox" v-model="filter" value="512"><i data-toggle="tooltip" data-placement="top" title="" class="fa fa-users" data-original-title="Group Project"></i></label></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,6 +72,7 @@
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.java == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.rails == 1"></span></td>
                                     <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.android == 1"></span></td>
+                                    <td class="grad-cohort"><span class="fa fa-check success" v-if="grad.groupproject == 1"></span></td>
                                 </tr>
                                 <tr v-if="filter.length == 0">
                                     <td colspan="@if (Auth::check() && Auth::user()->admin) 12 @else 11 @endif" class="text-right" style="height:50px">Click language icons to begin your search <span class="fa fa-level-up"></span></td>
@@ -114,7 +116,8 @@
                         ios: '{{ $grad->ios }}',
                         android: '{{ $grad->android }}',
                         python: '{{ $grad->python }}',
-                        java: '{{ $grad->java }}'
+                        java: '{{ $grad->java }}',
+                        groupproject: '{{ $grad->groupproject }}'
                     },
                     @endforeach
                 ],

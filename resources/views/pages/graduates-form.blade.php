@@ -44,6 +44,8 @@
                                             <label><input type="checkbox" v-model="python" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->python == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-python-plain colored" data-original-title="Python"></i></label>
                                             <input type="hidden" name="java" value="@{{ java }}">
                                             <label><input type="checkbox" v-model="java" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->java == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="devicon-java-plain colored" data-original-title="Java"></i></label>
+                                            <input type="hidden" name="groupproject" value="@{{ groupproject }}">
+                                            <label><input type="checkbox" v-model="groupproject" v-bind:true-value="1" v-bind:false-value="0" @if(isset($grad) && $grad->groupproject == 1) checked @endif><i data-toggle="tooltip" data-placement="bottom" title="" class="fa fa-users" data-original-title="Group Project"></i></label>
                                         </div>
                                     </div>
                                 </div>

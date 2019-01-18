@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class GradAddPythonField extends Migration
+class GradAddGroupprojectField extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class GradAddPythonField extends Migration
     public function up()
     {
         Schema::table('grads', function (Blueprint $table) {
-            $table->tinyInteger('python')->nullable()->default(0);
+            $table->tinyInteger('groupproject')->nullable()->default(0);
         });
     }
 

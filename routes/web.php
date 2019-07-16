@@ -23,6 +23,9 @@ Route::get('mentor/edit', function () {
 Route::get('mentor/edit/{id}', ['middleware' => 'mentor', 'uses' => 'Pages@mentor_edit']);
 Route::get('learn', 'Pages@learn');
 Route::get('learn/apply', 'Pages@apply');
+
+Route::get('enrollment-process', 'Pages@enrollmentProcess');
+
 Route::get('hire', 'Pages@hire');
 Route::get('hire/graduates', 'Pages@graduates');
 Route::get('hire/graduates/add', ['uses' => 'Pages@graduates_add']);

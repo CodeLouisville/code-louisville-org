@@ -34,6 +34,15 @@ class Pages extends Controller
         return view('pages.learn', $data);
     }
 
+    public function enrollmentProcess()
+    {
+        $data = $this->fetch_content();
+
+        $data['title'] = 'Enrollment Process';
+
+        return view('pages.enrollment-process', $data);
+    }
+
     public function apply()
     {
         $data = $this->fetch_content();

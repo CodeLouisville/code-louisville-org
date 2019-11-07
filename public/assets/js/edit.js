@@ -44,13 +44,12 @@ var Edit = {
     bubble: $('body'),
     createContent: function($_)
     {
-        var g = $_.data('group'),
-            t = $('[name="_token"]').val()
+        var g = $_.data('group')
 
         $.ajax({
             type: 'PUT',
             url: '/api/content/create',
-            data: 'group=' + g + '&_token=' + t,
+            data: 'group=' + g,
             dataType: 'json',
             success: function(){
                 window.location.reload()
@@ -59,8 +58,7 @@ var Edit = {
     },
     delete: function($_)
     {
-        var k = $_.data('key'),
-            t = $('[name="_token"]').val()
+        var k = $_.data('key')
 
         $('.modal').modal('hide')
         $('[data-editable][data-key="' + k + '"]').detach()
@@ -68,7 +66,7 @@ var Edit = {
         $.ajax({
             type: 'DELETE',
             url: '/api/content',
-            data: 'key=' + k + '&_token=' + t,
+            data: 'key=' + k,
             dataType: 'json'
         })
     },
@@ -105,16 +103,20 @@ var Edit = {
     },
     init: function () {
         Edit.attachHandlers()
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        })
     },
-    putContent: function(k, v, g, t)
+    putContent: function(k, v, g)
     {
         g = typeof g !== 'undefined' ? g : ''
 
         let data = {
             key: k,
             content: v,
-            group: g,
-            token: t
+            group: g
         }
 
         $.ajax({
@@ -126,12 +128,11 @@ var Edit = {
     },
     save: function($_, ace = false)
     {
-        var t = $('[name="_token"]').val(),
-            k = $_.data('key'),
+        var k = $_.data('key'),
             v = ace ? Edit.editor.getValue() : $_.val() || $_.html(),
             g = $_.data('group')
 
-        Edit.putContent(k, v, g, t)
+        Edit.putContent(k, v, g)
 
         $('[data-editable][data-key="' + k + '"]').html(v)
 

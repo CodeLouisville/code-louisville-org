@@ -57,9 +57,14 @@ Route::get('api/content', function () {
     return App\Content::all();
 });
 Route::put('api/content', ['middleware' => 'admin', function () {
-    App\Content::updateOrCreate(['key' => Request::input('key')], Request::all());
+    App\Content::updateOrCreate([
+        'key' => Request::input('key')
+    ], Request::all());
 }]);
-Route::put('api/content/create', ['middleware' => 'admin', 'uses' => 'Api@create']);
+Route::put('api/content/create', [
+    'middleware' => 'admin',
+    'uses' => 'Api@create'
+]);
 Route::delete('api/content', ['middleware' => 'admin', function () {
     App\Content::where('key', Request::input('key'))->delete();
 }]);

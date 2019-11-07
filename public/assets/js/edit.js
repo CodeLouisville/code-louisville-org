@@ -110,10 +110,17 @@ var Edit = {
     {
         g = typeof g !== 'undefined' ? g : ''
 
+        let data = {
+            key: k,
+            content: v,
+            group: g,
+            token: t
+        }
+
         $.ajax({
             type: 'PUT',
             url: '/api/content',
-            data: 'key=' + k + '&content=' + v + '&group=' + g + '&_token=' + t,
+            data: data,
             dataType: 'json'
         })
     },

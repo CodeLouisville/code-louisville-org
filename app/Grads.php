@@ -8,11 +8,12 @@ use Carbon\Carbon;
 class Grads extends Model
 {
     protected $table = 'grads';
+
     protected $appends = [
         'cohorts',
         'cohort_month',
         'cohort_year',
-        'cohort_datetime'
+        'cohort_datetime',
     ];
 
     protected $fillable = [

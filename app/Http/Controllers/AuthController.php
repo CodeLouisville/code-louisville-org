@@ -40,7 +40,9 @@ class AuthController extends Controller
      */
     public function login()
     {
-        return Socialite::driver('github')->scopes(['user:email', 'read:org'])->redirect();
+        return Socialite::driver('github')
+            ->scopes(['user:email', 'read:org'])
+            ->redirect();
     }
 
     public function logout()

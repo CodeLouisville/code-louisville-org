@@ -26,80 +26,82 @@
                         <hr>
                         <div @include('edit', ['key' => 'mentor_tech_desc'])>{!! $mentor_tech_desc !!}</div>
                     </section>
-                    <div id="current" class="profiles" class="m2-top m2-bottom">
-                        <hr>
-                        @if (Auth::check() && Auth::user()->admin) <a href="/mentor/add" class="button small pink pull-right">Add mentor</a> @endif
-                        <h3 class="m0">Current mentors</h3>
-                        <hr>
-                        <div class="row">
-                            @foreach ($mentors as $mentor)
-                                @if ( $mentor->active == 1 || ( Auth::check() && Auth::user()->admin ) )
-                                    <div class="col-md-2 col-sm-3 col-xs-4">
-                                        <div class="card text-center @if ($mentor->active == 0) inactive @endif">
-                                            <div class="img-holder">
-                                                @if(Auth::check())
-                                                    @if (Auth::user()->admin)
-                                                        <a class="edit-profile" href="/mentor/edit/{{ $mentor->id }}"><span class="fa fa-edit"></span></a>
-                                                    @elseif ($mentor->github_id == Auth::user()->github_id)
-                                                        <a class="edit-profile" href="/mentor/edit/{{ $mentor->id }}"><span class="fa fa-edit"></span></a>
+                    @if (env('SHOW_MENTORS'))
+                        <div id="current" class="profiles" class="m2-top m2-bottom">
+                            <hr>
+                            @if (Auth::check() && Auth::user()->admin) <a href="/mentor/add" class="button small pink pull-right">Add mentor</a> @endif
+                            <h3 class="m0">Current mentors</h3>
+                            <hr>
+                            <div class="row">
+                                @foreach ($mentors as $mentor)
+                                    @if ( $mentor->active == 1 || ( Auth::check() && Auth::user()->admin ) )
+                                        <div class="col-md-2 col-sm-3 col-xs-4">
+                                            <div class="card text-center @if ($mentor->active == 0) inactive @endif">
+                                                <div class="img-holder">
+                                                    @if(Auth::check())
+                                                        @if (Auth::user()->admin)
+                                                            <a class="edit-profile" href="/mentor/edit/{{ $mentor->id }}"><span class="fa fa-edit"></span></a>
+                                                        @elseif ($mentor->github_id == Auth::user()->github_id)
+                                                            <a class="edit-profile" href="/mentor/edit/{{ $mentor->id }}"><span class="fa fa-edit"></span></a>
+                                                        @endif
                                                     @endif
-                                                @endif
-                                                @if ($mentor->github)
-                                                    <img class="photo" src="https://github.com/{{ $mentor->github }}.png" alt="{{ $mentor->name }}">
-                                                @else
-                                                    <img class="photo" src="https://deppclvsgi2as.cloudfront.net/assets/img/default-person.png" alt="{{ $mentor->name }}">
-                                                @endif
-                                            </div>
-                                            <div class="info">
-                                                <div>
-                                                    <h4 class="name">{{ $mentor->first }} <small>{{ $mentor->last }}</small></h4>
-                                                    @if ($mentor->linkedin) <a href="https://www.linkedin.com/in/{{ $mentor->linkedin }}" target="_blank"><span class="fa fa-linkedin-square"></span></a> @endif
-                                                    @if ($mentor->github) <a href="https://github.com/{{ $mentor->github }}" target="_blank"> <span class="fa fa-github-square"></span></a> @endif
-                                                    @if ($mentor->twitter) <a href="https://twitter.com/{{ $mentor->twitter }}" target="_blank"> <span class="fa fa-twitter-square"></span></a> @endif
+                                                    @if ($mentor->github)
+                                                        <img class="photo" src="https://github.com/{{ $mentor->github }}.png" alt="{{ $mentor->name }}">
+                                                    @else
+                                                        <img class="photo" src="https://deppclvsgi2as.cloudfront.net/assets/img/default-person.png" alt="{{ $mentor->name }}">
+                                                    @endif
                                                 </div>
-                                                <div>
-                                                    @if ($mentor->track == 'js')
-                                                        <h4 class="name">Javascript <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-javascript-plain colored"></span></a>
-                                                        <a><span class="devicon-nodejs-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'front')
-                                                        <h4 class="name">Front-end <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-html5-plain-wordmark colored"></span></a>
-                                                        <a><span class="devicon-css3-plain-wordmark colored"></span></a>
-                                                        <a><span class="devicon-javascript-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'ruby')
-                                                        <h4 class="name">Ruby <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-rails-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'php')
-                                                        <h4 class="name">PHP <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-php-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'dotnet')
-                                                        <h4 class="name">.NET <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-dot-net-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'python')
-                                                        <h4 class="name">Python <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-python-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'salesforce')
-                                                        <h4 class="name">Salesforce <small>{{ $mentor->night }}</small></h4>
-                                                    @elseif ($mentor->track == 'android')
-                                                        <h4 class="name">Android<small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-android-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'java')
-                                                        <h4 class="name">Java <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-java-plain colored"></span></a>
-                                                    @elseif ($mentor->track == 'ios')
-                                                        <h4 class="name">iOS (Swift) <small>{{ $mentor->night }}</small></h4>
-                                                        <a><span class="devicon-apple-plain colored"></span></a>
-                                                        <a><span class="devicon-swift-plain colored"></span></a>
-                                                    @endif
+                                                <div class="info">
+                                                    <div>
+                                                        <h4 class="name">{{ $mentor->first }} <small>{{ $mentor->last }}</small></h4>
+                                                        @if ($mentor->linkedin) <a href="https://www.linkedin.com/in/{{ $mentor->linkedin }}" target="_blank"><span class="fa fa-linkedin-square"></span></a> @endif
+                                                        @if ($mentor->github) <a href="https://github.com/{{ $mentor->github }}" target="_blank"> <span class="fa fa-github-square"></span></a> @endif
+                                                        @if ($mentor->twitter) <a href="https://twitter.com/{{ $mentor->twitter }}" target="_blank"> <span class="fa fa-twitter-square"></span></a> @endif
+                                                    </div>
+                                                    <div>
+                                                        @if ($mentor->track == 'js')
+                                                            <h4 class="name">Javascript <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-javascript-plain colored"></span></a>
+                                                            <a><span class="devicon-nodejs-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'front')
+                                                            <h4 class="name">Front-end <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-html5-plain-wordmark colored"></span></a>
+                                                            <a><span class="devicon-css3-plain-wordmark colored"></span></a>
+                                                            <a><span class="devicon-javascript-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'ruby')
+                                                            <h4 class="name">Ruby <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-rails-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'php')
+                                                            <h4 class="name">PHP <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-php-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'dotnet')
+                                                            <h4 class="name">.NET <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-dot-net-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'python')
+                                                            <h4 class="name">Python <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-python-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'salesforce')
+                                                            <h4 class="name">Salesforce <small>{{ $mentor->night }}</small></h4>
+                                                        @elseif ($mentor->track == 'android')
+                                                            <h4 class="name">Android<small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-android-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'java')
+                                                            <h4 class="name">Java <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-java-plain colored"></span></a>
+                                                        @elseif ($mentor->track == 'ios')
+                                                            <h4 class="name">iOS (Swift) <small>{{ $mentor->night }}</small></h4>
+                                                            <a><span class="devicon-apple-plain colored"></span></a>
+                                                            <a><span class="devicon-swift-plain colored"></span></a>
+                                                        @endif
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endif
-                            @endforeach
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                     <section id="questions" class="faqs m2-top m2-bottom">
                         <hr>
                         <h3 class="m0" @include('edit', ['key' => 'mentor_questions_title'])>{!! $mentor_questions_title !!}</h3>
@@ -212,7 +214,9 @@
                             <li><a href="#who">What is a mentor?</a></li>
                             <li><a href="#what">What does it take?</a></li>
                             <li><a href="#tech">Technologies</a></li>
-                            <li><a href="#current">Current mentors</a></li>
+                            @if (env('SHOW_MENTORS'))
+                                <li><a href="#current">Current mentors</a></li>
+                            @endif
                             <li><a href="#questions">FAQs</a></li>
                             <li><a href="#form" class="button pink"><i class="fa fa-clipboard"></i><span>Sign up</span><span>Become a Mentor</span></a></li>
                         </ul>

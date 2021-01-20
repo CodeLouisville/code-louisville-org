@@ -27,7 +27,7 @@
                         <ul class="nav">
                             <li><a href="#main">Main</a></li>
                             <li><a href="#questions">FAQs</a></li>
-                            <li><a href="/learn/apply" class="button pink"><i class="fa fa-clipboard"></i><span>Apply</span><span>Apply</span></a></li>
+                            <li><a href="/learn/apply" class="button pink" onclick="fbq('trackCustom', 'ClickApplyButton')"><i class="fa fa-clipboard"></i><span>Apply</span><span>Apply</span></a></li>
                         </ul>
                     </nav>
                 </div>

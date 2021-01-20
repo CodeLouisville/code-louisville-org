@@ -14,7 +14,7 @@
                         <hr>
                         <div @include('edit', ['key' => 'apply_intro_desc'])>{!! $apply_intro_desc !!}</div>
                         <div class="apply-now">
-                          <button type="button" class="button pink" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdXlC-rsEQBbNgmTiJlbwWVWYXbrfJGziyP3p0NoY-zzN2Jgg/viewform?usp=sf_link')">Apply Now</button>
+                          <button type="button" class="button pink" onclick="fbq('trackCustom', 'ClickedApplyNowButton'); window.open('https://docs.google.com/forms/d/e/1FAIpQLSdXlC-rsEQBbNgmTiJlbwWVWYXbrfJGziyP3p0NoY-zzN2Jgg/viewform?usp=sf_link')">Apply Now</button>
                         </div>
                     </section>
                 </div>

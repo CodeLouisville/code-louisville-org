@@ -9,7 +9,7 @@
         <div class="container">
             <img class="cl-logo" src="{{ env('CLOUDFRONT') }}/assets/img/code-louisville-white.svg" alt="Code Louisville">
             <div>
-                <a href="#intro" class="button button-large white m1-right">Tell me more</a><a href="/learn#upcoming" class="button button-large pink">Sign up today</a>
+                <a href="#intro" class="button button-large white m1-right">Tell me more</a><a href="/learn#upcoming" class="button button-large pink" onclick="fbq('trackCustom', 'ClickSignUpTodayButton')">Sign up today</a>
             </div>
         </div>
     </header>
@@ -52,7 +52,7 @@
                         <h2 class="pink weak m2-bottom" @include('edit', ['key' => 'home_get_involved_col1_title'])>{!! $home_get_involved_col1_title !!}</h2>
                         <hr>
                         <p class="left m2-top m2-bottom" @include('edit', ['key' => 'home_get_involved_col1_desc'])>{!! $home_get_involved_col1_desc !!}</p>
-                        <div class="right"><a class="button pink" href="/learn">Learn more</a></div>
+                        <div class="right"><a class="button pink" href="/learn" onclick="fbq('trackCustom', 'ClickLearnMoreButton')">Learn more</a></div>
                     </div>
                 </div>
                 <div class="col-sm-4">
